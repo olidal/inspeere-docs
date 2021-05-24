@@ -1,6 +1,8 @@
 # inspeere-docs
 
-[![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+![logo_inspeere](https://github.com/olidal/inspeere-docs/raw/master/Images/logo_inspeere.png "Logo Inspeere")
+
+[![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/) 
 
 Ce dépôt héberge la documentation officielle des produits et services [Inspeere](https://inspeere.com).
 
