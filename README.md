@@ -1,6 +1,6 @@
 # inspeere-docs
 
-![logo_inspeere](https://github.com/olidal/inspeere-docs/raw/main/Images/logo_inspeere.png "Logo Inspeere")
+[![logo_inspeere](https://github.com/olidal/inspeere-docs/raw/main/Images/logo_inspeere.png "Logo Inspeere")](https://inspeere.com)
 
 [![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/) 
 
