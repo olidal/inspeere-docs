@@ -543,7 +543,6 @@ qu'une et une seule fois (1,5 fois, si l'on tient compte de la redondance).
 
 
 
-
 .. _mise_en_service:
 
 2. Mise en service
