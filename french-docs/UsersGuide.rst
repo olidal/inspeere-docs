@@ -421,7 +421,7 @@ Sans compter que ces éléments s'ajoutent aussi à la tolérance aux pannes int
 chaque appliance Inspeere. En effet les appliances sont toutes équipées de 
 disques redondant. Selon les modèles, il peut s'agir de disques en mode RAID1 (miroir), 
 RAID5 (n+1), ou RAID5 + hot spare (n+1+1). Et sur les modèles les plus hauts de gamme,
-nous savons utiliser toute la puisance de ZFS sur les très grosses configurations, 
+nous savons utiliser toute la puissance de ZFS sur les très grosses configurations, 
 pour proposer les formes les plus avancées de RAID (RAID50, RAID60 et même plus encore). 
 
 Ajoutons de plus que ces solutions RAID permettent aussi 
@@ -548,9 +548,154 @@ qu'une et une seule fois (1,5 fois, si l'on tient compte de la redondance).
 2. Mise en service
 ------------------
 
+Selon la prestation d'installation retenue en collaboration avec votre 
+distributeur, votre solution Inspeere peut être livrée soit pré-installée et 
+pré-activée, soit prête à être activée. 
+
+Dans les deux cas votre distributeur saura réaliser, ou vous aider à réaliser
+les étapes suivantes de l'installation dans vos locaux:
+
+* :ref:`ip_statique`
+* :ref:`filtrage_sortant`
+* :ref:`config_dnat` 
+
+.. _ip_statique:
+
+Configuration IP Statique de l'Appliance Inspeere
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+La grande majorité des réseaux d'entreprise (et aussi ceux des particuliers) affectent une 
+adresse IP automatiquement lors d'une première connexion d'un équipement.
+C'est pratique, mais cette affectation n'est pas garantie de rester toujours
+la même. Pour des postes de travail, ce n'est pas gênant car ils sont seulement
+clients d'autres services et n'ont pas besoin d'être joignables.
+
+Pour les serveurs en revanche, un service qui change d'adresse peut créer quelques 
+désagréments. Pour éviter cette situation, il est donc préférable de fixer l'adresse
+du serveur sur le réseau. Cette opération (ansi que les suivantes) s'effectue au 
+niveau de la box du FAI (ou du routeur/serveur DHCP) du site d'installation.
+
+La plupart des FAIs permettent aux utilisateurs de faire eux-meme cette 
+opération sur la console de supervision de leur box. On appelle cette
+opération une "affectation statique d'un bail DHCP".
+
+Sur le principe cette opération est très simple: elle consiste à associer l'adresse 
+MAC de l'appliance [#mac]_ à sa future adresse IP dans le réseau local.
+
+L'adresse IP doit être choisie pour faire partie du sous-réseau intranet 
+auquel sera connecté l'appliance Inspeere. Les serveurs DHCP des FAI sont 
+généralement configurés pour distribuer des adresses IP sur une plage 
+"centrale" de valeurs entre la valeur minimum 0 (qui est réservée) et la 
+valeur 255 (qui est réservée aussi).
+Les adresses entre 200 et 250 sont généralement de bons choix. [#ping]_
+
+Attention toutefois a bien attendre que l'IP statique soit configurée dans le
+serveur DHCP ou la box FAI avant d'allumer l'appliance Inspeere la première 
+fois. Autrement elle risque de récupérer une autre adresse dont elle aura du mal
+à se défaire (DHCP est un protocole têtu). 
+
+.. _filtrage_sortant: 
+
+(De)filtrage du traffic sortant
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Les mesures de sécurité sont variables d'une entreprise à l'autre. Dans 
+les environnements les plus stricts, les connexions sortantes sont systèmatiquement bloquées.
+
+Dans ce cas, il faut configurer le Firewall (ou le faire configurer) afin de "défiltrer" 
+les connexions sortantes qui ont les caractéristiques suivantes:
+
++-----------------------+-------------+-----+----------------------------+
+| IP dest               | port dest   |proto| description                |
++=======================+=============+=====+============================+
+| toutes                | 600         | TCP | ssh serveur backup         |
++-----------------------+-------------+-----+----------------------------+
+| docker.inspeere.com   | 5000-5001   | TCP | Dépôt docker Inspeere      |
++-----------------------+-------------+-----+----------------------------+
+| toutes                | 443         | TCP | HTTPS                      |
++-----------------------+-------------+-----+----------------------------+
+| toutes                | 80          | TCP | HTTP                       |
++-----------------------+-------------+-----+----------------------------+
+| toutes                | 11371       | TCP | HKP                        |
++-----------------------+-------------+-----+----------------------------+
+| mail.inspeere.net     | 25          | TCP | Notifications systemes/mail|
++-----------------------+-------------+-----+----------------------------+
+| toutes                | 8089        | UDP | Monitoring (grafana)       |
++-----------------------+-------------+-----+----------------------------+
+| toutes                | 587         | TCP | Soumission mail            |
++-----------------------+-------------+-----+----------------------------+
+| toutes                | 20-21       | TCP | FTP downloads              |
++-----------------------+-------------+-----+----------------------------+
+| reverse1.inspeere.com | 12288-32767 | TCP | Reverse ssh                |
++-----------------------+-------------+-----+----------------------------+
+| toutes                | 3478-3479   | UDP | STUN (visio)               |
++-----------------------+-------------+-----+----------------------------+
+
+.. _config_dnat:
+
+Routage du traffic entrant
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pour fonctionner dans de bonnes condition, l'appliance Inspeere doit être 
+joignable depuis l'extranet, sur les ports suivants, à l'aide de redirections
+DNAT:
+
++---------------------+-----------+-------+------------------------------+
+| IP origine          | port dest | proto | description                  |
++=====================+===========+=======+==============================+
+| toutes              | 443       |  TCP  | Servies extranet             |
++---------------------+-----------+-------+------------------------------+
+| toutes              | 1194-1195 |  UDP  | VPN                          |
++---------------------+-----------+-------+------------------------------+
+| toutes              | 600       |  TCP  | Sauvegardes                  |
++---------------------+-----------+-------+------------------------------+
+| toutes              | 22        |  TCP  | Ssh (optionel si reverse ok) |
++---------------------+-----------+-------+------------------------------+
+
+
+Première mise sous tension
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configuration backup des postes Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configuration backup des poste MACOS via TimeMachine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
 
 .. _premiers_pas:
 
 3. Premiers pas, visite guidée
 ------------------------------
 
+
+Console de supervision
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+Volumes de partage SMB
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+Nextcloud
+^^^^^^^^^
+
+Permissions du dossier COMMUN
+"""""""""""""""""""""""""""""
+
+Partage de documents
+""""""""""""""""""""
+
+Authentification 2 facteurs
+"""""""""""""""""""""""""""
+
+Réseau privé virtuel (VPN)
+""""""""""""""""""""""""""
+
+.. rubric:: Footnotes
+
+.. [#mac] L'adresse MAC est un identifiant constitué de 6 nombres hexadécimaux de deux digits séparés par des deux-points, comme par exemple ``01:AB:45:F8:C5:87``. Cette addresse MAC est fournie par Inspeere à l'avance à votre installateur. 
+
+.. [#ping] Pour être sûr de ne pas créer un conflit, la personne en charge de l'installation devra vérifier que l'adresse n'est pas déjà utilisée, par exemple à l'aide la commande ``ping`` depuis un terminal.
