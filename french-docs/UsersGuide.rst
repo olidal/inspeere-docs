@@ -24,6 +24,8 @@ Ci-après, nous abordons les questions suivantes:
 
   * :ref:`pas_expert`
   * :ref:`pourquoi_inspeere`
+  * :ref:`quantite_stockage`
+  * :ref:`tolerance_pannes`
   * :ref:`peu_ressources`
 
 
@@ -139,19 +141,19 @@ Chez Inspeere la sécurité est au centre de nos préoccupations, surtout par
 les temps qui courrent. Au lieu d'appliquer la sécurité en tentant seulement
 de construire une forteresse inviolable, nous construisons un système qui
 applique la stratégie dite de "la guérilla". Ainsi, au premier niveau de défense
-d'un pare-feu extrêmement fiable et robuste, réputé pour sa performance 
+constitué d'un pare-feu extrêmement fiable et robuste, réputé pour sa performance 
 (shorewall), nous ajoutons une multitude de mécanismes qui rendent la 
 progression de l'Adversaire quasiment impossible. 
 
 Citons par exemple:
 
 * Le choix du système Linux: bien qu'un grand nombre de serveurs fonctionnent
-  sous Linux, aujourd'hui 99% des attaquent portent sur les système Windows,
-  et plus récemment sur les MAC. Ce n'est pas un hasard: Linux (et ses cousins 
+  sous Linux, aujourd'hui 99% des attaques portent sur les système Windows,
+  (et plus récemment sur les MAC). Ce n'est pas un hasard: Linux (et ses cousins 
   de la famille BSD) savent déjà très bien se défendre, tant par leur héritage
   Unix, que par le fait qu'ils sont portés par la communauté OpenSource. 
   Aujourd'hui, en matière de sécurité, le modèle OpenSource fait l'unanimité: 
-  les failles sont détéctées rapidement par une très large communauté d'expert,
+  les failles sont détéctées rapidement par une très large communauté d'experts,
   issue aussi bien des milieux académiques que de l'industrie, et les 
   correctifs mis en production en temps réel.
 
@@ -167,7 +169,7 @@ Citons par exemple:
   les équipements d'Inspeere sont remontées auprès d'Inspeere, qui les analyse et
   met à jour en temps réel une liste noire globale. Ainsi, individuellemnt, les 
   équipements d'Inspeere ne sont pas seuls face au reste du monde, mais ils forment
-  une grande famille, très soudée et agissant de façon collective. C'est
+  une grande famille, très soudée et agissent de façon collective. C'est
   l'ADN d'Inspeere.   
 
 * Le cloisonnement: les différents constituants de la solution Inspeere sont
@@ -214,7 +216,8 @@ Citons par exemple:
 * Les sauvegardes sont en lecture seule, par construction: Les sauvegardes 
   d'Inspeere sont inaltérables, par construction, grâce au système ZFS. 
   Avec la solution Inspeere, un rançongiciel ne peut pas modifier les données 
-  exitantes pour les crypter. La seule chose qu'il peut faire, c'est détruire 
+  exitantes d'une sauvegarde locale pour les crypter. La seule chose qu'il peut 
+  faire, c'est détruire 
   le système en effaçant les données qu'il contient. Mais dans ce cas l'attaque 
   ne pourrait faire l'objet d'aucune demande rançon. Et quand bien même une 
   telle situation se produisait, la sauvegarde externalisée très robuste 
@@ -222,7 +225,7 @@ Citons par exemple:
   puissance du stockage distribué redondant. C'est littéralement  mission 
   impossible!
 
-* Les sauvegardes externes sont cryptées à la source et distribuées de facon
+* Les sauvegardes externes sont cryptées à la source, et distribuées de facon
   redondante. Avec Inspeere, vos sauvegardes ne sont pas stockées seulement sur 
   un ou quelques sites, qui constitueraient automatiquement des points de 
   vulnérabilité, mais sur plusieurs, avec une forte tolérance aux pannes. 
@@ -266,8 +269,8 @@ Citons par exemple:
     
     Chez Inspeere, nous pensons donc que la solution des DataCenter pour construire
     UNE sauvegarde sécurisée mais centralisée est une abbération, et une logique de profit à 
-    très court terme (et peu écologique). Nous pensons que tout l'inverse de ce dont 
-    une sauvegarde a besoin. Et donc nous sommes fiers de proposer exactement
+    très court terme (et peu écologique). Nous pensons que c'est tout l'inverse de ce dont 
+    une sauvegarde a besoin. Et donc, justement, nous sommes très fiers de proposer exactement
     l'inverse. Et un même un peu surpris d'être quasiment les seuls à suivre cette ligne,
     compte tenu des enjeux considérables que représentent les sauvegardes!
  
@@ -276,36 +279,55 @@ Citons par exemple:
 Choisir Inspeere pour la performance
 """"""""""""""""""""""""""""""""""""
 
-Le fait de disperser les données de sauvegarde sur de multiples site de stockage, avec 
+Le fait de disperser les données de sauvegarde sur de multiples sites de stockage, avec 
 redondance, permet d'optimiser considérablement la performance de la solution d'Inspeere
 lors de la récurpération des sauvegardes. 
 
 En effet, en matière de sauvegarde, la phase la plus critique est celle de la récupération
 des données. Non seulement les données doivent être retrouvées sans altération ni perte 
-(c'est la moindre des choses pour une sauvegarde), mais cette récupération doit aller vite.
+(c'est la moindre des choses pour une sauvegarde), mais cette récupération doit aller vite, 
+car l'utilisateur en a généralement besoin pour reprendre son activité.
 
 Idéalement, il est souhaitable que cette récupération se fasse à une vitesse proche de la
 vitesse maximum du réseau, y compris si le réseau est très rapide. Pour cela Inspeere 
-bénéficie de multiples facteurs d'accélération, dus à son fonctionnement multi-cible:
+bénéficie de multiples facteurs d'accélération, dus à son fonctionnement multi-cibles:
 
 1. Comme les données sont divisées en multiples parties de sauvegarde qui sont 
-   éparpillées, le téléchargement peut atteindre une vitesse qui permet de cimuler les 
+   éparpillées, le téléchargement peut atteindre une vitesse qui permet de cumuler les 
    vitesses (bande passante) des multiples cibles de sauvegarde. Si les sauvegardes 
    sont stockées sur 30 sites qui disposent chacun de 100Mbit/s au moment de la 
    récupération, alors potentiellement la vitesse maximale de la récupération peut 
-   atteindre 30 x 100Mbit/s = 3 Gbit/s.
+   atteindre 30 x 100Mbit/s = 3 Gbit/s. Si les 30 sites disposent chacun de 1Gbit/s,
+   la limite passe à 30Gbit/s. Autant dire que dans ce cas, la seule limite se situe 
+   au niveau du matériel, et non plus de la sauvegarde.
 
 2. Comme nous avons ajouté de la redondance, la bande passante des sources redondante
-   peut aussi être exploitée de facon intelligente pour accélérer d'autant la restoration.
-   Il est par exemple assez facile de choisir les plus rapides des sources, de facon à
-   ne pas être ralenti par celles qui sont surchargées
+   peut aussi être exploitée de facon intelligente pour accélérer d'autant la récupération.
+   Dès lors qu'il y a plusieur choix possible, il est par exemple assez naturel de choisir 
+   les plus rapides, de facon à ne pas être ralenti par celles qui sont surchargées. Cela 
+   permet de se rapprocher au maximum de la limite théorique exposée ci-dessus. La priorité
+   chez Inspeere, c'est de saturer la connexion réseau pour que la récupération soit la plus
+   rapide et efficace possible.
 
 3. La solution Inspeere gère les ressources de stockage de la sauvegarde de facon 
-   rigoureuse, en surveillant les performance de chaque site de stockage au fur et à 
-   mesure des sauvegardes et récupération, selon un procédé breveté. LEs sites de stockage
-   qui subissent des défaillance ou dont les performances sont diminuées sont détecté
-   instantanément et remplacé par de nouveau site plus performant, de facon à toujours 
-   garantir une Qualité de Service minimale. 
+   rigoureuse, en surveillant continuellement les performances de chaque site de stockage,
+   au fur et à mesure des sauvegardes et récupérations, selon un procédé breveté. Les sites 
+   de stockage qui subissent des défaillances ou dont les performances sont diminuées sont 
+   détectés rapidement et, si besoin, remplacés par de nouveau site plus performant, de 
+   facon à toujours garantir une Qualité de Service minimale. 
+
+4. La technique de sauvegarde avancée utilisée par Inspeere permet à la fois la 
+   sauvegarde incrémentale (lors de chaque sauvegarde, on n'envoie que ce qui change),
+   et la récupération sélective d'un état de sauvegarde consolidé : on choisit la date de 
+   la sauvegarde à récupérer, et le système n'envoie que le strict minimum de données 
+   necéssaires pour la récupération de cette sauvegarde, en une seule fois. Autrement dit, 
+   si la sauvegarde correspond à l'envoi de 1000 incréments depuis la toute première 
+   sauvegarde, on n'a pas besoin de récupérer successiveemnt ces 1000 états de sauvegarde.
+   La procédure de récupération est capable de retrouver directement, en une seule fois, 
+   la 1000e sauvegarde comme si elle avait été une première sauvegarde complète. 
+   Non seulement ca économise un temps de transfert considérable, mais grâce à ZFS cette 
+   opération de consolidation est instantanée, et le transfert commence immédiatement 
+   sans attendre la fin d'un quelconque calcul de consolidation d'état.
 
 
 .. _quantite_stockage:
@@ -321,48 +343,95 @@ Pour cela, Inspeere fournit un certain nombre d'outils très simple pour:
 
 1. Déposer des fichiers directement sur l'appliance en intranet, par exemple 
    à l'aide d'un volume en réseau (protocole SMB)
-2. Déposer des fichiers sur l'appliance en mobilité, à l'aide du système de 
+2. Déposer des fichiers sur l'appliance en mobilité (ou inrtranet), à l'aide du système de 
    nuage privé NextCloud intégré à notre solution
 3. Concentrer des sauvegardes de postes de travail Windows ou Linux, 
    en réseau, soit à l'aide d'outils de synchronisation de fichiers simples 
-   tels que ``rsync``, ou à l'aide d'outils de backup reposant sur un agent très simple 
-   à installer sur chaque poste à sauvegarder. Ce dernier système à base d'agent permet
-   de faire des sauvegardes de type image virtuelle de disque, pour une restoration 
-   complète de l'etat de la machine sauvegardée ou de type fichiers, pour une restauration
-   sélective des fichiers à recupérer
+   tels que ``rsync``, ou à l'aide d'outils de backup fournis par Inspeere et reposant 
+   sur un agent très simple à installer sur chaque poste à sauvegarder. Sur une machine Windows.
+   ce dernier système à base d'agent permet de faire des sauvegardes de type image virtuelle 
+   de disque, pour une restoration complète de l'etat de la machine sauvegardée, ou une 
+   sauvegarde de type fichiers, pour une restauration sélective des fichiers à recupérer 
+   (ou les deux)
 4. Sur Mac, concentrer les sauvegardes TimeMachine en permettant aux 
    utilisateur de voir notre système comme un disque externe TimeMachine (enfantin!) 
 
 Lors du choix de sa nouvelle solution Inspeere, l'utilisateur doit donc anticiper ses 
-besoins de concentration vers l'appliance sur plusieurs années, afin de déterminer
-la **capacité utile** dont il/elle a besoin. 
+besoins d'espace de stockage pour la concentration de ses données existantes et futures,
+et ce sur plusieurs années. Ce calcul n'est pas très complexe, mais il ne peut pas être
+automatisé. En revanche, le distributeur choisi pour la fourniture et l'installation 
+de la solution Inspeere saura parfaitement vous accompagner pour cette évaluation.
 
-Il convient aussi de tenir compte de la dégradation sensible des performances 
-(et de la durée de vie) des disques lorsqu'ils deviennent trop plein. 
-Ainsi, il est par exemple fortement déconseillé de dépasser le seuil des 90% 
-d'occupation de l'espace disque.
+Cette évaluation doit en effet tenir compte de différents éléments, comme par exemple
+la dégradation sensible des performances (et de la durée de vie) des disques lorsqu'ils 
+deviennent trop plein. 
+En l'occurence, il est fortement déconseillé de dépasser le seuil des 90% d'occupation 
+de l'espace disque. 
 
 La bonne nouvelle, c'est que le système Inspeere (plus précisément ZFS), comprime 
 les données qui peuvent l'être lors de la concentration.
 Par exemple, nous avons expérimenté qu'un disque d'ordinateur portable MacBook 
 qui contenait 400GO de données, n'occupait au final que 230Go sur le serveur 
-inspeere, après compression.
+inspeere, après compression, soit une réduction de 42,5%. 
 
 Néanmoins comme il est difficile de prédire quel taux de compression sera 
-effectivement atteint, et il est prudent de considerer que le ratio sera au pire de 1:1.
+effectivement atteint, dans le doute, il reste conseillé de considerer que le ratio 
+sera au pire de 1:1.
 
 Au final, le calcul est donc relativement simple:
 
 1. Faire la somme des volumes de données à sauvegarder actuellement sur les postes en réseau, 
-2. Ajouter le volume des données qui seront eventuellement centralisées par Nextcloud
-3. Calculer le taux d'accroissement annuel du volume de données
-4. Appliquer ce taux d'accroissement à la durée d'exploitation prévue de la 
+2. Ajouter le volume des données supplémentaires qui seront eventuellement centralisées 
+   par Nextcloud
+3. Ajouter le volume de données associés aux éventuels service supplémentaires choisis en option
+4. Calculer le taux d'accroissement annuel du volume total de données
+5. Appliquer ce taux d'accroissement à la durée d'exploitation prévue de la 
    solution Inspeere (typiquement 3 ou 5 ans)
-5. Ajouter une marge d'erreur de 20-25% 
-6. Ajouter 10% pour eviter le remplissage complet
+6. Ajouter une marge d'erreur de 20-25% 
+7. Ajouter 10% pour eviter le remplissage complet et rester sous le seuil des 90%.
 
 Le résultat de ce calcul permet alors de déterminer le seuil de **capacité utile** dont 
 l'utilisateur a besoin.
+
+.. _tolerance_pannes:
+
+Pourquoi la solution Inspeere est-elle robuste?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+La solution Inspeere utilise simultanément de multiples cibles de sauvegarde distantes.
+Pour cela, les données initiales sont divisées en un certain nombre de fragments, mais 
+seule une partie de ces fragments est indispensable à la récupération des sauvegardes.
+Les autres sont là pour la redondance, afin de garantir la tolérance au pannes de notre 
+solution. Car toutes les cibles de sauvegardes sont équivalentes et interchangeables.
+
+En pratique, la solution Inspeere peut utiliser jusqu'à 48 framents, dont 16 pour la 
+redondance. Cela signifie que le système peut tolérer jusqu'à 16 pannes simultanées 
+avant que la sauvegarde ne devienne effectivement irrécupérable. 
+
+Mais cela ne peut jamais arriver, car dès qu'une panne est détectée, le système Inspeere 
+lance immédiatement une action de réparation pour reconstituer la redondance initiale. 
+Cette combinaison d'un niveau de redondance élevé
+et d'une stratégie de récupération dite "impatiente" ( *eager* ), rend la solution
+quasiment invulnérable, car chaque cible de stockage est sur un site géographique et dans
+un réseau différent (et alimenté en courant a priori par une source différente). AUCUN 
+DataCenter ne peut égaler ce niveau de service!
+
+
+Sans compter que ces éléments s'ajoutent aussi à la tolérance aux pannes interne de 
+chaque appliance Inspeere. En effet les appliances sont toutes équipées de 
+disques redondant. Selon les modèles, il peut s'agir de disques en mode RAID1 (miroir), 
+RAID5 (n+1), ou RAID5 + hot spare (n+1+1). Et sur les modèles les plus hauts de gamme,
+nous savons utiliser toute la puisance de ZFS sur les très grosses configurations, 
+pour proposer les formes les plus avancées de RAID (RAID50, RAID60 et même plus encore). 
+
+Outre qu'elle permettent de tolérer la 
+défaillance d'un disque ou plusieurs disques, ces solutions RAID permettent aussi 
+d'améliorer la performance d'accès de l'appliance.
+En effet, le système de fichier ZFS sait parfaitement tirer partie de la redondance des 
+disques pour accélérer les transferts. Ainsi sur une solution en RAID5 avec 4 disques,
+les lectures se font simultanément sur les 4 disques, avec un débit résultant proche
+du quadruple du débit d'un disque seul.
+
 
 .. _peu_ressources:
 
@@ -378,6 +447,41 @@ La réponse tient dans ces deux éléments technologiques:
 
 Le codage de Reed-Solomon
 """""""""""""""""""""""""
+
+Il existe deux manières d'ajouter de la tolérance aux pannes: soit on fait de la 
+duplication, soit on utilise un code d'effacement ( *erasure coding* ) tel que Reed Solomon.
+
+La duplication consiste faire n copies identiques des données. C'est simple, mais ca 
+consomme beuacoup d'espace. Par exemple, pour tolérer 16 pannes simulatnées avec 
+la techniques de duplication, on a besoin d'un espace de stockage 16x plus important que
+le volume initial, soit un cout de 1500%.
+
+Avec un codage d'effacement, au contraire, on est capable de supporter un grand nombre 
+de pannes avec un volume réduit.
+
+Le codage d'effacement Reed-Solomon est la même technique que l'on retrouve dans la technologie
+RAID. Dans le cas de la solution d'Inspeere, nous construisons un super-RAID, capable d'aller 
+jusqu'à (n+16), soit l'équivalent de 16 disques de redondance.
+
+Et pourtant ce choix extrême reste très peu consommateur de ressource, car il ne conduit
+qu'à une augmentation de 50% du volume de stockage. Toute la subtilité du modèle 
+Reed-Solomon tient dans le rapport entre le nombre total de fragments (ou disques) et le 
+niveau de redondance. Reed-Solomon laisse libre le choix des valeurs, que l'on appelle ses
+paramètres et que l'on note RS(n,k), ou n est le nombre total de fragments (ou disques) 
+et k le nombre de fragments minimal. Ainsi le codage RS(n,k) tolère jusqu'à (n-k) pannes 
+simultannées.
+
+Dans le cas du RAID5 sur 4 disques on a donc un codage RS(4,3), et on se trouve avec 
+un disque de redondance sur 4. Et dans ce cas, le RAID5 "coute" 25% de ressources 
+supplémentaires. Mais si on décide de faire du RAID5 sur 10 disques, alors le cout de la 
+redondance tombe a 10% (1 disque sur 10). Dans le cas de la solution Inspeere, nous placons 
+la barre à 50% de redondance, mais avec un grand nombre de "disques" virtuels. La valeur 
+des paramètres que nous choisissons est variable, et peut atteindre le niveau RS(48,32). 
+Dans ce cas
+le niveau de redondance maximal, permettant de tolérer jusqu'à 16 pannes est atteint,
+dans une configuration de sauvegarde avec 48 cibles.
+
+
 
 .. _zfs_filesystem:
 
@@ -402,13 +506,13 @@ automatiquement quand une erreur est détectée! L'idée est simple, mais sa
 réalisation efficace et fiable est une véritable prouesse.
 
 Il en est bien d'autres, mais nous n'allons pas toutes les décrire ici 
-pour rester concis (enfin prersque).
+pour rester (assez) concis.
 
 Selon l'adage, qui peut le plus peut le moins, et donc chez Inspeere nous utilisons
 ZFS pour répondre aux besoins de tous nos clients, que ce soit pour 1TO, 
-100TO ou un PO (péta-Octet).
+100TO ou 1PO (péta-Octet = 1000 TO).
 
-Ainsi, non seulement ZFS permet le chiffrement, et la compression des 
+Ainsi, non seulement ZFS permet le chiffrement et la compression des 
 données à la source, ainsi eventuellement que leur déduplication, mais 
 il permet aussi les capturer instantanément sous la forme d'instantanés 
 ( *snapshots* ).
@@ -436,26 +540,7 @@ faire de multiples sauvegardes complètes, comme avec de nombreux autres
 systèmes de sauvegarde. 
 
 Et donc, au final, chaque donnée à sauvegarder, n'a besoin d'être sauvegardée
-qu'une et une seule fois (si l'on ne tient pas compte de la redondance).
-
-
-.. _mise_en_service:
-
-2. Mise en service
-------------------
-
-
-.. _premiers_pas:
-
-3. Premiers pas, visite guidée
-------------------------------
-
-
-Guide d'Installation
-====================
-
-Ce guide s'adresse aux distributeurs de la solution Inspeere.
-
+qu'une et une seule fois (1,5 fois, si l'on ne tient pas compte de la redondance).
 
 
 

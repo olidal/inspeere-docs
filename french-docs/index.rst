@@ -9,7 +9,8 @@ Documentation Inspeere
 .. toctree::
    :maxdepth: 2
 
-   Guides
+   UsersGuide
+   InstallGuide
 
 
 
