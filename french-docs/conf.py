@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Documentation Inspeere'
+project = 'Docs Inspeere'
 copyright = '2021, Olivier Dalle'
 author = 'Olivier Dalle'
 
