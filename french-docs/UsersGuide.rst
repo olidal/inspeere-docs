@@ -401,10 +401,10 @@ Pourquoi la solution Inspeere est-elle robuste?
 La solution Inspeere utilise simultanément de multiples cibles de sauvegarde distantes.
 Pour cela, les données initiales sont divisées en un certain nombre de fragments, mais 
 seule une partie de ces fragments est indispensable à la récupération des sauvegardes.
-Les autres sont là pour la redondance, afin de garantir la tolérance au pannes de notre 
+Les autres sont là pour la redondance, afin de garantir la tolérance aux pannes de notre 
 solution. Car toutes les cibles de sauvegardes sont équivalentes et interchangeables.
 
-En pratique, la solution Inspeere peut utiliser jusqu'à 48 framents, dont 16 pour la 
+En pratique, la solution Inspeere peut utiliser jusqu'à 48 fragments, dont 16 pour la 
 redondance. Cela signifie que le système peut tolérer jusqu'à 16 pannes simultanées 
 avant que la sauvegarde ne devienne effectivement irrécupérable. 
 
@@ -424,8 +424,7 @@ RAID5 (n+1), ou RAID5 + hot spare (n+1+1). Et sur les modèles les plus hauts de
 nous savons utiliser toute la puisance de ZFS sur les très grosses configurations, 
 pour proposer les formes les plus avancées de RAID (RAID50, RAID60 et même plus encore). 
 
-Outre qu'elle permettent de tolérer la 
-défaillance d'un disque ou plusieurs disques, ces solutions RAID permettent aussi 
+Ajoutons de plus que ces solutions RAID permettent aussi 
 d'améliorer la performance d'accès de l'appliance.
 En effet, le système de fichier ZFS sait parfaitement tirer partie de la redondance des 
 disques pour accélérer les transferts. Ainsi sur une solution en RAID5 avec 4 disques,
@@ -452,7 +451,7 @@ Il existe deux manières d'ajouter de la tolérance aux pannes: soit on fait de 
 duplication, soit on utilise un code d'effacement ( *erasure coding* ) tel que Reed Solomon.
 
 La duplication consiste faire n copies identiques des données. C'est simple, mais ca 
-consomme beuacoup d'espace. Par exemple, pour tolérer 16 pannes simulatnées avec 
+consomme beaucoup, beaucoup d'espace. Par exemple, pour tolérer 16 pannes simultannées avec 
 la techniques de duplication, on a besoin d'un espace de stockage 16x plus important que
 le volume initial, soit un cout de 1500%.
 
@@ -478,7 +477,7 @@ redondance tombe a 10% (1 disque sur 10). Dans le cas de la solution Inspeere, n
 la barre à 50% de redondance, mais avec un grand nombre de "disques" virtuels. La valeur 
 des paramètres que nous choisissons est variable, et peut atteindre le niveau RS(48,32). 
 Dans ce cas
-le niveau de redondance maximal, permettant de tolérer jusqu'à 16 pannes est atteint,
+le niveau de redondance est maximal, permettant de tolérer jusqu'à 16 pannes est atteint,
 dans une configuration de sauvegarde avec 48 cibles.
 
 
@@ -514,7 +513,7 @@ ZFS pour répondre aux besoins de tous nos clients, que ce soit pour 1TO,
 
 Ainsi, non seulement ZFS permet le chiffrement et la compression des 
 données à la source, ainsi eventuellement que leur déduplication, mais 
-il permet aussi les capturer instantanément sous la forme d'instantanés 
+il permet aussi de les capturer instantanément sous la forme d'instantanés 
 ( *snapshots* ).
 Comme leur création est très facile et ne consomme quasiment aucune 
 ressource (dans ZFS), ils peuvent au besoin être créés de facon très 
@@ -540,7 +539,7 @@ faire de multiples sauvegardes complètes, comme avec de nombreux autres
 systèmes de sauvegarde. 
 
 Et donc, au final, chaque donnée à sauvegarder, n'a besoin d'être sauvegardée
-qu'une et une seule fois (1,5 fois, si l'on ne tient pas compte de la redondance).
+qu'une et une seule fois (1,5 fois, si l'on tient compte de la redondance).
 
 
 
