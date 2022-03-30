@@ -4,16 +4,17 @@
 
 version: 2
 
-sphinx:
-  builder: html
-  configuration: french-docs/conf.py
-  fail_on_warning: true
-
 python:
-  version: 3.8.1
+  version: "3.7"
   install:
     - method: pip
       path: french-docs
       extra_requirements:
         - sphinx_panels
-        
+
+
+sphinx:
+  builder: html
+  configuration: french-docs/conf.py
+  fail_on_warning: true
+
