@@ -14,8 +14,8 @@ python:
     - method: pip
       path: .
 
-sphinx:
-  builder: html
-  configuration: french-docs/conf.py
-  fail_on_warning: true
+#sphinx:
+#  builder: html
+#  configuration: french-docs/conf.py
+#  fail_on_warning: true
 
