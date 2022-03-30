@@ -11,11 +11,10 @@ build:
 
 python:
   install:
-    - method: pip
-      path: .
+    - requirements: french-docs/requirements.txt
 
-#sphinx:
-#  builder: html
-#  configuration: french-docs/conf.py
-#  fail_on_warning: true
+sphinx:
+  builder: html
+  configuration: french-docs/conf.py
+  fail_on_warning: true
 
