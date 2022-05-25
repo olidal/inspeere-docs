@@ -3,14 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+======================
 Documentation Inspeere
 ======================
 
-.. toctree::
-   :maxdepth: 2
+.. image:: https://readthedocs.org/projects/inspeere-docs/badge/?version=latest
+   :target: https://inspeere-docs.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 
-   UsersGuide
-   InstallGuide
+.. toctree::
+   :maxdepth: 3
+
+   user-guide/UsersGuide
+   install-guide/InstallGuide
 
 
 
