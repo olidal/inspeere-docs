@@ -7,6 +7,10 @@
 Documentation Inspeere
 ======================
 
+.. image:: https://readthedocs.org/projects/inspeere-docs/badge/?version=latest
+   :target: https://inspeere-docs.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
 .. toctree::
    :maxdepth: 3
 
