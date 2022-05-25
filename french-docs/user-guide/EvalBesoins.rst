@@ -597,7 +597,7 @@ de sites choisi, jusqu'a quelques dizaines, est suffisant pour profiter de l'eff
 de groupe, mais tout en restant raisonnable, pour éviter d'impliquer un trop 
 grand nombre de destinations.
 
-Entre-elles, le DATIS forment donc de petites communautés de sauvegarde qui 
+Entre-elles, les DATIS forment donc de petites communautés de sauvegarde qui 
 fonctionnent en vase clos. 
 
 Au niveau du stockage, cette sauvegarde de niveau 1 est ce qui se fait de mieux.
@@ -662,23 +662,22 @@ absolument triviale.
 
    Car l'incendie n'est pas le seul danger qui plane sur les DataCenters:
 
-   * en 2014, c'est l'ouragan Sandie qui s'abattait sur New York et inondait ses DataCenters. 
+   - en 2014, c'est l'ouragan Sandie qui s'abattait sur New York et inondait ses DataCenters. 
    
-   * En 2018, c'est l'incendie de Paradise, 
-      en Californie, qui est passé très près du DataCenter de BackBlaze et ses milliers 
-      de baies de stockage. 
+   - En 2018, c'est l'incendie de Paradise, en Californie, qui est passé très 
+     près du DataCenter de BackBlaze et ses milliers de baies de stockage. 
 
-   * En janvier 2021, c'est une attaque terroriste qui a été stoppée par le FBI à 
-      l'encontre de l'un des DataCenter d'Amazon. 
+   - En janvier 2021, c'est une attaque terroriste qui a été stoppée par le FBI 
+     à l'encontre de l'un des DataCenter d'Amazon. 
 
-   Ce ne sont là que quelques exemples choisis pour leur diversité. Par construction, 
+   Ce ne sont là que quelques exemples, choisis pour leur diversité. Par construction, 
    la nature centralisée des DataCenter les rend vulnérable de tous les cotés. 
    
    A l'origine, Internet avait d'ailleurs été conçu de façon décentralisée par la DARPA, 
    justement pour éviter ce type de vulnérabilité, face à la menace d'une attaque nucléaire.
-   Un comble que l'internet actuel soit allé à ce point à contre-sens de l'idée originale.
+   Un comble que l'Internet actuel soit allé à ce point à contre-sens de l'idée originale.
 
-   Enfin, la maintenance de ces infra-structure les expose à moyen terme à un
+   Enfin, la maintenance de ces infra-structures les expose à moyen terme à un
    grave problème d'obsolescence, que la politique de l'autruche actuelle n'empêchera pas:
    tous ces DataCenters, contruits à peu près à la même période, vont vieillir à la 
    même vitesse... et donc finir par tomber en panne ou demander des investissements 
@@ -689,7 +688,7 @@ absolument triviale.
    
    Chez Inspeere, nous pensons donc que la solution des DataCenter pour construire
    UNE sauvegarde sécurisée mais centralisée est une abbération, et une logique de profit à 
-   très court terme (et peu écologique). Nous pensons que c'est tout l'inverse de ce dont 
+   très court terme (en plus d'être peu écologique). Nous pensons que c'est tout l'inverse de ce dont 
    une sauvegarde a besoin. Et donc, justement, nous sommes très fiers de proposer exactement
    l'inverse. Et un même un peu surpris d'être quasiment les seuls à suivre cette ligne,
    compte tenu des enjeux considérables que représentent les sauvegardes!
@@ -736,11 +735,11 @@ Nous avons plusieurs sites. Peut-on déployer la solution en interne, entre-nous
 
 Oui, pour les entreprises et structures qui possèdent plusieurs sites ou agences, 
 ou les regroupements tels que les franchises ou les collectivités, le système DATIS 
-peut-être déployé en vase clos, entre les différents sites du client ou du groupement.
+peut-être déployé en mode "vase clos", entre les différents sites du client ou du groupement.
 
-Le nombre de sites et leur connectivité réseau doivent néanmoins être étudié précisément. 
-Ce type de configuration doit donc faire l'objet d'une étude préalable. Contactez-nous via
-`ce formulaire de contact <https://www.inspeere.com/tester-mon-eligibilite/>`_ pour de plus
+Le nombre de sites et leur connectivité réseau doivent néanmoins être étudiés précisément. 
+Ce type de configuration doit donc faire l'objet d'une petite étude préalable. Contactez-nous 
+via `ce formulaire de contact <https://www.inspeere.com/tester-mon-eligibilite/>`_ pour de plus
 amples renseignements.
 
 .. link-button:: eval_besoins
