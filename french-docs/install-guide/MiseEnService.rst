@@ -3,10 +3,17 @@
 1. Mise en Service
 ==================
 
+
+.. figure:: Processus_Mise_En_Service_Datis.svg
+   :width: 720px
+   :align: center
+
+   Les étapes de mise en service de l'appliance INSPEERE DATIS.
+
 .. _installation_système:
 
-Installation du système DATIS
------------------------------
+1.1 Installation du firmware DATIS
+----------------------------------
 
 Si vous êtes distributeur, il est possible que vous ayez reçu de Inspeere ou 
 du grossiste une Datis pré-installée. Dans ce cas vous n'avez rien à faire, 
@@ -96,8 +103,8 @@ connexion tel que le suivant:
 
 .. _etapes_de_preparation:
 
-Etapes de préparation (avant installation sur site)
----------------------------------------------------
+1.2 Etapes de préparation (avant installation sur site)
+-------------------------------------------------------
 
 Philosophie Datis
 ^^^^^^^^^^^^^^^^^
@@ -297,8 +304,8 @@ quotidien sur 30 ou 90 jours.
 
 .. _etapes_déploiement:
 
-Etapes de déploiement (sur site)
---------------------------------
+1.3 Etapes de déploiement (sur site)
+------------------------------------
 
 La mise en service d'une DATIS sur le site du client suit les étapes suivantes:
 
@@ -426,16 +433,18 @@ Internet), pour le forcer à donner toujours la même IP privée, pour qu'elle
 devienne ainsi une IP *statique*.
 
 Sur le principe cette opération est très simple: elle consiste à associer l'adresse 
-MAC de l'appliance [#mac]_ à sa future adresse IP dans le réseau local.
+MAC de l'appliance à sa future adresse IP dans le réseau local.
 
 Mais attention, l'adresse IP devra être choisie pour faire partie du sous-réseau 
 intranet auquel sera connecté l'appliance Inspeere. Les serveurs DHCP des FAI sont 
 généralement configurés pour distribuer des adresses IP sur une plage 
 "centrale" de valeurs entre la valeur minimum 0 (qui est réservée) et la 
 valeur 255 (qui est réservée aussi).
-Les adresses entre 200 et 250 sont généralement de bons choix. [#ping]_
+Les adresses entre 200 et 250 sont généralement de bons choix.
 
-
+.. note:: Pour être sûr de ne pas créer un conflit, la personne en charge de 
+   l'installation devra vérifier que l'adresse IP choisie en intranet n'est 
+   pas déjà utilisée, par exemple à l'aide la commande ``ping`` depuis un terminal.
 
 
 .. _filtrage_sortant: 
@@ -491,32 +500,53 @@ Configuration de la sauvegarde de postes de travail
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Comme expliqué dans cette introduction sur le :ref:`fonctionnement_sauvegarde`, 
-la sauvegarde d'Inspeere peut fonctionner sur deux niveaux:
+la sauvegarde d'Inspeere, selon les cas d'usage, peut comporter un ou deux niveaux:
 
-1. **au niveau services**, avec un système de sauvegarde des postes de travail qui va concentrer les données éparses depuis les postes utilisateur vers l'équipement Datis;
+1. **niveau haut ou applicatif**, avec un système de sauvegarde des postes de 
+   travail qui va concentrer les données éparses depuis les postes utilisateur 
+   vers l'équipement Datis;
 
-2. **au niveau stockage** avec le système de sauvegarde innovant breveté qui assure l'externalisation de la sauvegarde.
+2. **niveau bas ou stockage**, avec le système de sauvegarde innovant breveté 
+   qui assure l'externalisation de la sauvegarde.
 
-Toutefois, ces deux niveaux ne sont pas forcément actifs dans tous les cas, dans certaines situations, seul le niveau stockage est utilisé.
-C'est le cas, par exemple, lorsque la Datis est utilisée directement comme serveur de fichiers. Dans ce cas, les données des usagers sont écrites directement sur la Datis lors de la création ou de la modification du contenu d'un fichier, au travers d'un protocole tel que samba.
+Selon les cas d'usage, ces deux niveaux ne sont pas forcément actifs. 
+Dans certaines situations, seul le niveau stockage est utilisé.
+C'est le cas, par exemple, lorsque la Datis est utilisée directement comme serveur 
+de fichiers. Dans ce cas, les données des usagers sont écrites directement sur 
+la Datis lors de la création ou de la modification du contenu d'un fichier, 
+au travers d'un protocole tel que samba.
 
-De plus, la sauvegarde proposée au niveau services n'est pas imposée et dépend du type de poste de travail ou serveur à sauvegarder: 
+De plus, la sauvegarde proposée au niveau services n'est pas imposée et dépend 
+du type de poste de travail ou serveur à sauvegarder: 
 
-- **pour les postes windows**, par défault DATIS inclut une solution OpenSource connue pour sa robustesse: `UrBackup <https://urbackup.org>`_.
-  En plus de sa grande fiabilité, le gros avantage de la solutuion UrBackup` est son coût, très faible.
+- **pour les postes windows**, par défault DATIS inclut une solution OpenSource 
+  connue pour sa robustesse: `UrBackup <https://urbackup.org>`_.
+  En plus de sa grande fiabilité, le gros avantage de la solutuion UrBackup 
+  est son coût, très faible, voire nul lorsqu'il n'y a pas de serveur de
+  virtualisation à sauvegarder.
   
   Néanmoins, des solutions plus *mainstream* (et couteuses), telles que 
   `VEEAM <https://veeam.com>`_ peuvent être préférées, ou ajoutées, pour 
   répondre au mieux aux besoins des clients. (Le coût de ces solutions 
-  devant être assumé en sus par le client.)
+  devant être assumé en sus par le client.) (voir aussi :ref:`config_VEEAM`)
 
-- **pour les postes MACOS**, la solution de sauvegarde est `TimeMachine <https://support.apple.com/en-us/HT201250>`_ que fait partie de MacOS. La solution DATIS est simplement prévue pour être facilement désignée comme cible de sauvegarde MacOS Time Machine suivant une procédure qui ne requiert que 6 clics de souris!
 
-- **pour les postes Linux**,  DATIS intègre une procédure pour simplifier la synchronisation de volumes en réseau par l'utilitaire ``rsync``. Ce mécanisme permet de facilement rappatrier les données depuis les postes Linux vers DATIS, qui 
-  assure ensuite la sauvegarde au niveau du stockage. 
+- **pour les postes MACOS**, la solution de sauvegarde est 
+  `TimeMachine <https://support.apple.com/en-us/HT201250>`_ que fait partie 
+  de MacOS. La solution DATIS est simplement prévue pour être facilement 
+  désignée comme cible de sauvegarde MacOS Time Machine suivant une procédure 
+  qui ne requiert que 6 clics de souris!
+
+- **pour les postes Linux**, de multiples solutions sont possibles, mais DATIS n'en
+  prévoit qu'une très simple défaut, sachant qu'il est très facile de mettre en place
+  des alternatives en s'appuyant sur le stockage DATIS. La solution DATIS par défaut 
+  est une simple procédure de synchronisation de volumes en 
+  réseau par l'utilitaire ``rsync``. Ce mécanisme permet de facilement 
+  rappatrier les données depuis les postes Linux vers DATIS, qui 
+  assure ensuite la sauvegarde normalement prevue, au niveau du stockage. 
   Néanmoins, il est toujours possible de mettre en place une solution de sauvegarde 
-  plus évoluée que ``rsync`` au niveau service, comme la solution OSS `amanda <http://www.amada.org>`_ 
-  par exemple. 
+  plus évoluée que ``rsync`` au niveau service, comme la solution OSS 
+  `amanda <http://www.amada.org>`_ par exemple. 
 
 - **pour les serveurs Windows, Hyper-V et VmWare**, la solution fournie en standard 
   par DATIS pour les postes de travail, UrBackup, propose des extensions 
@@ -531,29 +561,113 @@ De plus, la sauvegarde proposée au niveau services n'est pas imposée et dépen
   décrit ci-dessus.
 
 
-.. _config_client_urbackup:
+.. _config_client_windows:
 
-Configuration backup des postes Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuration de la sauvegarde des postes Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. _config_client_timemachine:
+:Durée d'intervention: 
+  - 1 à 5 minutes par poste windows
+  - 5 à 10 minutes pour l'interface de gestion
 
-Configuration backup des poste MACOS via TimeMachine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+La sauvegarde des postes Windows s'appuie sur le système OpenSource 
+`UrBackup <https://www.urbackup.org>`_.
+
+Ce système fournit un service de sauvegarde complet, constitué d'**agents de collecte** 
+qui doivent être déployés sur chaun des postes à sauvegarder, et d'une **interface 
+de gestion centralisée**. La configuration de chaque poste sauvegardée peut-être soit 
+délocalisée au niveau du poste, soit centralisée au niveau de la console de gestion.
+
+Ces éléments sont décrits sur la page :ref:`config_client_urbackup`, ainsi 
+que la **procédure d'association**:
+
+
+.. _config_client_macos:
+
+Configuration backup des postes MACOS via TimeMachine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:Durée d'intervention: 1 minute par poste MacOS.
+
+
+La configuration de postes client MacOS par Time Machine se fait 
+très simplement, en six étapes décrite sur la page :ref:`config_client_timemachine`.
 
 .. _compte_admin:
 
 Création d'un compte administrateur
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+:Durée d'intervention: 1 minute.
 
-.. rubric:: Footnotes
-
-.. [#mac] L'adresse MAC est un identifiant constitué de 6 nombres hexadécimaux de deux digits séparés par des deux-points, comme par exemple ``01:AB:45:F8:C5:87``. Cette addresse MAC est fournie par Inspeere à l'avance à votre installateur. 
-
-.. [#ping] Pour être sûr de ne pas créer un conflit, la personne en charge de l'installation devra vérifier que l'adresse n'est pas déjà utilisée, par exemple à l'aide la commande ``ping`` depuis un terminal.
-
+La console d'administration locale de la Datis est accessible depuis l'intranet, 
+via l'url ``<https://admin.xxxx.inspee.re>`` ou xxxx est l'identifiant de la 
+Datis (4 derniers digits de l'adress MAC).
 
 
-Réinstallation à partir de la dernière sauvegarde
--------------------------------------------------
+
+La connexion initiale à cette interface se fait à l'aide de l'identifiant 
+``sysadmin@inspeere.com`` et du mot de passe transmis par Inspeere.
+
+.. note:: Lors de l'activation de la Datis, un mot de passe est généré aléatoirement et récupéré par 
+   Inspeere de façon sécurisée à l'aide d'une connexion SSH. Ce mot de passe est transmis au 
+   contact (support niveau 1) en charge de l'installation à l'aide d'un fichier keypass, dont le 
+   mot de passe master a été transmis par une messagerie sécurisée (généralement Signal). 
+
+   En cas de difficulté à retrouver ces informations, contacter le support niveau 2 (Inspeere ou 
+   partenaire). 
+
+Il est fortement conseillé de n'utiliser ce compte initial d'administration que pour créer un 
+nouvel utilisateur administrateur, qui pourra ensuite ajouter de nouveaux utilisateurs. 
+En effet le compte administrateur initial comporte des limitations: 
+
+- impossibilité de changer l'adresse mail associée (donc changement du mot passe seulement 
+  possible pour Inspeere)
+
+- mot de passe a durée limitée (changement régulier de mot de passe sans notification)
+
+- utilisateur sans accès à Nextcloud
+
+
+.. figure:: Ajout_Utilisateurs.jpg
+   :width: 700px
+   :align: center
+
+   Interface DatisAdmin pour la gestion des utilisateurs
+
+
+
+
+1.4 Réinstallation à partir de la dernière sauvegarde
+-----------------------------------------------------
+
+La réinstallation complète d'une Datis, à partir d'une sauvegarde externalisée est 
+totalement automatisée dans le cas où l'objectif est de remettre la Datis dans le 
+dernier état de sauvegarde externalisé.
+
+Si la réinstallation doit être faite dans un état antérieur à celui de la dernière 
+sauvegarde, la procédure doit être initiée en contactant le support de niveau 2 ou 3, 
+afin de rechercher et sélectionner l'état de sauvegarde désiré pour la restoration.
+
+Le schéma suivant montre les étapes de la restoration automatique, qui commence 
+exactement comme une installation, avec une clef USB sur une machine nue.
+
+
+.. figure:: Processus_Restoration.png
+   :width: 700px
+   :align: center
+
+   Processus de restoration complète d'une Datis depuis la sauvegarde 
+   externalisée (partant d'une machine nue) 
+
+
+
+La seule différence se situe au niveau de la phase d'activation, pour laquelle il 
+faut se rendre sur l'URL ``http://saferbox-xxxx.local/restore/`` pour activer une 
+opération de restoration au lieu d'une installation initiale.
+
+
+
+
+
+.. sectionauthor:: Olivier Dalle <olivier@inspeere.com>

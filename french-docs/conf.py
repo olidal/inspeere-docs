@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Docs Inspeere'
-copyright = '2021, Olivier Dalle'
+copyright = '2022, Olivier Dalle'
 author = 'Olivier Dalle'
 
 # The full version, including alpha/beta/rc tags
