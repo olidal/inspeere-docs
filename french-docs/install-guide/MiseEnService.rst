@@ -42,8 +42,8 @@ détectée comme ``/dev/sdb`` sur linux, vous utiliserez la commande suivante:
 
   $ dd if=fichier_image.iso of=/dev/sdb bs=1M
 
-Installation du firmware DATIS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Procédure d'Installation du firmware DATIS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Pour installer le firmware DATIS, vous devez déballer le matériel, et connecter 
 le boitier DATIS au secteur ET au réseau. 
@@ -84,77 +84,95 @@ de la distribution Proxmox. En principe, aucune intervention n'est plus nécessa
 partir de ce point (sauf instruction contraire au préablable du support Inspeere 
 pour des installations très spécifiques.)
 
+.. figure:: Proxmox_installer_screen_2.png
+  :width: 480px
+  :align: center
+
 Au bout de 5 secondes, le premier écran de démarrage de Proxmox doit automatiquement 
 basculer vers la "ceinture d'astéroides" de la version Inspeere de Proxmox.
 
-<Image>
+.. figure:: Ceinture_Asteroide.png
+  :width: 480px
+  :align: center
 
-NB: Si une boite de dialogue apparaît demandant de préciser la langue ou un autre 
-paramètre, c'est qu'il y a un problème de connexion réseau. Vérifier la connexion, la 
-configuration de votre serveur DHCP et les filtrages au niveau du firewall, puis 
-recommencez l'installation en démarrant sur la clef USB.
-
-<Image>
+.. note:: Si une boite de dialogue apparaît demandant de préciser la langue ou un autre 
+   paramètre, c'est qu'il y a un problème de connexion réseau. Vérifier la connexion, la 
+   configuration de votre serveur DHCP et les filtrages au niveau du firewall, puis 
+   recommencez l'installation en démarrant sur la clef USB.
 
 Lorsque l'installation s'est bien passée, vous devez voir s'afficher un écran de 
-connexion tel que le suivant:
+connexion tel que le suivant. Félicitations, vous avez terminé cette première 
+phase d'installation!
 
-<Image>
+.. figure:: banniere_login.png
+  :width: 480px
+  :align: center
+
+
+1.2 Activation du système DATIS
+-------------------------------
 
 .. _etapes_de_preparation:
 
-1.2 Etapes de préparation (avant installation sur site)
--------------------------------------------------------
 
-Philosophie Datis
-^^^^^^^^^^^^^^^^^
+.. panels::
+   :header: text-center
 
-La philosophie de Inspeere Datis est de préférer les conventions à la configuration 
-(CoC : `Convention over Configuration <https://en.wikipedia.org/wiki/Convention_over_configuration>`_)
+   :column: col-lg-12 
 
-Contrairement à d'autres produits, cette philosophie permet d'éviter au maximum le 
-besoin de naviguer dans des menus de configuration, et donc d'éviter à l'utilisateur ou
-au technicien en charge de l'installation d'avoir à répondre à des questions inutilement 
-complexes et ambigus.
+    Philosophie Datis
+    ^^^^^^^^^^^^^^^^^
 
-Dans tous les cas, le produit qui est livré au client est toujours dans un état de 
-configuration **raisonnable par défaut** lui permettant de fonctionner sans paramètrage 
-ni réglage, *out-of-the-box*.
+    La philosophie de Inspeere Datis est de préférer les conventions à la configuration 
+    (pattern CoC : `Convention over Configuration <https://en.wikipedia.org/wiki/Convention_over_configuration>`_)
+
+    Contrairement à d'autres produits, cette philosophie permet d'éviter au maximum le 
+    besoin de naviguer dans des menus de configuration, et donc d'éviter à l'utilisateur ou
+    au technicien en charge de l'installation d'avoir à répondre à des questions inutilement 
+    complexes et ambigus.
+
+    Ce mode de fonctionnement permet de réduire le risque de mauvaise configuration, et donc 
+    de potentiel dysfonctionnement. Il permet aussi de réduire le niveau d'expertise technique 
+    requis pour l'installation d'un équipement Inspeere Datis.
+
+    Dans tous les cas, le produit qui est livré au client est toujours dans un état de 
+    configuration **raisonnable par défaut** lui permettant de fonctionner sans paramètrage 
+    ni réglage, *out-of-the-box*.
 
 Ajustement de la configuration par défaut
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Selon les clients, certains **ajustements** de la configuration par défaut peuvent 
-être nécessaires, avec deux cas de figure (non exclusifs):
+L'activation d'un système DATIS entraîne le chargement et l'application automatique
+de réglages prédéfinis contenus dans son `bundle de configuration`. 
+Pour gagner du temps et éviter les reconfigurations, il est donc préférable de modifier 
+ces réglages par défaut, si besoin, avant de déclencher l'activation.
 
-- Les ajustements spécifiques au client sont connus à l'avance, avant la mise en service : 
-  dans ce cas, il peuvent être communiqués à Inspeere en amont de l'activation du produit,
-  de telle sorte que la configuration demandée soit automatiquement appliquée lors de cette 
-  activation, par la constitution d'un *bundle de configuration*.
+Cette modification des réglages par défaut en amont de l'activation se fait par 
+simple demande auprès du support Inspeere (ou du partenaire grossiste).
 
-- Les besoins d'ajustements sont découverts au fil de l'eau, lors de la mise en service
-  ou après : l'interface d'administration DatisAdmin permet de procéder à quelques réglages 
-  basiques, mais pour des besoins plus spécifiques, il suffit d'adresser la demande au 
-  support Inspeere, qui procédera à la modification des réglages, à distance.  
+.. note:: Chaque Datis possède un `bundle de configuration` spécifique. C'est un fichier
+   (format json) qui est conservé par Inspeere et est mis à jour (par Inspeere) tout au 
+   long de la durée d'exploitation de la Datis. Lors d'une opération de reinstallation, 
+   la Datis récupère automatiquement la dernière version du bundle.
 
+.. note:: Si des besoins d'ajustements sont découverts au fil de l'eau, lors de la mise en 
+  service ou après : l'interface d'administration DatisAdmin permet de procéder à quelques 
+  réglages basiques, mais pour des besoins plus spécifiques, il suffit d'adresser la demande 
+  au support Inspeere, qui procédera à la modification des réglages, à distance.  
 
-Ce mode de fonctionnement permet de réduire le risque de mauvaise configuration, et donc 
-de potentiel dysfonctionnement. Il permet aussi de réduire le niveau d'expertise technique 
-requis pour l'installation d'un équipement Inspeere Datis.
-
-L'interface d'administration d'une Datis est donc volontairement simple, car les réglages 
-et points de configuration spécifiques à chaque client sont prévus pour être traîtés en 
-amont de l'installation, ou par demande explicite au support.
+L'interface d'administration d'une Datis est volontairement simple, car les réglages 
+et points de configuration spécifiques à chaque client sont justement prévus pour être 
+traîtés en amont de l'installation, ou par demande explicite au support.
 
 Lors de sa première mise en service, la Datis récupère *automatiquement* son bundle de configuration 
 auprès d'Inspeere, et se configure de façon complètement automatique.
 
-Inspeere ne propose pas encore d'outil à ses distributeurs pour la génération du bundle de 
+Inspeere ne propose pas d'outil à ses distributeurs pour la gestion de bundle de 
 configuration. Les demandes peuvent être formulées librement, par mail ou téléphone, auprès 
 du support Inspeere. Chaque distributeur ayant ses propres habitudes, Inspeere part néanmoins 
-d'une configuration type spécifique à chaque distributeur, et l'ajuste ensuite en fonction des 
-demandes formulées, toujours dans le but de réduire au minimum les questions liées à la configuration, 
-et donc les risques d'erreur.
+d'une configuration type (template) spécifique à chaque distributeur, et l'ajuste ensuite en 
+fonction des demandes formulées, toujours dans le but de réduire au minimum les questions 
+liées à la configuration, et donc les risques d'erreur.
 
 Liste des réglages
 ^^^^^^^^^^^^^^^^^^
@@ -206,7 +224,7 @@ est en service, par simple demande au support Inspeere:
 Politiques de sauvegarde Datis (niveau 1)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-La sauvegarde Datis de niveau 1 s'appuie sur les instantannés de ZFS. Il s'agit d'une 
+La sauvegarde Datis de niveau 1 s'appuie sur les instantanés de ZFS. Il s'agit d'une 
 sauvegarde dite *de niveau blocs*, incrémentielle perpetuelle. Cette technologie de sauvegarde 
 très efficace et très robuste ne requiert qu'**une seule phase initiale de sauvegarde complète** 
 (la première sauvegarde). Les sauvegardes suivantes sont toutes incrémentales, et donc après la première 
@@ -251,56 +269,61 @@ Comme on le voit sur cet exemple, il est donc très facile de construire des pol
 un espacement variable de prise des instantanés, chaque instantané produisant un incrément 
 de sauvegarde.
 
-Discussion sur la gestion des instantannés
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. panels::
+   :header: text-center
 
-Le nombre d'instantannés n'influe que très peu sur les volumes de sauvegarde: par exemple avec 
-une fréquence élevée de 5 minutes, les nouvelles données qui sont capturées dans un 
-incrément produit à 14h05 n'auront plus besoin d'être capturée à 14h10, alors qu'avec un 
-incrément de 10 minutes (ou plus), il faudra capturer la totalité en une seule fois à 14h10.
+   :column: col-lg-12 
 
-Une fréquence élevée n'a qu'un seul incovénient, celui d'augmenter la taille de l'espace de 
-recherche: il est plus facile de retrouver la dernière modification d'une donnée en fouillant 
-dans un seul incrément que dans dix. Mais d'un autre coté, si on sait quand la donnée cherchée 
-a été produite, une fréquence élevée est intéressante et donne plus de chance de retrouver
-une modification ou un contenu qui aurait été effacé peu de temps après avoir été produit. 
-D'où cette idée d'une reduction progressive de la fréquence.
+    Discussion sur la gestion des instantanés
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Inspeere propose par défaut un certain nombre de politiques pour les sauvegarde de type continue, 
-archive sur 5 ans, quotidienne, backup sur 30j, eternelle (conservartion sans limite de durée). 
+    Le nombre d'instantanés n'influe que très peu sur le volume des sauvegardes: par exemple avec 
+    une fréquence élevée de 5 minutes, les nouvelles données qui sont capturées dans un 
+    incrément produit à 14h05 n'auront plus besoin d'être capturées à 14h10, alors qu'avec un 
+    incrément de 10 minutes (ou plus), il faudra capturer la totalité en une seule fois à 14h10.
 
-Dans tous les cas, sauf cas particulier de production importante de données en continu, il 
-faut retenir que le volume de données résultant sera peu sensible à la fréquence et que l'impacte 
-en terme de charge d'une fréquence élevée sur le système Datis est très faible.
+    Une fréquence élevée n'a qu'un seul incovénient, celui d'augmenter la taille de l'espace de 
+    recherche: il est plus facile de retrouver la dernière modification d'une donnée en fouillant 
+    dans un seul incrément que dans dix. Mais d'un autre coté, si on sait quand la donnée cherchée 
+    a été produite, une fréquence élevée est intéressante et donne plus de chance de retrouver
+    une modification ou un contenu qui aurait été effacé peu de temps après avoir été produit. 
+    D'où cette idée d'une reduction progressive de la fréquence.
 
-En revanche la durée de rétention des instantannés peut être très impactante. En effet, lorsqu'une 
-donnée est effacée, notamment lorsqu'un fichier est détruit, les données correspondantes ne sont 
-pas immédiatement effacées. Elles sont conservées jusqu'à ce que le dernier instantanné qui y 
-faisait référence a disparu.
+    Inspeere propose par défaut un certain nombre de politiques pour les sauvegardes : continue, 
+    archive sur 5 ans, quotidienne, backup sur 30j, eternelle (conservartion sans limite de durée). 
 
-Par exemple, si un fichier de 10Go est téléchargé par mégarde à 14h00, et qu'a cette date 
-un instantanné est produit, alors un effacement du fichier à 14h01 ne libèrera pas les 10Go 
-d'espace occupés. Ces 10 Go ne seront libérés, au mieux, que lorsque l'instantanné de 14h00 
-disparaîtra à son tour. Si cet instantanné fait partie de la politique éternelle, l'espace 
-ne sera jamais libéré.
+    Dans tous les cas, sauf cas particulier de production importante de données en continu, il 
+    faut retenir que le volume de données résultant sera peu sensible à la fréquence et que l'impact 
+    en terme de charge d'une fréquence élevée sur le système Datis est très faible.
 
-Il est important aussi de retenir que les instantannés ne sont pas modifiables. Il n'est donc 
-pas possible de supprimer des données dans un instantanné qui auraient été capturées par mégarde 
-(sauf en supprimant l'instantanné).
-En revanche il est possible de monter un instantanné (en lecture seule), ce qui permet de 
-retrouver l'état des données à la date précise de capture de l'instantanné. Notons aussi que 
-l'opération de capture est **atomique**, ce qui, en jargon informatique, signifie que toutes
-les données qui en font partie ont été "attrappées" exactement au même instant (d'ou le nom 
-d'instantanné).
+    En revanche la durée de rétention des instantanés peut être très impactante. En effet, lorsqu'une 
+    donnée est effacée, notamment lorsqu'un fichier est détruit, les données correspondantes ne sont 
+    pas immédiatement effacées. Elles sont conservées jusqu'à ce que le dernier instantané qui y 
+    faisait référence a disparu.
 
-Il est aussi possible de créer un clone modifiable d'un instantanné. Ces opérations avancées 
-de clonage et de montage ne sont pas mises à disposition des utilisateurs. Elle peuvent néanmoins
-faire l'objet d'une demande auprès du support en cas de besoin.
+    Par exemple, si un fichier de 10Go est téléchargé par mégarde à 14h00, et qu'à cette date 
+    un instantané est produit, alors un effacement du fichier à 14h01 ne libèrera pas les 10Go 
+    d'espace occupés. Ces 10 Go ne seront libérés, au mieux, que lorsque l'instantané de 14h00 
+    disparaîtra à son tour. Si cet instantané fait partie de la politique éternelle, l'espace 
+    ne sera jamais libéré.
 
-La configuration type proposée par défaut par Inspeere, implique une conservation locale sur 30 
-jours et une conservation externalisée sur 90 jours, avec un incrément toutes les 15 minutes sur 
-les 2 premières heures, puis un espacement progressif jusqu'à la fréquence d'un imncrément 
-quotidien sur 30 ou 90 jours. 
+    Il est important aussi de retenir que les instantanés ne sont pas modifiables. Il n'est donc 
+    pas possible de supprimer des données dans un instantané qui auraient été capturées par mégarde 
+    (sauf en supprimant l'instantané).
+    En revanche il est possible de monter un instantané (en lecture seule), ce qui permet de 
+    retrouver l'état des données à la date précise de capture de l'instantané. Notons aussi que 
+    l'opération de capture est **atomique**, ce qui, en jargon informatique, signifie que toutes
+    les données qui en font partie ont été "attrappées" exactement au même instant (d'ou le nom 
+    d'instantané).
+
+    Il est aussi possible de créer un clone modifiable d'un instantané. Ces opérations avancées 
+    de clonage et de montage ne sont pas mises à disposition des utilisateurs. Elle peuvent néanmoins
+    faire l'objet d'une demande auprès du support en cas de besoin.
+
+    La configuration type proposée par défaut par Inspeere, implique une conservation locale sur 30 
+    jours et une conservation externalisée sur 90 jours, avec un incrément toutes les 15 minutes sur 
+    les 2 premières heures, puis un espacement progressif jusqu'à la fréquence d'un imncrément 
+    quotidien sur 30 ou 90 jours. 
 
 .. _etapes_déploiement:
 
