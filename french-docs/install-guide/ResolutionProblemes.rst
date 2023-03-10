@@ -128,7 +128,7 @@ L'opération de restauration est très simple:
 .. _reconfigurer_le_pare_feu:
 
 Reconfigurer le pare-feux Windows après installation d'un agent UrBackup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------
 
 La procédure de reconfiguration est très simple, en 9 étapes:
 
