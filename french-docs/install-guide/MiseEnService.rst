@@ -598,7 +598,7 @@ La sauvegarde des postes Windows s'appuie sur le système OpenSource
 
 Ce système fournit un service de sauvegarde complet, constitué d'**agents de collecte** 
 qui doivent être déployés sur chaun des postes à sauvegarder, et d'une **interface 
-de gestion centralisée**. La configuration de chaque poste sauvegardée peut-être soit 
+de gestion centralisée**. La configuration de chaque poste sauvegardé peut-être soit 
 délocalisée au niveau du poste, soit centralisée au niveau de la console de gestion.
 
 Ces éléments sont décrits sur la page :ref:`config_client_urbackup`, ainsi 
