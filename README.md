@@ -26,7 +26,7 @@ Suivez-nous sur [LinkedIN](https://fr.linkedin.com/company/inspeere)
 
 <i>[Inspeere](https://inspeere.com) is a French company transfering innovation from [CNRS](https://www.cnrs.fr) and [Université Côte d'Azur](https://univ-cotedazur.fr/). Inspeere develops and distributes a cost effective advanced network storage solution that includes an innovative external backup.
 
-Inspeere's solution is a collaborative and ultra-secured external backup solution, that does need a Data-Center... Nor any GAFAM!
+Inspeere's solution is a collaborative and ultra-secured external backup solution, that does not need a Data-Center... Nor any GAFAM!
 
 Inspeere's ambitions are to fulfill storage and backup needs with a solution that is secured, reliable, high performance, and eco-friendly, in total contrast with existing approaches.
 
