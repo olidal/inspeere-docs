@@ -1,6 +1,33 @@
 3. Résolution de problèmes
 ==========================
 
+Sauvegardes TimeMachine (sur MAC)
+---------------------------------
+
+Sauvegarde sur une connexion VPN
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+La procédure de configuration par défaut, sans VPN, utilise le protcole "Bonjour" pour détecter le volume TimeMachine de la Datis.
+Malheureusement, ce protocole ne fonctionne que dans le périmètre du domaine de diffusion de votre réseau local.
+
+En clair, cela signifie que votre volume TimeMachine *par défaut* n'est pas accessible lors d'une connexion VPN.
+
+Heureusement, il y a une solution assez simple, il suffit d'une commande dans un terminal pour résoudre le problème:
+
+```shell
+sudo tmutil setdestination -ap smb://<login>@<ipdatis_par_vpn>/TimeMachine-<mac4>
+```
+
+En n'oubliant pas de remplacer les valeurs entre <>:
+- login: votre identifiant d'utilisateur **sur la DATIS** 
+- ipdatis_par_vnp : si vous utilisez le serveur VPN embarqué de votre DATIS, ça sera toujours 10.147.13.111 
+- mac4: l'identifiant à 4 caractères de la DATIS
+
+
+Cette commande ajoute un nouveau volume TimeMachine, qui lui sera bien accessible par VPN... et même seulement par VPN si vous utilisez le VPN embarqué de la Datis.
+Ensuite, TimeMachine sait parfaitement gérer plusieurs volume, et utiliser ceux qui sont disponibles en fonction du moment.
+ 
+
 Procédures de Restoration
 -------------------------
 
