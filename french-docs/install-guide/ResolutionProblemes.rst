@@ -4,6 +4,21 @@
 Sauvegardes TimeMachine (sur MAC)
 ---------------------------------
 
+Accélérer la première sauvegarde qui prend des heures
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Par défaut TimeMachine fonctionne avec une priorité très basse de façon (supposément) à ne pas gêner les autres activités de l'utilisateur sur le MAC.
+
+En fait, cette stratégie est héritée d'une époque révolue où les MAC n'avaient pas encore de disques SSD, et où les accès au disque, très lents, étaient très pénalisant.
+
+Pour désactiver cette stratégie au moins jusqu'au prochain démarrage (où elle reviendra automatiquement), il suffit de taper la commande suivante dans un Terminal (l'application Terminal se trouve dans le sous-dossier 'Utilitaires' du dossier 'Applications') :
+
+.. code-block:: bash
+
+   sudo sysctl debug.lowpri_throttle_enabled=0
+
+La vitesse de sauvegarde doit alors augmenter de façon spectaculaire...
+
 Sauvegarde sur une connexion VPN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
