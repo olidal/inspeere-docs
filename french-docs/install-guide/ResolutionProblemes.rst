@@ -34,7 +34,7 @@ Heureusement, il y a une solution assez simple, il suffit d'une commande dans un
    sudo tmutil setdestination -ap smb://<login>@<ipdatis_par_vpn>/TimeMachine-<mac4>
 
 
-En n'oubliant pas de remplacer les valeurs entre <>:
+En n'oubliant pas de remplacer les valeurs entre <> (les <> ne doivent pas être conservés):
   * ``login`` : votre identifiant d'utilisateur **sur la DATIS** 
   * ``ipdatis_par_vnp`` : si vous utilisez le serveur VPN embarqué de votre DATIS, ça sera toujours 10.147.13.111 
   * ``mac4``: l'identifiant à 4 caractères de la DATIS
