@@ -19,7 +19,7 @@ Si vous êtes distributeur, il est possible que vous ayez reçu de Inspeere ou
 du grossiste une Datis pré-installée. Dans ce cas vous n'avez rien à faire, 
 vous pouvez passer à l'étape suivante:
 
-    :ref:`etapes_de_preparation`
+    :ref:`activation_du_systeme_DATIS`
 
 Clef USB d'installation
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,7 +109,7 @@ phase d'installation!
   :align: center
 
 
-.. _etapes_de_preparation:
+.. _activation_du_systeme_DATIS:
 
 1.2 Activation du système DATIS
 -------------------------------
@@ -196,8 +196,8 @@ Voici la liste des réglages qui peuvent être pris en compte au niveau du bundl
 Voici la liste des réglages supplémentaires qui sont disponibles une fois que la Datis 
 est en service, par simple demande au support Inspeere:
 
-- configuration réseau statique (IP, masque, passerelle, serveur DNS)
-
+- configuration réseau statique (IP, masque, passerelle, serveur DNS,...)
+  
 - port HTTPS alternatif (par exemple 4343 au lieu de 443)
 
 - autoriser le routage du traffic VPN vers l'intranet (avec liste de ports a défiltrer)
@@ -219,6 +219,18 @@ est en service, par simple demande au support Inspeere:
 - désignation de volumes/dossiers à synchroniser par rsync
 
 - désignation de volumes externes à monter par SMB (voir complément d'info ci après)
+
+- paramètres du service optionel AD/DC samba4 (domaine DATIS):
+  
+  * IP (cidr) du serveur AD/DC sur intranet (différente de l'IP de la Datis)
+
+  * IP passerelle sur intranet
+
+- paramètres du service optionel fileserver dans domaine AD 'DATIS'
+
+  * IP (cidr) du fileserver
+
+- désignation d'un volume ZFS alternatif pour les sauvegardes UrBackup/ZFS
 
 
 Politiques de sauvegarde Datis (niveau 1)
