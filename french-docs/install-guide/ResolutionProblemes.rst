@@ -1,6 +1,48 @@
 3. Résolution de problèmes
 ==========================
 
+Accès VPN depuis MacOS
+----------------------
+
+Les dernières versions de MacOS **imposent** l'utilisation de IPv6 quand cette option est disponible.
+
+En effet, si vous accédez à internet par un opeerateur qui fournit un accès IPv6, l'interface de 
+configuration réseau de votre MAC ne vous permet pas de désactiver IPv6 pour basculer
+sur IPv4 seul.
+
+Or l'accès OpenVPN de votre DATIS ne fonctionne qu'avec IPv4.
+
+Pas panique, une solution existe, il suffit d'ouvrir un terminal de commande 
+(Application Utilitaires/Terminal) et de taper l'une des commandes suivantes 
+selon votre mode de connexion:
+
+1. Connexion Wi-Fi
+
+   .. code-block:: bash
+      
+      sudo -setv6off Wi-Fi
+
+2. Connexion cablée Ethernet
+
+   .. code-block:: bash
+
+      sudo -setv6off Ethernet
+
+Si vous êtes connectés simultanément avec les deux modes d'accès, exécutez les deux commandes.
+
+NB1: Ces commandes doivent être exécutées depuis un compte administrateur 
+du Mac, et vous demanderont de saisir votre mot de passe admin.
+
+NB2: Si vous n'êtes pas connectés avec le compte administrateur, vous n'avez pas besoin de 
+fermer votre session, ajoutez simplement l'option `-u`` suivie du nom de l'utilisateur avec les droits d'admin. 
+Par exemple si l'utilisateur avec droit d'admin est `macadmin` alors tapez la commande suivante pour un mode de connexion Wi-Fi:
+
+.. code-block:: bash
+
+   sudo -u macadmin -setv6off Wi-Fi
+
+
+
 Sauvegardes TimeMachine (sur MAC)
 ---------------------------------
 
@@ -35,6 +77,7 @@ Heureusement, il y a une solution assez simple, il suffit d'une commande dans un
 
 
 En n'oubliant pas de remplacer les valeurs entre <> (les <> ne doivent pas être conservés):
+
   * ``login`` : votre identifiant d'utilisateur **sur la DATIS** 
   * ``ipdatis_par_vnp`` : si vous utilisez le serveur VPN embarqué de votre DATIS, ça sera toujours 10.147.13.111 
   * ``mac4``: l'identifiant à 4 caractères de la DATIS
@@ -71,9 +114,8 @@ Elle se passe en cinq étapes:
 5. Choisir un mode restauration entre:
    
    * Restauration avec écrasement : la version restaurée écrase la version existante
-   
-   * Resaturation sans écrasement : on ajoute la date au nom de l'élément restauré 
-    afin qu'il n'écrase pas la version existante
+   * Restauration sans écrasement : on ajoute la date au nom de l'élément restauré 
+      afin qu'il n'écrase pas la version existante
 
 
 Restoration locale à partir de la sauvegarde UrBackup
@@ -149,14 +191,12 @@ L'opération de restauration est très simple:
 6. Patientez jusqu'à la réception des messages de fin de restauration ET d'installation des des services (au minimum deux messages):
 
    * Datisadmin
-
    * Sauvegarde des postes
-
    * Autres services en option (p. ex Nextcloud)
-   La durée de la restauration est de 40 mins minimum pour rétablir l'ensemble des services.
-   Elle dépend du volume de données et de la bande passant disponible.
-   Sur une connexion Internet par fibre Gbit, la vitesse de restauration sera au maximum de 110GO/h.
-   Néanmoins, sur une connexion partagée, le débit est souvent moindre.  
+      La durée de la restauration est de 40 mins minimum pour rétablir l'ensemble des services.
+      Elle dépend du volume de données et de la bande passant disponible.
+      Sur une connexion Internet par fibre Gbit, la vitesse de restauration sera au maximum de 110GO/h.
+      Néanmoins, sur une connexion partagée, le débit est souvent moindre.  
 
 
 .. note::
