@@ -109,10 +109,10 @@ phase d'installation!
   :align: center
 
 
+.. _etapes_de_preparation:
+
 1.2 Activation du système DATIS
 -------------------------------
-
-.. _etapes_de_preparation:
 
 
 .. panels::
@@ -543,7 +543,7 @@ De plus, la sauvegarde proposée au niveau services n'est pas imposée et dépen
 du type de poste de travail ou serveur à sauvegarder: 
 
 - **pour les postes windows**, par défault DATIS inclut une solution OpenSource 
-  connue pour sa robustesse: `UrBackup <https://urbackup.org>`_.
+  connue pour sa robustesse: `UrBackup <https://urbackup.org>`__.
   En plus de sa grande fiabilité, le gros avantage de la solutuion UrBackup 
   est son coût, très faible, voire nul lorsqu'il n'y a pas de serveur de
   virtualisation à sauvegarder.
@@ -594,7 +594,7 @@ Configuration de la sauvegarde des postes Windows
   - 5 à 10 minutes pour l'interface de gestion
 
 La sauvegarde des postes Windows s'appuie sur le système OpenSource 
-`UrBackup <https://www.urbackup.org>`_.
+`UrBackup <https://www.urbackup.org>`__.
 
 Ce système fournit un service de sauvegarde complet, constitué d'**agents de collecte** 
 qui doivent être déployés sur chaun des postes à sauvegarder, et d'une **interface 

@@ -5,8 +5,8 @@
 
 .. _fonctionnement_sauvegarde:
 
-Comment fonctionne la sauvegarde d'Inspeere?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Fonctionnement de la sauvegarde d'Inspeere
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Commençons par expliquer les principes de fonctionnement du système DATIS d'Inspeere.
 Le système DATIS, c'est une *appliance*, c'est-à-dire la combinaison d'un équipement 

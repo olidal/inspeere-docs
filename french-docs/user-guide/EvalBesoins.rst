@@ -13,7 +13,7 @@ Ci-après, nous abordons les questions suivantes:
   * :ref:`quantite_stockage`
   * :ref:`tolerance_pannes`
   * :ref:`peu_ressources`
-  * :ref:`fonctionnement_sauvegarde`
+  * :ref:`besoins+fonctionnement_sauvegarde`
   * :ref:`config_sauvegarde`
   * :ref:`multi_site`
 
@@ -529,7 +529,7 @@ La réponse tient dans ces deux éléments technologiques:
    :classes: btn-outline-primary btn-sm
    :text: Retour à la liste...
 
-.. _fonctionnement_sauvegarde:
+.. _besoins+fonctionnement_sauvegarde:
 
 Comment fonctionne la sauvegarde d'Inspeere?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
