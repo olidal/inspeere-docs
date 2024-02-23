@@ -241,7 +241,7 @@ Sauvegarde Office 365
 
 2.2 Interface DatisAdmin
 ------------------------
-.. figure:: /Figures/1_DatisAdmin_DashBoard_Annot.png
+.. figure:: ./Figures/1_DatisAdmin_DashBoard_Annot.png
   :width: 480px
   :align: center
 
@@ -254,7 +254,7 @@ Sauvegarde Office 365
  Un lien vers la documentation est proposé dans le coin inférieur droit
 
 
-.. figure:: /Figures/2_DatisAdmin_2FA_annot.png
+.. figure:: ./Figures/2_DatisAdmin_2FA_annot.png
   :width: 480px
   :align: center
 
@@ -267,7 +267,7 @@ Sauvegarde Office 365
  qui permet d’utiliser les mêmes identifiants pour accéder aux différents services du système INSPEERE Datis.
 
 
-.. figure:: /Figures/3_DatisAdmin_Users_Annot.png
+.. figure:: ./Figures/3_DatisAdmin_Users_Annot.png
   :width: 480px
   :align: center
 
@@ -281,7 +281,7 @@ Sauvegarde Office 365
  pour être exposés directement sur Internet (SMB, FTP, ...). Initialement, chaque Datis est livrée avec un premier utilisateur « admin »,
  dont les identifiants sont transmis de façon sécurisée à l'administrateur.
 
-.. figure:: /Figures/4_DatisAdmin_Systeme_General_Annot.png
+.. figure:: ./Figures/4_DatisAdmin_Systeme_General_Annot.png
   :width: 480px
   :align: center
 
@@ -291,7 +291,7 @@ Sauvegarde Office 365
  Le menu de gestion du système (figure 4) permet de configurer ou de consulter les éléments de la configuration système. 
  Nous revenons plus en détail sur les deux derniers concernant les versions et les rapports ci-après.
 
-.. figure:: /Figures/5_DatisAdmin_Systeme_Version_annot.png
+.. figure:: ./Figures/5_DatisAdmin_Systeme_Version_annot.png
   :width: 480px
   :align: center
 
@@ -303,7 +303,7 @@ Sauvegarde Office 365
  La version courante du système INSPEERE Datis est quant à elle toujours visible en bas à gauche de l’interface DatisAdmin.
 
 
-.. figure:: /Figures/6_DatisAdmin_Systeme_Rapports_Annot.png
+.. figure:: ./Figures/6_DatisAdmin_Systeme_Rapports_Annot.png
   :width: 480px
   :align: center
 
@@ -316,7 +316,7 @@ Sauvegarde Office 365
  Ce menu permet aussi d’activer l’envoi d’un rapport quotidien à une liste d’utilisateurs convenus (par exemple le client final / adhérent).
 
 
-.. figure:: /Figures/7_DatisAdmin_Systeme_Rapport_Visu_Annot.png
+.. figure:: ./Figures/7_DatisAdmin_Systeme_Rapport_Visu_Annot.png
   :width: 480px
   :align: center
 
@@ -327,7 +327,7 @@ Sauvegarde Office 365
  C’est le même format PDF qui est envoyé par mail lorsque la demande de rapport quotidien est activée.
 
 
-.. figure:: /Figures/8_DatisAdmin_Recup_Annot.png
+.. figure:: ./Figures/8_DatisAdmin_Recup_Annot.png
   :width: 480px
   :align: center
 
@@ -350,7 +350,7 @@ Sauvegarde Office 365
  en suffixe du nom de fichier/dossier. 
 
 
-.. figure:: /Figures/9_DatisAdmin_Urbackup_Liste_Annot.png
+.. figure:: ./Figures/9_DatisAdmin_Urbackup_Liste_Annot.png
   :width: 480px
   :align: center
 
@@ -373,7 +373,7 @@ Sauvegarde Office 365
  en supprimant n’importe le(s)quel(s), en fonction des objectifs de la politique de rétention.
 
 
-.. figure:: /Figures/10_DatisAdmin_Urbackup_ListeOne.png
+.. figure:: ./Figures/10_DatisAdmin_Urbackup_ListeOne.png
   :width: 480px
   :align: center
 
@@ -385,7 +385,7 @@ Sauvegarde Office 365
  il est possible d’ouvrir une nouvelle  page de détails spécifique à cet instantané (bouton action en fin de ligne sur la figure 10).
 
 
-.. figure:: /Figures/11_DatisAdmin_UrBackup_ExploreImg_Annot.png
+.. figure:: ./Figures/11_DatisAdmin_UrBackup_ExploreImg_Annot.png
   :width: 480px
   :align: center
 
@@ -402,7 +402,7 @@ Sauvegarde Office 365
 
 
 
-.. figure:: /Figures/12_Etat_global_Grafana_Annot.png
+.. figure:: ./Figures/12_Etat_global_Grafana_Annot.png
   :width: 480px
   :align: center
 
@@ -424,7 +424,7 @@ La zone suivante offre un niveau de détail plus élevé. Elle constituée d’u
  pour chaque serveur, sur une ligne par serveur (cadre rouge en partie basse de la figure 23).
 
 
-.. figure:: /Figures/13_Etat_Systeme_Annot.png
+.. figure:: ./Figures/13_Etat_Systeme_Annot.png
   :width: 480px
   :align: center
 
@@ -440,7 +440,7 @@ Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler 
  avec des couleurs différentes pour le trafic en provenance des postes sauvegardés, et celui à destination des réplicats externes.
 
 
-.. figure:: /Figures/14_Etat_Urbackup_Annot.png
+.. figure:: ./Figures/14_Etat_Urbackup_Annot.png
   :width: 480px
   :align: center
 
