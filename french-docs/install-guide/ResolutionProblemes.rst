@@ -142,6 +142,7 @@ https://etcher.balena.io/#download-etcher
 
 
 Lancer l'application et créer la clé bootable
+
 .. figure:: /Figures2/3_usb_boot.png
   :width: 480px
   :align: center
