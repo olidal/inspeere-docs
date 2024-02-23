@@ -120,8 +120,84 @@ Elle se passe en cinq étapes:
 
 Restoration locale à partir de la sauvegarde UrBackup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. NOTE::
+  C'est une procédure relativement simple qui se déroule en 3 étapes:
+* Créer une clé de restauration bootable
+* Booter sur cette clé et suivre les instruction de la page de restauration
+* Restaurer
 
-A compléter...
+**1°) Aller sur le site de Urbackup pour télécharger Urbackup Restaure CD.**
+https://www.urbackup.org/download.html#restore_cd
+
+.. figure:: /Figures2/1_urbackup_restore_usb.png
+  :width: 480px
+  :align: center
+
+Une fois l'iso téléchargée, créer une clé usb bootable à l'aide de Balena Etcher
+https://etcher.balena.io/#download-etcher
+
+.. figure:: /Figures2/2_etcher.png
+  :width: 480px
+  :align: center
+
+
+Lancer l'application et créer la clé bootable
+.. figure:: /Figures2/3_usb_boot.png
+  :width: 480px
+  :align: center
+
+
+**2°) Une fois la clé prête, booter sur la machine à restaurer.**
+Voici la page d'accueil de Urbackup Restore:
+
+.. figure:: /Figures2/4_Accueil_urbackup.png
+  :width: 480px
+  :align: center
+
+Cliquer sur Start Urbackup Restore
+
+.. figure:: /Figures2/5_Accueil_Urbackup.png
+  :witdh: 480px
+  :align: center
+
+
+Puis configurer le pc et son réseau (Remplacer les IP par celles correspondant au réseau local)
+
+.. figure:: /Figures2/6_Edit_PC.png
+  :width: 480px
+  :align: center
+
+.. figure:: /Figures2/6_Edit_Networking.png
+  :width: 480px
+  :align: center
+
+**3°) Commencer la procédure de restauration (Start restore).**
+
+Les images suivantes montrent la progression et la reprise d'activité du client et du serveur Urbackup
+
+.. figure:: /Figures2/7_Start_restore.png
+  :width: 480px
+  :align: center
+
+
+
+.. figure:: /Figures2/8_Restoring.png
+  :width: 480px
+  :align: center
+
+
+
+.. figure:: /Figures2/9_urbackup_activité.png
+  :width: 480px
+  :align: center
+
+Une fois la procédure terminée, éteindre le PC, enlever la clé usb et redémarrer
+L'image ci-dessous montre la reprise des sauvegardes par le client Urbackup
+
+.. figure:: /Figures2/10_save_image.png
+  :width: 480px
+  :align: center
+
 
 Restoration locale à partir de la sauvegarde O365
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
