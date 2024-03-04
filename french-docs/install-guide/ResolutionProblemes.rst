@@ -118,13 +118,14 @@ Elle se passe en cinq étapes:
       afin qu'il n'écrase pas la version existante
 
 
-Restoration locale à partir de la sauvegarde UrBackup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restoration locale d'une image système à partir de la sauvegarde UrBackup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. NOTE::
   C'est une procédure relativement simple qui se déroule en 3 étapes:
-* Créer une clé de restauration bootable
-* Booter sur cette clé et suivre les instruction de la page de restauration
-* Restaurer
+  Créer une clé de restauration bootable
+
+*  Booter sur cette clé et suivre les instruction de la page de restauration
+*  Restaurer
 
 **1°) Aller sur le site de Urbackup pour télécharger Urbackup Restaure CD.**
 https://www.urbackup.org/download.html#restore_cd
@@ -141,7 +142,7 @@ https://etcher.balena.io/#download-etcher
   :align: center
 
 
-Lancer l'application et créer la clé bootable
+**Lancer l'application et créer la clé bootable**
 
 .. figure:: ./Figures2/3_usb_boot.png
   :width: 480px
@@ -199,11 +200,84 @@ L'image ci-dessous montre la reprise des sauvegardes par le client Urbackup
   :width: 480px
   :align: center
 
+Restoration granulaire en local
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. NOTE::
+  Datis Admin permet désormais la restauration de fichiers à partir de l'image 
+  sauvegardée. Voici comment procéder:
+
+**Dans la page DatisAdmin cliquer sur l'onglet "Machines sauvegardées" puis sur le bouton
+"Explorer"** 
+
+.. figure:: ./Figures2/Sélection_012.png
+  :width: 480px
+  :align: center
+
+**Choisir une image dans la liste proposée et cliquer sur l'oeil tout à droite (Explorer)**
+
+.. figure:: ./Figures2/Sélection_013.png
+  :width: 480 px
+  :align: center
+
+
+**Il faut ensuite "Monter" l'image pour avoir accès à son contenu.**
+
+.. figure:: ./Figures2/Sélection_014.png
+  :width: 480px
+  :align: center
+
+
+**Après quoi il suffit donc d'explorer et de sélectionner un dossier (Ici il a été choisi "Users")**
+
+.. figure:: ./Figures2/Sélection_015.png
+  :width: 480px
+  :align: center
+
+
+**User name (Ici Anakin)**
+
+.. figure:: ./Figures2/Sélection_016.png
+  :width: 480px
+  :align: center
+
+
+**Et enfin de choisir un dossier à restaurer.**
+
+.. figure:: ./Figures2/Sélection_017.png
+  :width: 480px
+  :align: center
+
+
+**Puis de le télécharger.**
+
+.. figure:: ./Figures2/Sélection_018.png
+  :width: 480px
+  :align: center
+
+...Fin...
+
 
 Restoration locale à partir de la sauvegarde O365
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A compléter...
+.. NOTE::
+  Ce paragraphe fait référence a la dernière partie intitulée : Sauvegarde Office 365
+  se trouvant dans "Configuration système Datis" 
+
+/image1
+
+.. figure:: ./Figures_o365/3_onedrive_saves.png
+  :width: 480px
+  :align: center
+
+/image2
+
+.. figure:: ./Figures_o365/4_explorer.png
+  :width: 480px
+  :align: center
+
+...***...
 
 Restoration Datis complète depuis sauvegarde distante
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
