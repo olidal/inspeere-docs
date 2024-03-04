@@ -392,7 +392,7 @@ distributeur.
 
 .. _config_dnat:
 
-Routage du traffic entrant
+Routage du trafic entrant
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 L'équipement Inspeere Datis est un équipement ACTIF sur Internet. 
@@ -556,11 +556,11 @@ du type de poste de travail ou serveur à sauvegarder:
 
 - **pour les postes windows**, par défault DATIS inclut une solution OpenSource 
   connue pour sa robustesse: `UrBackup <https://urbackup.org>`__.
-  En plus de sa grande fiabilité, le gros avantage de la solutuion UrBackup 
+  En plus de sa grande fiabilité, le gros avantage de la solution UrBackup 
   est son coût, très faible, voire nul lorsqu'il n'y a pas de serveur de
   virtualisation à sauvegarder.
   
-  Néanmoins, des solutions plus *mainstream* (et couteuses), telles que 
+  Néanmoins, des solutions plus *mainstream* (et coûteuses), telles que 
   `VEEAM <https://veeam.com>`_ peuvent être préférées, ou ajoutées, pour 
   répondre au mieux aux besoins des clients. (Le coût de ces solutions 
   devant être assumé en sus par le client.) (voir aussi :ref:`config_VEEAM`)
@@ -577,7 +577,7 @@ du type de poste de travail ou serveur à sauvegarder:
   des alternatives en s'appuyant sur le stockage DATIS. La solution DATIS par défaut 
   est une simple procédure de synchronisation de volumes en 
   réseau par l'utilitaire ``rsync``. Ce mécanisme permet de facilement 
-  rappatrier les données depuis les postes Linux vers DATIS, qui 
+  rapatrier les données depuis les postes Linux vers DATIS, qui 
   assure ensuite la sauvegarde normalement prevue, au niveau du stockage. 
   Néanmoins, il est toujours possible de mettre en place une solution de sauvegarde 
   plus évoluée que ``rsync`` au niveau service, comme la solution OSS 

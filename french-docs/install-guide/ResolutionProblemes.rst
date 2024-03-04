@@ -124,8 +124,8 @@ Restoration locale d'une image système à partir de la sauvegarde UrBackup
   C'est une procédure relativement simple qui se déroule en 3 étapes:
   Créer une clé de restauration bootable
 
-*  Booter sur cette clé et suivre les instruction de la page de restauration
-*  Restaurer
+  * Booter sur cette clé et suivre les instruction de la page de restauration
+  * Restaurer
 
 **1°) Aller sur le site de Urbackup pour télécharger Urbackup Restaure CD.**
 https://www.urbackup.org/download.html#restore_cd
@@ -255,7 +255,7 @@ Restoration granulaire en local
   :width: 480px
   :align: center
 
-...Fin...
+  Bottom  
 
 
 Restoration locale à partir de la sauvegarde O365
@@ -265,19 +265,22 @@ Restoration locale à partir de la sauvegarde O365
   Ce paragraphe fait référence a la dernière partie intitulée : Sauvegarde Office 365
   se trouvant dans "Configuration système Datis" 
 
-/image1
+  * En images:
 
 .. figure:: ./Figures_o365/3_onedrive_saves.png
   :width: 480px
   :align: center
 
-/image2
+  image 1
 
 .. figure:: ./Figures_o365/4_explorer.png
   :width: 480px
   :align: center
 
-...***...
+  image 2
+
+..
+
 
 Restoration Datis complète depuis sauvegarde distante
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
