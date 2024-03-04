@@ -239,15 +239,54 @@ Mise en place sauvegarde niveau 2 : VEEAM
 Sauvegarde Office 365
 ^^^^^^^^^^^^^^^^^^^^^
 
+Voici en images la procédure de connexion au compte Microsoft 365:
+
+.. figure:: ./Figures_o365/1_connexion_compte.png
+  :width: 480px
+  :align: center
+
+**Cliquer sur le bouton "connexion"**
+
+.. figure:: ./Figures_o365/2_cjohan.png
+  :width: 480px
+  :align: center
+
+**Choisir ensuite le nom de connexion**
+
+.. figure:: ./Figures_o365/2_connexion_johan.png
+  :width: 480 px
+  :align: center
+
+**Une fois celle-ci établie les sauvegardes commencent**
+
+
+.. figure:: ./Figures_o365/3_onedrive_saves.png
+  :width: 480px
+  :align: center
+
+
+
+.. figure:: ./Figures_o365/4_explorer.png
+  :width: 480px
+  :align: center
+
+**Il suffit ensuite de choisir le fichier ou dossier à restaurer**
+
+
+.. sidebar:: [==================================]
+  :align: center
+
 2.2 Interface DatisAdmin
 ------------------------
 .. figure:: ./Figures/1_DatisAdmin_DashBoard_Annot.png
   :width: 480px
   :align: center
 
+/figure 1
+
+
 **1. Tableau de bord de la console d'administration**
 
->figure 1
  La figure 1 présente le tableau de bord de la console d’administration,
  avec un menu en partie gauche, un rappel de l’état général du système en partie centrale haute,
  et un rappel de l’état de sauvegarde de chaque poste sauvegardé par UrBackup en partie centrale basse.
@@ -258,9 +297,11 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 2
+
+
 **2. Chaque utilisateur de la console peut activer une authentification à deux facteurs**
 
->figure 2
  La console peut-être accessible par différents utilisateurs. Chacun peut activer une authentification à double facteur (figure 2).
  Les utilisateurs créés avec le profile Administrateur ont le droit d’ajouter de nouveaux utilisateur. 
  Les accès des utilisateurs sont centralisés dans une base interne LDAP,
@@ -271,10 +312,12 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
-**3. Le menu de gestion des utilisateurs permet de créer ou modifier des comptes 
-     utilisateurs et de leur générer des profils VPN Individuels.**
+/figure 3
 
->figure 3
+
+**3. Le menu de gestion des utilisateurs permet de créer ou modifier des comptes 
+utilisateurs et de leur générer des profils VPN Individuels.**
+
  Le Menu des gestion des utilisateurs (figure 3) permet d’ajouter de nouveaux utilisateurs, de les activer/désactiver, 
  ou de leur délivrer un profile pour établir une connexion VPN (la clé en partie droite). 
  Le profile VPN permet d’accéder aux consoles de gestion et de supervision, ou à certains services trop vulnérables 
@@ -285,9 +328,10 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 4
+
 **4. Le menu de gestion du système propose plusieurs onglet de configuration.**
 
->figure 4
  Le menu de gestion du système (figure 4) permet de configurer ou de consulter les éléments de la configuration système. 
  Nous revenons plus en détail sur les deux derniers concernant les versions et les rapports ci-après.
 
@@ -295,9 +339,11 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 5
+
+
 **5. Affichage des versions des principaux composants du système, pour une meilleure prise en compte des vulnérabilité potentielles.**
 
->figure 5
  L’onglet VERSION du menu système (figure 5) permet d’afficher les version actuellement déployées des composants utilisés par le système : 
  version du noyau, du serveur LDAP, VPN, etc. Cette liste permet de vérifier rapidement si le système est vulnérable lors de l’annonce de nouvelles CVE.
  La version courante du système INSPEERE Datis est quant à elle toujours visible en bas à gauche de l’interface DatisAdmin.
@@ -307,9 +353,11 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 6
+
+
 **6. Interface de gestion des Rapports.**
 
->figure 6
  L’onglet RAPPORTS du menu système (figure 6) permet d’accéder à l’interface de gestion et consultation des rapports de synthèse. 
  Ces rapports sont complémentaires des rapports techniques et alertes mail produits par UrBackup. 
  Ils sont destinés à un public non spécialiste et permettent de vérifier le bon déroulement des sauvegardes de postes.
@@ -320,9 +368,11 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 7
+
+
 **7. Visualisation d’un rapport.**
 
->figure 7
  Chaque rapport peut-être soit visualisé sous forme HTML (figure 7), soit téléchargé au format PDF. 
  C’est le même format PDF qui est envoyé par mail lorsque la demande de rapport quotidien est activée.
 
@@ -331,10 +381,14 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 8
+
+
 **8. La première des deux interfaces de restauration, permet de récupérer des fichiers dans le stockage local 
 (fichiers déposés par Samba, Rsync, FTP, etc.)**
 
->figure 8
+
+
  Le menu Récupération (figure 8) permet d’accéder à l’historique de la première des deux formes de sauvegardes, 
  celle des fichiers « déposés » sur le système INSPEERE Datis, 
  à l’aide de protocoles tels que Samba, Rsync, FTP, NFS, etc.
@@ -354,9 +408,11 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 9
+
+
 **9. La deuxième interface de restauration est plus spécifiquement dédiée aux sauvegardes de postes et VMs par UrBackup.**
 
->figure 9
  Le menu Machine Sauvegardées (figure 9) permet d ‘accéder à la deuxième interface de restauration plus spécifiquement dédiée à UrBackup. 
  Elle permet d’obtenir la liste des sauvegardes de postes et VMs gérées par la système UrBackup. Le bouton d’action en bout de ligne permet 
  d’accéder plus spécifiquement aux sauvegardes d’un poste en particulier.
@@ -377,9 +433,11 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 10
+
+
 **10. Navigation dans les sauvegardes images UrBackup d’un poste en particulier.**
 
->figure 10
  En cliquant sur le bouton d’action à fin de la ligne correspondant à un poste sauvegardé (figure 9), 
  on obtient la liste des sauvegardes de type image et de type fichier de UrBackup. Pour chaque instantané de sauvegarde de type image, 
  il est possible d’ouvrir une nouvelle  page de détails spécifique à cet instantané (bouton action en fin de ligne sur la figure 10).
@@ -389,9 +447,11 @@ Sauvegarde Office 365
   :width: 480px
   :align: center
 
+/figure 11
+
+
 **11.Ouverture d’un instantané de volume du poste sauvegardé.**
 
->figure 11
  Lorsque le volume explorer correspond à une partition d’origine (disque C, D, ...), il est possible de « monter » l’image 
  afin d’accéder à son contenu (figure 11). Il est alors possible d’explorer le contenu de l’image et d’en télécharger 
  des fichier à l’aide des boutons d’action en fin de ligne.
@@ -400,21 +460,22 @@ Sauvegarde Office 365
  l’accès au contenu d’un instantané ne requiert aucune phase de reconstruction/consolidation : en pratique, 
  chaque instantané est une sauvegarde complète, immédiatement disponible.
 
+Tableau de bord de supervision centralisé
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-.. figure:: ./Figures/12_Etat_global_Grafana_Annot.png
+.. figure:: ./Figure_Graf/1_Etat_global_Grafana_Annot.png
   :width: 480px
   :align: center
 
-**12. La zone supérieure du tableau de bord présente un « cartouche » par serveur. Chaque cartouche est une matrice 3x2 d’indicateurs de couleur. 
+/figure 1
+
+**1. La zone supérieure du tableau de bord présente un « cartouche » par serveur. Chaque cartouche est une matrice 3x2 d’indicateurs de couleur. 
 La zone suivante offre un niveau de détail plus élevé. Elle constituée d’une série de lignes d’indicateurs, les « one-liner », une pour chaque serveur.**
 
->figure 12
- .. Tableau de bord de supervision centralisé::
  
 
 
- La figure 12 montre la partie haute du tableau de bord. Tout en haut, on trouve la zone des « cartouches » qui présente de façon compacte 
+ La figure 1 montre la partie haute du tableau de bord. Tout en haut, on trouve la zone des « cartouches » qui présente de façon compacte 
  l’état de chaque serveur, à l’aide de 6 indicateurs, organisés en matrice 3x2. Le code couleur est intuitif : 
  vert quand tout va bien, bleu quand un indicateur est sans objet (par exemple lorsque la sauvegarde UrBackup de type fichier n’est pas utilisée), 
  et jaune, puis orange, puis rouge en fonction du niveau d’alerte. Dans le cas présent, les cases oranges indiquent que des sauvegardes UrBackup 
@@ -424,15 +485,16 @@ La zone suivante offre un niveau de détail plus élevé. Elle constituée d’u
  pour chaque serveur, sur une ligne par serveur (cadre rouge en partie basse de la figure 23).
 
 
-.. figure:: ./Figures/13_Etat_Systeme_Annot.png
+.. figure:: ./Figure_Graf/2_Etat_Systeme_Annot.png
   :width: 480px
   :align: center
 
-**13. En faisant défiler la page vers le bas, on atteint la zone centrale du tableau de bord, avec les indicateurs système de chaque serveur.
+/figure 2
+
+**2. En faisant défiler la page vers le bas, on atteint la zone centrale du tableau de bord, avec les indicateurs système de chaque serveur.
 Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler la page pour obtenir les même indicateurs avec les serveurs suivants.**
 
->figure 13
- La figure 13 montre la zone des indicateurs système d’un serveur. A coté des indicateurs classique de charge et d’occupation mémoire, 
+ La figure 2 montre la zone des indicateurs système d’un serveur. A coté des indicateurs classique de charge et d’occupation mémoire, 
  on trouve les indicateurs concernant l’état du stockage primaire ZFS. La aussi le code couleur est conservé : lorsque c’est vert (ONLINE), 
  le stockage n’a pas d’erreur. Si un disque venait à perdre des secteur, l’état passerait en orange (DEGRADED), et en cas de défaillance grave, 
  il passe en rouge (FAULTED). La quantité de stockage libre/utilisé est aussi un indicateur important à surveiller 
@@ -440,11 +502,13 @@ Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler 
  avec des couleurs différentes pour le trafic en provenance des postes sauvegardés, et celui à destination des réplicats externes.
 
 
-.. figure:: ./Figures/14_Etat_Urbackup_Annot.png
+.. figure:: ./Figure_Graf/3_Etat_Urbackup_Annot.png
   :width: 480px
   :align: center
 
-**14. En faisant encore défiler jusqu’en bas de la page du tableau de bord, on atteint la zone concernant l’état des sauvegardes UrBackup
+/figure 3
+
+**3. En faisant encore défiler jusqu’en bas de la page du tableau de bord, on atteint la zone concernant l’état des sauvegardes UrBackup
 sur chacun des serveurs. Les informations présentées sont les même que celles présentées sur la console UrBackup, mais regroupées
 en un seul et même endroit pour tous les serveurs Datis d’un même client ou tous les client d’un même partenaire.**
 
