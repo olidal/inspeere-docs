@@ -17,12 +17,76 @@ Configuration sauvegarde niveau 1
 
 .. _config_client_urbackup:
 
+
+.. panels::
+  :header: text-center
+  :column: col-lg-12
+
+  Le Client Urbackup
+  ^^^^^^^^^^^^^^^^^^
+
+  La configuration du client Urbackup nécessite tout d'abord le téléchargement de ce dernier
+  à l'adresse indiquée (Téléchargement:  `ICI <https://hndl.urbackup.org/Server/2.5.32/UrBackup%20Server%202.5.32.exe/>`_)
+  Lancer l'installation et paramétrer comme suit :
+
+
+.. _explications_en_images:
+
+Paramétrage du Client
+^^^^^^^^^^^^^^^^^^^^^
+
+**Clic droit sur l'icône (voir encadré sur l'image).**
+
+.. figure:: ./Figures2/urb_client.png
+  :width: 480px
+  :align: center
+  
+  figure 1
+
+
+**Choisir settings.**
+
+.. figure:: ./Figures2/urb_client_.png
+  :width: 480px
+  :align: center
+
+  figure 2
+
+
+**Sélectionner les fichiers à sauvegarder et ceux à exclure.**
+
+.. figure:: ./Figures2/urb_client_1.png
+  :width: 480px
+  :align: center
+
+  figure 3
+
+
+**Indiquer le volume C pour la sauvegarde image du système.**
+
+.. figure:: ./Figures2/urb_client_2.png
+  :width: 480px
+  :align: center
+
+
+**Puis le créneau horaire et journalier.**
+
+.. figure:: ./Figures2/urb_client_3.png
+  :width: 480px
+  :align: center
+
+
+.. _config_niveau_2:
+
+
+
 Configuration sauvegarde niveau 2 : UrBackup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 La sauvegarde des postes de travail, serveurs et machines virtuelles windows 
 est assurée à l'aide de l'outil UrBackup (documentation: `EN <https://www.urbackup.org/>`_ | 
 `FR <https://www-urbackup-org.translate.goog/?_x_tr_sl=en&_x_tr_tl=fr&_x_tr_hl=fr-FR>`_).
+
 
 .. panels::
   :header: text-center
@@ -273,8 +337,11 @@ Voici en images la procédure de connexion au compte Microsoft 365:
 **Il suffit ensuite de choisir le fichier ou dossier à restaurer**
 
 
-.. sidebar:: [==================================]
+.. sidebar::[ Fin ]
   :align: center
+   A suivre
+  
+  
 
 2.2 Interface DatisAdmin
 ------------------------
@@ -282,7 +349,7 @@ Voici en images la procédure de connexion au compte Microsoft 365:
   :width: 480px
   :align: center
 
-/figure 1
+  figure 1
 
 
 **1. Tableau de bord de la console d'administration**
@@ -297,7 +364,7 @@ Voici en images la procédure de connexion au compte Microsoft 365:
   :width: 480px
   :align: center
 
-/figure 2
+  figure 2
 
 
 **2. Chaque utilisateur de la console peut activer une authentification à deux facteurs**
@@ -312,7 +379,7 @@ Voici en images la procédure de connexion au compte Microsoft 365:
   :width: 480px
   :align: center
 
-/figure 3
+  figure 3
 
 
 **3. Le menu de gestion des utilisateurs permet de créer ou modifier des comptes 
@@ -328,7 +395,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-/figure 4
+  figure 4
 
 **4. Le menu de gestion du système propose plusieurs onglet de configuration.**
 
@@ -339,7 +406,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-/figure 5
+  figure 5
 
 
 **5. Affichage des versions des principaux composants du système, pour une meilleure prise en compte des vulnérabilité potentielles.**
@@ -353,7 +420,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-/figure 6
+  figure 6
 
 
 **6. Interface de gestion des Rapports.**
@@ -368,7 +435,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-/figure 7
+  figure 7
 
 
 **7. Visualisation d’un rapport.**
@@ -380,8 +447,8 @@ utilisateurs et de leur générer des profils VPN Individuels.**
 .. figure:: ./Figures/8_DatisAdmin_Recup_Annot.png
   :width: 480px
   :align: center
-
-/figure 8
+  
+  figure 8
 
 
 **8. La première des deux interfaces de restauration, permet de récupérer des fichiers dans le stockage local 
@@ -408,7 +475,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-/figure 9
+  figure 9
 
 
 **9. La deuxième interface de restauration est plus spécifiquement dédiée aux sauvegardes de postes et VMs par UrBackup.**
@@ -433,7 +500,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-/figure 10
+  figure 10
 
 
 **10. Navigation dans les sauvegardes images UrBackup d’un poste en particulier.**
@@ -447,7 +514,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-/figure 11
+  figure 11
 
 
 **11.Ouverture d’un instantané de volume du poste sauvegardé.**
@@ -467,7 +534,7 @@ Tableau de bord de supervision centralisé
   :width: 480px
   :align: center
 
-/figure 1
+  figure 1
 
 **1. La zone supérieure du tableau de bord présente un « cartouche » par serveur. Chaque cartouche est une matrice 3x2 d’indicateurs de couleur. 
 La zone suivante offre un niveau de détail plus élevé. Elle constituée d’une série de lignes d’indicateurs, les « one-liner », une pour chaque serveur.**
@@ -489,7 +556,7 @@ La zone suivante offre un niveau de détail plus élevé. Elle constituée d’u
   :width: 480px
   :align: center
 
-/figure 2
+  figure 2
 
 **2. En faisant défiler la page vers le bas, on atteint la zone centrale du tableau de bord, avec les indicateurs système de chaque serveur.
 Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler la page pour obtenir les même indicateurs avec les serveurs suivants.**
@@ -506,7 +573,7 @@ Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler 
   :width: 480px
   :align: center
 
-/figure 3
+  figure 3
 
 **3. En faisant encore défiler jusqu’en bas de la page du tableau de bord, on atteint la zone concernant l’état des sauvegardes UrBackup
 sur chacun des serveurs. Les informations présentées sont les même que celles présentées sur la console UrBackup, mais regroupées

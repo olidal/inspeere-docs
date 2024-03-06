@@ -210,48 +210,48 @@ Restoration granulaire en local
 **Dans la page DatisAdmin cliquer sur l'onglet "Machines sauvegardées" puis sur le bouton
 "Explorer"** 
 
-.. figure:: ./Figures2/Sélection_012.png
+.. figure:: ./Figures2/Selection_012.png
   :width: 480px
   :align: center
 
 **Choisir une image dans la liste proposée et cliquer sur l'oeil tout à droite (Explorer)**
 
-.. figure:: ./Figures2/Sélection_013.png
+.. figure:: ./Figures2/Selection_013.png
   :width: 480 px
   :align: center
 
 
 **Il faut ensuite "Monter" l'image pour avoir accès à son contenu.**
 
-.. figure:: ./Figures2/Sélection_014.png
+.. figure:: ./Figures2/Selection_014.png
   :width: 480px
   :align: center
 
 
 **Après quoi il suffit donc d'explorer et de sélectionner un dossier (Ici il a été choisi "Users")**
 
-.. figure:: ./Figures2/Sélection_015.png
+.. figure:: ./Figures2/Selection_015.png
   :width: 480px
   :align: center
 
 
 **User name (Ici Anakin)**
 
-.. figure:: ./Figures2/Sélection_016.png
+.. figure:: ./Figures2/Selection_016.png
   :width: 480px
   :align: center
 
 
 **Et enfin de choisir un dossier à restaurer.**
 
-.. figure:: ./Figures2/Sélection_017.png
+.. figure:: ./Figures2/Selection_017.png
   :width: 480px
   :align: center
 
 
 **Puis de le télécharger.**
 
-.. figure:: ./Figures2/Sélection_018.png
+.. figure:: ./Figures2/Selection_018.png
   :width: 480px
   :align: center
 

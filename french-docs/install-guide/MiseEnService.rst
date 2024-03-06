@@ -200,7 +200,7 @@ est en service, par simple demande au support Inspeere:
   
 - port HTTPS alternatif (par exemple 4343 au lieu de 443)
 
-- autoriser le routage du traffic VPN vers l'intranet (avec liste de ports a défiltrer)
+- autoriser le routage du trafic VPN vers l'intranet (avec liste de ports a défiltrer)
 
 - version minimale du protocole SMB (par défaut niveau SMB2)
 
