@@ -30,7 +30,6 @@ Configuration sauvegarde niveau 1
   Lancer l'installation et paramétrer comme suit :
 
 
-.. _explications_en_images:
 
 Paramétrage du Client
 ^^^^^^^^^^^^^^^^^^^^^
@@ -68,6 +67,7 @@ Paramétrage du Client
   :width: 480px
   :align: center
 
+  figure 4
 
 **Puis le créneau horaire et journalier.**
 
@@ -75,8 +75,8 @@ Paramétrage du Client
   :width: 480px
   :align: center
 
+  figure 5
 
-.. _config_niveau_2:
 
 
 
@@ -300,6 +300,9 @@ utilisés par TimeMachine, et la première sauvegarde doit commencer bientôt.
 Mise en place sauvegarde niveau 2 : VEEAM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**En cours de construction.**
+
+
 Sauvegarde Office 365
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -339,6 +342,7 @@ Voici en images la procédure de connexion au compte Microsoft 365:
 
 .. sidebar::[ Fin ]
   :align: center
+  
    A suivre
   
   
@@ -579,10 +583,41 @@ Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler 
 sur chacun des serveurs. Les informations présentées sont les même que celles présentées sur la console UrBackup, mais regroupées
 en un seul et même endroit pour tous les serveurs Datis d’un même client ou tous les client d’un même partenaire.**
 
-
+.. _gestion_des_utilisateurs:
 
 Gestion des utilisateurs
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sur DatisAdmin voici comment se passe la gestion des utilisateurs:
+Dans l'exemple quelques utilisateurs ont été créés.
+
+.. figure:: ./Figures_SMB/Selection_001.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+**Afin de créer un nouvel utilisateur cliquer sur l'icone "Nouvel Utilisateur".**
+
+.. figure:: ./Figures_SMB/Selection_004.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+**Ensuite il en reste qu'à renseigner les champs proposés.**
+
+.. figure:: ./Figures_SMB/Selection_006.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+
+
 
 Fonctions système
 ^^^^^^^^^^^^^^^^^
@@ -602,6 +637,47 @@ Partages avec sauvegardes
 Partages et Nextcloud
 ^^^^^^^^^^^^^^^^^^^^^
 
+**Il est possible d'avoir tous les dossiers présents sur Nextcloud en local sur son PC.**
+
+Il faut pour cela tout d'abord créer un dossier spécifique que l'on nomme comme on veut par exemple :
+SMB situé dans les Documents :
+
+.. code-block:: bash
+
+
+  $ /home/luke/Documents# sudo mkdir SMB
+
+.. code-block:: bash
+
+
+  $ sudo mount -v -t cifs -o user=hsolo //192.168.113.99/hsolo/ SMB/
+
+
+Output:
+Password for hsolo@//192.168.113.99/hsolo/:``<Entrer le mot de passe>``
+
+mount.cifs kernel mount options: ip=192.168.113.99,unc=\\192.168.113.99\hsolo,user=hsolo,pass=********
+Pour vérifier que les dossiers sont bien synchronisés créer un dossier "Titi" dans Nextcloud
+
+.. figure:: ./Figures_SMB/Selection_003.png
+  :width: 480px
+  :align: center
+
+
+.. code-block:: bash
+
+
+  root@skywalker:/home/luke/Documents#cd SMB
+
+.. code-block:: bash
+
+
+  luke@skywalker:~/Documents/SMB$ ls
+
+
+Documents   Modèles  'Nextcloud intro.mp4'  'Nextcloud Manual.pdf'   Nextcloud.png   
+NOBACKUP   Photos   Readme.md  'Reasons to use Nextcloud.pdf'   Talk   Titi 
+
 2.4 Option Nextcloud
 --------------------
 
@@ -610,3 +686,48 @@ Fonctionalités par défaut
 
 Espace de partage (dossier COMMUN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. panels::
+  :header: text-center
+  :column: col-lg-12
+
+  A propos du dossier commun
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Après avoir créé des utilisateurs dans la DatisAdmin :ref:`gestion_des_utilisateurs` ceux-ci ont accès au
+  dossier ``COMMUN``.   
+  Le dossier commun est à la fois visible sur le PC en local et dans le serveur Nextcloud. Etant synchronisés
+  tout ce qu'un utilisateur créera dans le dossier commun le sera aussi dans le même dossier Nextcloud
+  ...et inversement!
+
+
+.. figure:: ./Figures_SMB/SMB_1.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+
+.. figure:: ./Figures_SMB/SMB_2.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+.. figure:: ./Figures_SMB/SMB_3.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+**Un dossier nommé OWEN LARS créé dans le dossier COMMUN du PC est synchonisé dans Nextcloud**
+
+.. figure:: ./Figures_SMB/SMB_4.png
+  :width: 480px
+  :align: center
+
+  image 4
+
+
