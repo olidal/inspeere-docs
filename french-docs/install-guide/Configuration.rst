@@ -5,7 +5,34 @@
 =================================
 
 Opérations courantes :
-* 
+*
+ 
+Fonction IPMI de la DATIS
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. NOTE::
+
+  Certaines DATIS (Les Terra) possèdent une "fonction" IPMI qui permet l'administration de celle-ci
+  via le réseau.
+
+
+**Tout d'abord entrer l'adresse IP partagée dans un navigateur pour accéder au serveur**
+
+.. figure:: ./Figures_ipmi/login_ipmi.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+.. figure:: ./Figures_ipmi/dashboard_ipmi.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+
 
 
 
@@ -26,7 +53,7 @@ Configuration sauvegarde niveau 1
   ^^^^^^^^^^^^^^^^^^
 
   La configuration du client Urbackup nécessite tout d'abord le téléchargement de ce dernier
-  à l'adresse indiquée (Téléchargement:  `ICI <https://hndl.urbackup.org/Server/2.5.32/UrBackup%20Server%202.5.32.exe/>`_)
+  à l'adresse indiquée (Téléchargement:  `ICI <https://hndl.urbackup.org/Client/2.5.25/UrBackup%20Client%202.5.25.exe>`_)
   Lancer l'installation et paramétrer comme suit :
 
 
@@ -662,6 +689,8 @@ Pour vérifier que les dossiers sont bien synchronisés créer un dossier "Titi"
 .. figure:: ./Figures_SMB/Selection_003.png
   :width: 480px
   :align: center
+
+  image
 
 
 .. code-block:: bash

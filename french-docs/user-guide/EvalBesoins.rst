@@ -1,7 +1,7 @@
 
 .. _eval_besoins:
 
-1. J'ai besoin de comprendre, expliquez-moi ce que vous faîtes!
+1. J'ai besoin de comprendre, expliquez-moi ce que vous faites!
 ----------------------------------------------------------------
 
 
