@@ -32,8 +32,41 @@ Fonction IPMI de la DATIS
   image 2
 
 
+**Pour avoir accès à l'interface en ligne de commande par le réseau il faut cliquer sur le bouton "jviewer".**
+
+.. figure:: ./Figures_ipmi/jviewer_ipmi.png
+  :width: 480px
+  :align: center
+
+  image 3
 
 
+**Suivre les instructions proposées par les images suivantes.**
+
+.. figure:: ./Figures_ipmi/jviewer2_ipmi.png
+  :width: 480px
+  :align: center
+
+  image 4
+
+.. figure:: ./Figures_ipmi/jviewer3_ipmi.png
+  :width: 480px
+  :align: center
+
+  image 5
+
+
+.. figure:: ./Figures_ipmi/jviewer4_cli_ipmi.png
+  :width: 480px
+  :align: center
+
+  image 6
+
+.. figure:: ./Figures_ipmi/jviewer4_cli2_ipmi.png
+  :width: 480px
+  :align: center
+
+  image 7
 
 
 2.1 Sauvegardes

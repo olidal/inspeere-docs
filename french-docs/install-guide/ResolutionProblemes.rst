@@ -134,12 +134,18 @@ https://www.urbackup.org/download.html#restore_cd
   :width: 480px
   :align: center
 
+  image 1
+
+
 Une fois l'iso téléchargée, créer une clé usb bootable à l'aide de Balena Etcher
 https://etcher.balena.io/#download-etcher
 
 .. figure:: ./Figures2/2_etcher.png
   :width: 480px
   :align: center
+  
+  image 2
+
 
 
 **Lancer l'application et créer la clé bootable**
@@ -147,6 +153,8 @@ https://etcher.balena.io/#download-etcher
 .. figure:: ./Figures2/3_usb_boot.png
   :width: 480px
   :align: center
+
+  image 3
 
 
 **2°) Une fois la clé prête, booter sur la machine à restaurer.**
@@ -156,22 +164,32 @@ Voici la page d'accueil de Urbackup Restore:
   :width: 480px
   :align: center
 
+  image 4
+
+
 Cliquer sur Start Urbackup Restore
 
 .. figure:: ./Figures2/5_Accueil_Urbackup.png
   :width: 480px
   :align: center
 
+  image 5
+
 
 Puis configurer le pc et son réseau (Remplacer les IP par celles correspondant au réseau local)
+
+.. figure:: ./Figures2/6_Edit_Networking.png
+  :width: 480px
+  :align: center
+
+  image 6
+
 
 .. figure:: ./Figures2/6_Edit_PC.png
   :width: 480px
   :align: center
 
-.. figure:: ./Figures2/6_Edit_Networking.png
-  :width: 480px
-  :align: center
+  image 7
 
 **3°) Commencer la procédure de restauration (Start restore).**
 
@@ -181,17 +199,20 @@ Les images suivantes montrent la progression et la reprise d'activité du client
   :width: 480px
   :align: center
 
-
+  image 8
 
 .. figure:: ./Figures2/8_Restoring.png
   :width: 480px
   :align: center
 
-
+  image 9
 
 .. figure:: ./Figures2/9_urbackup_activité.png
   :width: 480px
   :align: center
+
+  image 10
+
 
 Une fois la procédure terminée, éteindre le PC, enlever la clé usb et redémarrer
 L'image ci-dessous montre la reprise des sauvegardes par le client Urbackup
@@ -199,6 +220,9 @@ L'image ci-dessous montre la reprise des sauvegardes par le client Urbackup
 .. figure:: ./Figures2/10_save_image.png
   :width: 480px
   :align: center
+
+  image 11
+
 
 Restoration granulaire en local
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
