@@ -178,6 +178,10 @@ Cliquer sur Start Urbackup Restore
 
 Puis configurer le pc et son réseau (Remplacer les IP par celles correspondant au réseau local)
 
+.. NOTE::
+  Il faut indiquer l'IP du PC à restaurer qui est enregistré dans le serveur Urbackup
+
+
 .. figure:: ./Figures2/6_Edit_Networking.png
   :width: 480px
   :align: center
@@ -185,11 +189,18 @@ Puis configurer le pc et son réseau (Remplacer les IP par celles correspondant 
   image 6
 
 
-.. figure:: ./Figures2/6_Edit_PC.png
+.. figure:: ./Figures2/6_Edit_log_server.png
   :width: 480px
   :align: center
 
   image 7
+
+
+.. figure:: ./Figures2/6_Edit_PC.png
+  :width: 480px
+  :align: center
+
+  image 8
 
 **3°) Commencer la procédure de restauration (Start restore).**
 
@@ -199,19 +210,19 @@ Les images suivantes montrent la progression et la reprise d'activité du client
   :width: 480px
   :align: center
 
-  image 8
+  image 9
 
 .. figure:: ./Figures2/8_Restoring.png
   :width: 480px
   :align: center
 
-  image 9
+  image 10
 
 .. figure:: ./Figures2/9_urbackup_activité.png
   :width: 480px
   :align: center
 
-  image 10
+  image 11
 
 
 Une fois la procédure terminée, éteindre le PC, enlever la clé usb et redémarrer
@@ -221,8 +232,13 @@ L'image ci-dessous montre la reprise des sauvegardes par le client Urbackup
   :width: 480px
   :align: center
 
-  image 11
+  image 12
 
+
+**Pour la gestion des sauvegardes Veeam se référer à ce chapitre:**
+:ref:`config_VEEAM`
+
+ 
 
 Restoration granulaire en local
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -279,7 +295,7 @@ Restoration granulaire en local
   :width: 480px
   :align: center
 
-  Bottom  
+  Bottom file  
 
 
 Restoration locale à partir de la sauvegarde O365
@@ -303,7 +319,6 @@ Restoration locale à partir de la sauvegarde O365
 
   image 2
 
-..
 
 
 Restoration Datis complète depuis sauvegarde distante

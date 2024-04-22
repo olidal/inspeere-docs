@@ -41,6 +41,16 @@ Fonction IPMI de la DATIS
   image 3
 
 
+.. NOTE::
+  Il est possible qu'en cliquant sur le bouton "launch jviewer" la console ne se lance pas mais qu'un
+  fichier nommé jviewer.jnlp soit téléchargé. Il faut alors se placer dans ce dossier avec le terminal
+  et taper la commande suivante :
+
+.. code-block:: bash
+
+  $ javaws jviewer.jnlp
+
+
 **Suivre les instructions proposées par les images suivantes.**
 
 .. figure:: ./Figures_ipmi/jviewer2_ipmi.png
@@ -67,6 +77,9 @@ Fonction IPMI de la DATIS
   :align: center
 
   image 7
+
+
+
 
 
 2.1 Sauvegardes
@@ -164,6 +177,7 @@ est assurée à l'aide de l'outil UrBackup (documentation: `EN <https://www.urba
 
 .. _intro_interface_gestion_urbackup:
 
+
 Interface de gestion centralisée
 ################################
 
@@ -206,6 +220,7 @@ les réglages par défaut via l'onglet des réglages.
    :align: center
 
 .. _intro_agents_collecte_urbackup:
+
 
 Agents de sauvegarde
 ####################
@@ -268,6 +283,7 @@ le client est sur un autre site)
 
 
 .. _intro_procedure_association_urbackup:
+
 
 Procédure d'association
 #######################
@@ -366,11 +382,22 @@ Mise en place sauvegarde niveau 2 : VEEAM
 Sauvegarde Office 365
 ^^^^^^^^^^^^^^^^^^^^^
 
-Voici en images la procédure de connexion au compte Microsoft 365:
+.. NOTE::
+  Ce chapitre comporte 2 parties:
+  
+  La connexion individuelle à un compte Microsoft personnel et La connexion "multi-tenants" gérée par un administrateur au profit d'utilisateurs d'un Active Directory
+
+
+Pour la connexion individuelle:
+-------------------------------
+
+**Voici en images la procédure de connexion au compte Microsoft 0365**
 
 .. figure:: ./Figures_o365/1_connexion_compte.png
   :width: 480px
   :align: center
+
+  image 1
 
 **Cliquer sur le bouton "connexion"**
 
@@ -378,11 +405,15 @@ Voici en images la procédure de connexion au compte Microsoft 365:
   :width: 480px
   :align: center
 
+  image 2
+
 **Choisir ensuite le nom de connexion**
 
 .. figure:: ./Figures_o365/2_connexion_johan.png
   :width: 480 px
   :align: center
+
+  image 3
 
 **Une fois celle-ci établie les sauvegardes commencent**
 
@@ -391,20 +422,37 @@ Voici en images la procédure de connexion au compte Microsoft 365:
   :width: 480px
   :align: center
 
+  image 4
 
 
 .. figure:: ./Figures_o365/4_explorer.png
   :width: 480px
   :align: center
 
+  image 5
+
 **Il suffit ensuite de choisir le fichier ou dossier à restaurer**
 
 
-.. sidebar::[ Fin ]
+
+La connexion multi-tenant:
+--------------------------
+
+
+
+
+.. NOTE::
+  Il faut impérativement se rendre sur le portail Microsoft Azure pour
+  créer une page d'enregistrement d'une application à cette adresse : `cliquer ici <https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps>_ .
+  Ensuite suivre les étapes:
+
+.. figure:: ./Figures_app_azure/01_Welcome.jpg
+  :width: 480px
   :align: center
-  
-   A suivre
-  
+
+  image 1  
+
+    
   
 
 2.2 Interface DatisAdmin
@@ -736,9 +784,9 @@ Pour vérifier que les dossiers sont bien synchronisés créer un dossier "Titi"
 
   luke@skywalker:~/Documents/SMB$ ls
 
-
+**Output:**
 Documents   Modèles  'Nextcloud intro.mp4'  'Nextcloud Manual.pdf'   Nextcloud.png   
-NOBACKUP   Photos   Readme.md  'Reasons to use Nextcloud.pdf'   Talk   Titi 
+NOBACKUP   Photos   Readme.md  'Reasons to use Nextcloud.pdf'   Talk   ``Titi`` 
 
 2.4 Option Nextcloud
 --------------------
