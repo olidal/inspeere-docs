@@ -179,7 +179,7 @@ est assurée à l'aide de l'outil UrBackup (documentation: `EN <https://www.urba
 
 
 Interface de gestion centralisée
-################################
+================================
 
 L'interface de gestion centralisée est accessible depuis l'intranet auquel 
 est connecté DATIS, via l'URL ``https://backup.XXXX.inspee.re`` où XXXX 
@@ -223,7 +223,7 @@ les réglages par défaut via l'onglet des réglages.
 
 
 Agents de sauvegarde
-####################
+====================
 
 Le client de sauvegarde pour un poste Windows peut-être téléchargé directement 
 sur le site UrBackup depuis le poste à sauvegarder, 
@@ -286,7 +286,7 @@ le client est sur un autre site)
 
 
 Procédure d'association
-#######################
+=======================
 
 UrBackup propose deux formes d'association, qui NE sont PAS exclusives (on peut associer 
 un poste Windows des deux façon en même temps):
@@ -439,11 +439,13 @@ La connexion multi-tenant:
 --------------------------
 
 
+Création de l'application
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. NOTE::
-  Il faut impérativement se rendre sur le portail Microsoft Azure pour
-  créer une page d'enregistrement d'une application à cette adresse : `cliquer ici <https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps>_ .
+  Il faut impérativement se rendre sur le portail Microsoft Azure pour 
+  créer une page d'enregistrement d'une application à cette adresse : `cliquer ici <https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps>`_ .
   Ensuite suivre les étapes:
 
 .. figure:: ./Figures_app_azure/01_Welcome.jpg
@@ -452,8 +454,255 @@ La connexion multi-tenant:
 
   image 1  
 
-    
-  
+**Cocher les deux réponses montrées par la capture d'écran:**
+
+.. figure:: ./Figures_app_azure/2_USAGE_QUESTION.jpg
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+**Passer la visite guidée.**
+
+.. figure:: ./Figures_app_azure/3_SKIP_TOUR.jpg
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+**Enregistrer une nouvelle app en cliquant sur + Nouvelle inscription**
+
+.. figure:: ./Figures_app_azure/4_NEW_REGISTRATION.jpg
+  :width: 480px
+  :align: center
+
+  image 4
+
+**Une page s'affiche**
+
+- Donner un nom à l'application
+
+- Sous l'option "Types de compte pris en charge",
+  sélectionnez "Comptes dans n'importe quel annuaire organisationnel (tout locataire Microsoft Entra ID - Multilocataire)
+  et comptes personnels Microsoft (par exemple Skype, Xbox)".  
+
+- Laisser URI de redirection vide (Cette option ne sera pas utilisée.)
+
+- Pour finir, cliquer sur "s'incrire"
+
+
+.. figure:: ./Figures_app_azure/5_NEW_APP_FORM.jpg
+  :width: 480px
+  :align: center
+
+  image 5
+
+
+**La page est redirigée**
+
+- Sur celle-ci on trouve:
+  L'ID d'application
+  L'ID de l'annuaire
+  Bien noter ces deux valeurs.
+
+
+.. figure:: ./Figures_app_azure/6_ApplicationId_and_TenantID.jpg
+  :width: 480px
+  :align: center
+
+  image 6
+
+
+**Sur la même page, colonne de gauche, sélectionner:**
+
+- Certificats & secrets
+- Cliquer sur + Nouveau secret client
+
+.. figure:: ./Figures_app_azure/7_CERTIF_AND_SECRETS.jpg
+  :width: 480px
+  :align: center
+
+  image 7
+
+
+**Renseigner:**
+
+- La description
+- La date d'expiration
+- Cliquer sur ajouter
+
+.. figure:: ./Figures_app_azure/8_New_SECRET.jpg
+  :width: 480px
+  :align: center
+
+  image 8
+
+
+.. figure:: ./Figures_app_azure/9_FILL_SECRET_FORM.jpg
+  :width: 480px
+  :align: center
+
+  image 9
+
+**Ceci va donner:**
+
+- Une valeur de clé
+- Une ID de secret
+
+.. figure:: ./Figures_app_azure/10_DISPLAY_SECRET.jpg
+  :width: 480px
+  :align: center
+
+  image 10
+
+
+**Copier la valeur de la clé et l'enregistrer.**
+
+.. figure:: ./Figures_app_azure/11_COPY_SECRET_TO_CLIPBOARD.jpg
+  :width: 480px
+  :align: center
+
+  image 11
+
+
+Configurer les permissions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**A partir de la page d'application vue à l'étape précédente:**
+
+- Sélectionnner (Dans la colonne de gauche) "API autorisées".
+- Cliquer sur + Ajouter une autorisation et sélectionner "Microsoft Graph"
+
+.. figure:: ./Figures_app_azure/13_ADD_PERMISSION_BUTTON.jpg
+  :width: 480px
+  :align: center
+
+  image 12
+
+
+.. figure:: ./Figures_app_azure/14_DISPLAY_MICROSOFT_GRAPH.jpg
+  :width: 480px
+  :align: center
+
+  image 13
+
+
+**Comme le montre l'image suivante:**
+- Choisir "autorisations d'application"
+
+.. figure:: ./Figures_app_azure/15_APPLICATION_PERMISSIONS.jpg
+  :width: 480px
+  :align: center
+
+  image 14
+
+
+**Une page s'ouvre avec une barre de recherche.Tapez les mots clés pour:**
+
+- Applications
+- Directory
+- Files
+- Mail
+- Sites
+- User
+
+**Suivre la procédure ci-dessous.**
+
+.. figure:: ./Figures_app_azure/16_Application_ReadWriteALL.jpg
+  :width: 480px
+  :align: center
+
+  image 15
+
+
+.. figure:: ./Figures_app_azure/17_Application_ReadWriteALL.jpg
+  :width: 480px
+  :align: center
+
+  image 16
+
+
+.. figure:: ./Figures_app_azure/17_Application_ReadWriteALL.jpg
+  :width: 480px
+  :align: center
+
+  image 17
+
+
+.. figure:: ./Figures_app_azure/18_Files_Permissions.jpg
+  :width: 480px
+  :align: center
+
+  image 18
+
+
+.. figure:: ./Figures_app_azure/19_Mail_Permissions.jpg       
+  :width: 480px
+  :align: center
+
+  image 19
+
+
+.. figure:: ./Figures_app_azure/20_Sites_Permissions.jpg 
+  :width: 480px
+  :align: center
+
+  image 20
+
+
+.. figure:: ./Figures_app_azure/21_User_Permissions.jpg
+  :width: 480px
+  :align: center
+
+  image 21
+
+
+**Résumé de l'opération.**
+-Cliquer sur "Accorder un consentement d'administrateur pour..." (image 22)
+-Choisir le type d'autorisations déléguées (image 23)
+
+
+.. figure:: ./Figures_app_azure/22_AFTER_ADDPERM_BUTTON.jpg
+  :width: 480px
+  :align: center
+
+  image 22
+
+
+.. figure:: ./Figures_app_azure/23_BEFORE_DELEGATED_PERMISSION.jpg
+  :width: 480px
+  :align: center
+
+  image 23
+
+
+**Il ne reste plus alors qu'à entrer les clé dans le dashboard de la Datis:**
+- Application(client) ID
+- Tenant (Directory) ID
+- La Secret Value
+
+.. figure:: ./Figures_app_azure/24_ADD_KEYS_DATISADMIN.png
+  :width: 480px
+  :align: center
+
+  image 24
+
+**Avant de lancer la sauvegarde, tester les clés**
+
+.. figure:: ./Figures_app_azure/24_ADD_KEYS_TEST.png        
+  :width: 480px
+  :align: center
+
+  image 25
+
+
+
+
+
+
+
 
 2.2 Interface DatisAdmin
 ------------------------
