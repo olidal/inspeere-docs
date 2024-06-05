@@ -691,7 +691,7 @@ Configurer les permissions
 
 **Avant de lancer la sauvegarde, tester les clés**
 
-.. figure:: ./Figures_app_azure/24_ADD_KEYS_TEST.png        
+.. figure:: ./Figures_app_azure/25_ADD_KEYS_TEST.png        
   :width: 480px
   :align: center
 

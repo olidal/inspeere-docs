@@ -87,11 +87,11 @@ Cette commande ajoute un nouveau volume TimeMachine, qui lui sera bien accessibl
 Ensuite, TimeMachine sait parfaitement gérer plusieurs volume, et utiliser ceux qui sont disponibles en fonction du moment.
 
 
-Procédures de Restoration
--------------------------
+Procédures de Restauration
+--------------------------
 
-Restoration locale à partir de la sauvegarde de niveau 1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restauration locale à partir de la sauvegarde de niveau 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 La restauration de fichiers à partir de la sauvegarde de 
 niveau 1 se fait à partir du menu sauvegarde de l'interface DatisAdmin.
@@ -118,8 +118,8 @@ Elle se passe en cinq étapes:
       afin qu'il n'écrase pas la version existante
 
 
-Restoration locale d'une image système à partir de la sauvegarde UrBackup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restauration locale d'une image système à partir de la sauvegarde UrBackup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. NOTE::
   C'est une procédure relativement simple qui se déroule en 3 étapes:
   Créer une clé de restauration bootable
