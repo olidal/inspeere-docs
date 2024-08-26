@@ -294,7 +294,7 @@ de sauvegarde.
     incrément produit à 14h05 n'auront plus besoin d'être capturées à 14h10, alors qu'avec un 
     incrément de 10 minutes (ou plus), il faudra capturer la totalité en une seule fois à 14h10.
 
-    Une fréquence élevée n'a qu'un seul incovénient, celui d'augmenter la taille de l'espace de 
+    Une fréquence élevée n'a qu'un seul inconvénient, celui d'augmenter la taille de l'espace de 
     recherche: il est plus facile de retrouver la dernière modification d'une donnée en fouillant 
     dans un seul incrément que dans dix. Mais d'un autre coté, si on sait quand la donnée cherchée 
     a été produite, une fréquence élevée est intéressante et donne plus de chance de retrouver
@@ -302,7 +302,7 @@ de sauvegarde.
     D'où cette idée d'une reduction progressive de la fréquence.
 
     Inspeere propose par défaut un certain nombre de politiques pour les sauvegardes : continue, 
-    archive sur 5 ans, quotidienne, backup sur 30j, eternelle (conservartion sans limite de durée). 
+    archive sur 5 ans, quotidienne, backup sur 30j, éternelle (conservation sans limite de durée). 
 
     Dans tous les cas, sauf cas particulier de production importante de données en continu, il 
     faut retenir que le volume de données résultant sera peu sensible à la fréquence et que l'impact 
@@ -325,11 +325,11 @@ de sauvegarde.
     En revanche il est possible de monter un instantané (en lecture seule), ce qui permet de 
     retrouver l'état des données à la date précise de capture de l'instantané. Notons aussi que 
     l'opération de capture est **atomique**, ce qui, en jargon informatique, signifie que toutes
-    les données qui en font partie ont été "attrappées" exactement au même instant (d'ou le nom 
+    les données qui en font partie ont été "attrapées" exactement au même instant (d'ou le nom 
     d'instantané).
 
     Il est aussi possible de créer un clone modifiable d'un instantané. Ces opérations avancées 
-    de clonage et de montage ne sont pas mises à disposition des utilisateurs. Elle peuvent néanmoins
+    de clônage et de montage ne sont pas mises à disposition des utilisateurs. Elle peuvent néanmoins
     faire l'objet d'une demande auprès du support en cas de besoin.
 
     La configuration type proposée par défaut par Inspeere, implique une conservation locale sur 30 

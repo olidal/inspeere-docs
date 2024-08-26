@@ -179,7 +179,9 @@ Cliquer sur Start Urbackup Restore
 Puis configurer le pc et son réseau (Remplacer les IP par celles correspondant au réseau local)
 
 .. NOTE::
-  Il faut indiquer l'IP du PC à restaurer qui est enregistré dans le serveur Urbackup
+  Il faut indiquer l'IP du PC à restaurer qui est enregistrée dans le serveur Urbackup si elle n'a été effacée.
+  Dans le cas contraire il suffit simplement de noter l'IP du logiciel Restore Urbackup et de la
+  rentrer dans le serveur. Après quoi il faut relancer la recherche à partir de l'onglet "TimeZone".
 
 
 .. figure:: ./Figures2/6_Edit_Networking.png

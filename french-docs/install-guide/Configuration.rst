@@ -731,7 +731,7 @@ Configurer les permissions
 **2. Chaque utilisateur de la console peut activer une authentification à deux facteurs**
 
  La console peut-être accessible par différents utilisateurs. Chacun peut activer une authentification à double facteur (figure 2).
- Les utilisateurs créés avec le profile Administrateur ont le droit d’ajouter de nouveaux utilisateur. 
+ Les utilisateurs créés avec le profil Administrateur ont le droit d’ajouter de nouveaux utilisateurs. 
  Les accès des utilisateurs sont centralisés dans une base interne LDAP,
  qui permet d’utiliser les mêmes identifiants pour accéder aux différents services du système INSPEERE Datis.
 
@@ -747,7 +747,7 @@ Configurer les permissions
 utilisateurs et de leur générer des profils VPN Individuels.**
 
  Le Menu des gestion des utilisateurs (figure 3) permet d’ajouter de nouveaux utilisateurs, de les activer/désactiver, 
- ou de leur délivrer un profile pour établir une connexion VPN (la clé en partie droite). 
+ ou de leur délivrer un profil pour établir une connexion VPN (la clé en partie droite). 
  Le profile VPN permet d’accéder aux consoles de gestion et de supervision, ou à certains services trop vulnérables 
  pour être exposés directement sur Internet (SMB, FTP, ...). Initialement, chaque Datis est livrée avec un premier utilisateur « admin »,
  dont les identifiants sont transmis de façon sécurisée à l'administrateur.
@@ -758,7 +758,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
 
   figure 4
 
-**4. Le menu de gestion du système propose plusieurs onglet de configuration.**
+**4. Le menu de gestion du système propose plusieurs onglets de configuration.**
 
  Le menu de gestion du système (figure 4) permet de configurer ou de consulter les éléments de la configuration système. 
  Nous revenons plus en détail sur les deux derniers concernant les versions et les rapports ci-après.
@@ -772,7 +772,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
 
 **5. Affichage des versions des principaux composants du système, pour une meilleure prise en compte des vulnérabilité potentielles.**
 
- L’onglet VERSION du menu système (figure 5) permet d’afficher les version actuellement déployées des composants utilisés par le système : 
+ L’onglet VERSION du menu système (figure 5) permet d’afficher les versions actuellement déployées des composants utilisés par le système : 
  version du noyau, du serveur LDAP, VPN, etc. Cette liste permet de vérifier rapidement si le système est vulnérable lors de l’annonce de nouvelles CVE.
  La version courante du système INSPEERE Datis est quant à elle toujours visible en bas à gauche de l’interface DatisAdmin.
 
@@ -841,7 +841,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
 
 **9. La deuxième interface de restauration est plus spécifiquement dédiée aux sauvegardes de postes et VMs par UrBackup.**
 
- Le menu Machine Sauvegardées (figure 9) permet d ‘accéder à la deuxième interface de restauration plus spécifiquement dédiée à UrBackup. 
+ Le menu Machines Sauvegardées (figure 9) permet d ‘accéder à la deuxième interface de restauration plus spécifiquement dédiée à UrBackup. 
  Elle permet d’obtenir la liste des sauvegardes de postes et VMs gérées par la système UrBackup. Le bouton d’action en bout de ligne permet 
  d’accéder plus spécifiquement aux sauvegardes d’un poste en particulier.
  Il est important de noter que cette interface est complémentaire de l’interface fournie par le système UrBackup. 
@@ -937,8 +937,8 @@ Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler 
   figure 3
 
 **3. En faisant encore défiler jusqu’en bas de la page du tableau de bord, on atteint la zone concernant l’état des sauvegardes UrBackup
-sur chacun des serveurs. Les informations présentées sont les même que celles présentées sur la console UrBackup, mais regroupées
-en un seul et même endroit pour tous les serveurs Datis d’un même client ou tous les client d’un même partenaire.**
+sur chacun des serveurs. Les informations présentées sont les mêmes que celles présentées sur la console UrBackup, mais regroupées
+en un seul et même endroit pour tous les serveurs Datis d’un même client ou tous les clients d’un même partenaire.**
 
 .. _gestion_des_utilisateurs:
 
