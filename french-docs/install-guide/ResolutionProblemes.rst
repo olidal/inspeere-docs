@@ -105,7 +105,7 @@ niveau 1 se fait à partir du menu sauvegarde de l'interface DatisAdmin.
 Elle se passe en cinq étapes:
 
 1. Seléctionner une période de recherche. Cette étape à pour objectif 
-   de réduire le nombre  d'instantannés (incréments de sauvegarde)
+   de réduire le nombre  d'instantanés (incréments de sauvegarde)
    car ils peuvent être trop nombreux. L'idéal est de ne pas dépasser 50 instantanés.
    Le recherche peut être calendaires ou sur une période d'un certain 
    de nombre de jours avant la date courante. 
