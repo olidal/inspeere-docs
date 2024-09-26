@@ -96,19 +96,23 @@ Restauration locale à partir de la sauvegarde de niveau 1
 La restauration de fichiers à partir de la sauvegarde de 
 niveau 1 se fait à partir du menu sauvegarde de l'interface DatisAdmin.
 
-<Image>
+.. figure:: ./Figures/DatisAdmin_restor4.png
+  :width: 480px
+  :align: center
+
+  image
 
 Elle se passe en cinq étapes:
 
 1. Seléctionner une période de recherche. Cette étape à pour objectif 
-   de réduire le nombre de d'instantannés (incréments de sauvegarde)
-   car ils peuvent être trop nombreux. L'idéal est de ne pas dépasser 50 instantannés.
+   de réduire le nombre  d'instantannés (incréments de sauvegarde)
+   car ils peuvent être trop nombreux. L'idéal est de ne pas dépasser 50 instantanés.
    Le recherche peut être calendaires ou sur une période d'un certain 
    de nombre de jours avant la date courante. 
 
-2. Afficher les instantannés retenus
+2. Afficher les instantanés retenus
 
-3. Naviguer dans les instantannés jusqu'à trouver le fichier ou le dossier
+3. Naviguer dans les instantanés jusqu'à trouver le fichier ou le dossier
    recherchés
 
 5. Choisir un mode restauration entre:
@@ -179,7 +183,7 @@ Cliquer sur Start Urbackup Restore
 Puis configurer le pc et son réseau (Remplacer les IP par celles correspondant au réseau local)
 
 .. NOTE::
-  Il faut indiquer l'IP du PC à restaurer qui est enregistrée dans le serveur Urbackup si elle n'a été effacée.
+  Il faut indiquer l'IP du PC à restaurer qui est enregistrée dans le serveur Urbackup si elle n'a pas été effacée.
   Dans le cas contraire il suffit simplement de noter l'IP du logiciel Restore Urbackup et de la
   rentrer dans le serveur. Après quoi il faut relancer la recherche à partir de l'onglet "TimeZone".
 

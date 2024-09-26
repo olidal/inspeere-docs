@@ -10,6 +10,8 @@ Ce guide s'adresse aux partenaires **distributeurs** de la solution Inspeere.
   :maxdepth: 2
 
   MiseEnService
+  InterfaceGestionCentralisee
+  AgentdeSauvegarde
   Configuration
   ResolutionProblemes
 

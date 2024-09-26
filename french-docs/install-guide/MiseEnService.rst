@@ -406,7 +406,7 @@ Cet équipement doit donc être *joignable* depuis Internet, alors
 qu'il se trouve connecté sur le réseau **intranet** du client.
 Il faut donc faire en sorte que les données trouvent toujours leur chemin.
 Ce travail est en grande partie automatisé par le système Datis, qui met
-en place de multiple mécanismes automatiques pour garantir que le traffic
+en place de multiple mécanismes automatiques pour garantir que le trafic
 trouve toujours son chemin.
 
 En revanche, il y a une partie du problème que le système Datis ne peut
@@ -421,9 +421,9 @@ une adresse IP *privée* dans l'intranet.
    :align: center
 
 La redirection DNAT est un réglage, généralement très simple, qui se 
-configure au niveau de la box Internet de votre operateur, et qui permet 
+configure au niveau de la box Internet de votre opérateur, et qui permet 
 d'associer les deux identités, l'IP publique avec l'IP privée, pour certains 
-*ports* choisis. De plus, la redirection peut éventuellement être restreintes
+*ports* choisis. De plus, la redirection peut éventuellement être restreinte
 à certaines origines, mais l'équipement d'Inspeere n'utilise pas cette
 possibilité.  
 
@@ -446,7 +446,7 @@ redirections DNAT:
 
 NB: La configuration des redirections DNAT doit être mise en place au niveau 
 de la box Internet, et éventuellement au niveau des équipements réseau 
-intermédiaires (routyeurs, firewall) présents sur l'intranet du client, 
+intermédiaires (routeurs, firewall) présents sur l'intranet du client, 
 sur le trajet entre la box internet et l'équipement DATIS.
 
 
