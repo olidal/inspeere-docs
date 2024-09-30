@@ -484,7 +484,7 @@ Les adresses entre 200 et 250 sont généralement de bons choix.
 
 .. _filtrage_sortant: 
 
-(De)filtrage du traffic sortant
+(De)filtrage du trafic sortant
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Les mesures de sécurité sont variables d'un site d'installation à un autre. Dans 

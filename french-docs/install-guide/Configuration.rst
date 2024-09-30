@@ -5,15 +5,18 @@
 =================================
 
 Opérations courantes :
-*
+
  
 Fonction IPMI de la DATIS
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE::
 
-  Certaines DATIS (Les Terra) possèdent une "fonction" IPMI qui permet l'administration de celle-ci
+  Certaines DATIS (Les Terra) possèdent une "fonction" IPMI(BMC) qui permet l'administration de celle-ci
   via le réseau.
+  Trouver l'adresse IP du BMC:
+  Pendant le démarrage du serveur, l'adresse IP du BMC s'affiche généralement dans le coin inférieur droit de l'écran
+  
 
 
 **Tout d'abord entrer l'adresse IP partagée dans un navigateur pour accéder au serveur**
@@ -82,8 +85,8 @@ Fonction IPMI de la DATIS
 
 
 
-2.1 Sauvegardes
----------------
+4.1 Sauvegardes
+===============
 
 
 .. _config_client_urbackup:
@@ -169,11 +172,17 @@ du système MacOS, en 6 étapes:
   :width: 480px
   :align: center
 
+  image1
+
+
 **2. Ouvrir le menu de sélection des disques TimeMAchine**
 
 .. figure:: ActivationTimeMachine/2-SelectTimeMachineDisk.jpg
   :width: 480px
   :align: center
+
+  image 2
+
 
 **3. Sélectionner le disque de votre DATIS**
 
@@ -186,12 +195,16 @@ sur chacune des DATIS.
   :width: 480px
   :align: center
 
+  image 3
 
 **4. Acceptez la connexion au partage SAMBA de votre DATIS**
 
 .. figure:: ActivationTimeMachine/4-ConnectionTimeMachine.jpg
   :width: 480px
   :align: center
+
+  image 4
+
 
 **5. Donnez vos identifiants**
 
@@ -206,6 +219,7 @@ NB: La procédure de création de comptes DATIS est décrite ici.
   :width: 480px
   :align: center
 
+  image 5
 
 **6. C'est fait!**
 
@@ -217,6 +231,7 @@ utilisés par TimeMachine, et la première sauvegarde doit commencer bientôt.
   :width: 480px
   :align: center
 
+  image 6
 
 .. _config_VEEAM:
 
@@ -226,8 +241,8 @@ Mise en place sauvegarde niveau 2 : VEEAM
 **En cours de construction.**
 
 
-Sauvegarde Office 365
-^^^^^^^^^^^^^^^^^^^^^
+4.1.1 Sauvegarde Office 365
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE::
   Ce chapitre comporte 2 parties:
@@ -446,7 +461,7 @@ Configurer les permissions
   image 14
 
 
-**Une page s'ouvre avec une barre de recherche.Tapez les mots clés pour:**
+**Une page s'ouvre avec une barre de recherche. Tapez les mots clés pour:**
 
 - Applications
 - Directory
@@ -547,22 +562,19 @@ Configurer les permissions
 
 
 
+5. Interface DatisAdmin
+=======================
 
-
-
-
-2.2 Interface DatisAdmin
-------------------------
 .. figure:: ./Figures/1_DatisAdmin_DashBoard_Annot.png
   :width: 480px
   :align: center
 
-  figure 1
+  image 1
 
 
 **1. Tableau de bord de la console d'administration**
 
- La figure 1 présente le tableau de bord de la console d’administration,
+ L'image 1  présente le tableau de bord de la console d’administration,
  avec un menu en partie gauche, un rappel de l’état général du système en partie centrale haute,
  et un rappel de l’état de sauvegarde de chaque poste sauvegardé par UrBackup en partie centrale basse.
  Un lien vers la documentation est proposé dans le coin inférieur droit
@@ -572,7 +584,7 @@ Configurer les permissions
   :width: 480px
   :align: center
 
-  figure 2
+  image 2
 
 
 **2. Chaque utilisateur de la console peut activer une authentification à deux facteurs**
@@ -587,13 +599,13 @@ Configurer les permissions
   :width: 480px
   :align: center
 
-  figure 3
+  image 3
 
 
 **3. Le menu de gestion des utilisateurs permet de créer ou modifier des comptes 
 utilisateurs et de leur générer des profils VPN Individuels.**
 
- Le Menu des gestion des utilisateurs (figure 3) permet d’ajouter de nouveaux utilisateurs, de les activer/désactiver, 
+ Le Menu des gestion des utilisateurs (image 3) permet d’ajouter de nouveaux utilisateurs, de les activer/désactiver, 
  ou de leur délivrer un profil pour établir une connexion VPN (la clé en partie droite). 
  Le profile VPN permet d’accéder aux consoles de gestion et de supervision, ou à certains services trop vulnérables 
  pour être exposés directement sur Internet (SMB, FTP, ...). Initialement, chaque Datis est livrée avec un premier utilisateur « admin »,
@@ -603,23 +615,23 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-  figure 4
+  image 4
 
 **4. Le menu de gestion du système propose plusieurs onglets de configuration.**
 
- Le menu de gestion du système (figure 4) permet de configurer ou de consulter les éléments de la configuration système. 
+ Le menu de gestion du système (imagee 4) permet de configurer ou de consulter les éléments de la configuration système. 
  Nous revenons plus en détail sur les deux derniers concernant les versions et les rapports ci-après.
 
 .. figure:: ./Figures/5_DatisAdmin_Systeme_Version_annot.png
   :width: 480px
   :align: center
 
-  figure 5
+  image 5
 
 
 **5. Affichage des versions des principaux composants du système, pour une meilleure prise en compte des vulnérabilité potentielles.**
 
- L’onglet VERSION du menu système (figure 5) permet d’afficher les versions actuellement déployées des composants utilisés par le système : 
+ L’onglet VERSION du menu système (image 5) permet d’afficher les versions actuellement déployées des composants utilisés par le système : 
  version du noyau, du serveur LDAP, VPN, etc. Cette liste permet de vérifier rapidement si le système est vulnérable lors de l’annonce de nouvelles CVE.
  La version courante du système INSPEERE Datis est quant à elle toujours visible en bas à gauche de l’interface DatisAdmin.
 
@@ -628,12 +640,12 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-  figure 6
+  image 6
 
 
 **6. Interface de gestion des Rapports.**
 
- L’onglet RAPPORTS du menu système (figure 6) permet d’accéder à l’interface de gestion et consultation des rapports de synthèse. 
+ L’onglet RAPPORTS du menu système (image 6) permet d’accéder à l’interface de gestion et consultation des rapports de synthèse. 
  Ces rapports sont complémentaires des rapports techniques et alertes mail produits par UrBackup. 
  Ils sont destinés à un public non spécialiste et permettent de vérifier le bon déroulement des sauvegardes de postes.
  Ce menu permet aussi d’activer l’envoi d’un rapport quotidien à une liste d’utilisateurs convenus (par exemple le client final / adhérent).
@@ -643,12 +655,12 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-  figure 7
+  image 7
 
 
 **7. Visualisation d’un rapport.**
 
- Chaque rapport peut-être soit visualisé sous forme HTML (figure 7), soit téléchargé au format PDF. 
+ Chaque rapport peut-être soit visualisé sous forme HTML (image 7), soit téléchargé au format PDF. 
  C’est le même format PDF qui est envoyé par mail lorsque la demande de rapport quotidien est activée.
 
 
@@ -656,7 +668,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
   
-  figure 8
+  image 8
 
 
 **8. La première des deux interfaces de restauration, permet de récupérer des fichiers dans le stockage local 
@@ -664,7 +676,7 @@ utilisateurs et de leur générer des profils VPN Individuels.**
 
 
 
- Le menu Récupération (figure 8) permet d’accéder à l’historique de la première des deux formes de sauvegardes, 
+ Le menu Récupération (image 8) permet d’accéder à l’historique de la première des deux formes de sauvegardes, 
  celle des fichiers « déposés » sur le système INSPEERE Datis, 
  à l’aide de protocoles tels que Samba, Rsync, FTP, NFS, etc.
 
@@ -683,12 +695,12 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-  figure 9
+  image 9
 
 
 **9. La deuxième interface de restauration est plus spécifiquement dédiée aux sauvegardes de postes et VMs par UrBackup.**
 
- Le menu Machines Sauvegardées (figure 9) permet d ‘accéder à la deuxième interface de restauration plus spécifiquement dédiée à UrBackup. 
+ Le menu Machines Sauvegardées (image 9) permet d ‘accéder à la deuxième interface de restauration plus spécifiquement dédiée à UrBackup. 
  Elle permet d’obtenir la liste des sauvegardes de postes et VMs gérées par la système UrBackup. Le bouton d’action en bout de ligne permet 
  d’accéder plus spécifiquement aux sauvegardes d’un poste en particulier.
  Il est important de noter que cette interface est complémentaire de l’interface fournie par le système UrBackup. 
@@ -708,12 +720,12 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-  figure 10
+  image 10
 
 
 **10. Navigation dans les sauvegardes images UrBackup d’un poste en particulier.**
 
- En cliquant sur le bouton d’action à fin de la ligne correspondant à un poste sauvegardé (figure 9), 
+ En cliquant sur le bouton d’action à fin de la ligne correspondant à un poste sauvegardé (image 9), 
  on obtient la liste des sauvegardes de type image et de type fichier de UrBackup. Pour chaque instantané de sauvegarde de type image, 
  il est possible d’ouvrir une nouvelle  page de détails spécifique à cet instantané (bouton action en fin de ligne sur la figure 10).
 
@@ -722,13 +734,13 @@ utilisateurs et de leur générer des profils VPN Individuels.**
   :width: 480px
   :align: center
 
-  figure 11
+  image 11
 
 
 **11.Ouverture d’un instantané de volume du poste sauvegardé.**
 
  Lorsque le volume explorer correspond à une partition d’origine (disque C, D, ...), il est possible de « monter » l’image 
- afin d’accéder à son contenu (figure 11). Il est alors possible d’explorer le contenu de l’image et d’en télécharger 
+ afin d’accéder à son contenu (image 11). Il est alors possible d’explorer le contenu de l’image et d’en télécharger 
  des fichier à l’aide des boutons d’action en fin de ligne.
 
  Il est important de noter que toute cette séquence d’ouverture est très rapide, car grâce au stockage ZFS, 
@@ -742,7 +754,7 @@ Tableau de bord de supervision centralisé
   :width: 480px
   :align: center
 
-  figure 1
+  image 1
 
 **1. La zone supérieure du tableau de bord présente un « cartouche » par serveur. Chaque cartouche est une matrice 3x2 d’indicateurs de couleur. 
 La zone suivante offre un niveau de détail plus élevé. Elle constituée d’une série de lignes d’indicateurs, les « one-liner », une pour chaque serveur.**
@@ -764,7 +776,7 @@ La zone suivante offre un niveau de détail plus élevé. Elle constituée d’u
   :width: 480px
   :align: center
 
-  figure 2
+  image 2
 
 **2. En faisant défiler la page vers le bas, on atteint la zone centrale du tableau de bord, avec les indicateurs système de chaque serveur.
 Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler la page pour obtenir les même indicateurs avec les serveurs suivants.**
@@ -781,7 +793,7 @@ Ici la figure présente les indicateurs pour un serveur. Il faut faire défiler 
   :width: 480px
   :align: center
 
-  figure 3
+  image 3
 
 **3. En faisant encore défiler jusqu’en bas de la page du tableau de bord, on atteint la zone concernant l’état des sauvegardes UrBackup
 sur chacun des serveurs. Les informations présentées sont les mêmes que celles présentées sur la console UrBackup, mais regroupées

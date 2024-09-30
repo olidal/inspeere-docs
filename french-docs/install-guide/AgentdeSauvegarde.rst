@@ -15,13 +15,13 @@ Donnez l'autorisation à l'application d'installation d'apporter des
   :width: 480px
   :align: center
 
-  image 3
+  image 1
 
 .. figure:: Urbackup_Installer_Bienvenue.png
   :width: 480px
   :align: center
 
-  image 4
+  image 2
 
 Une fois l'application installée, le menu de configuration s'ouvre automatiquement:
 
@@ -29,7 +29,7 @@ Une fois l'application installée, le menu de configuration s'ouvre automatiquem
   :width: 480px
   :align: center
 
-  image 5
+  image 3
 
 Acceptez les choix par défaut, vous pourrez de toutes façon les changer par
 l'interface de supervision de la Datis.
