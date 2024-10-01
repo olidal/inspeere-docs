@@ -896,12 +896,83 @@ Choisir enfin le fichier recherché et cliquer le la flèche de téléchargement
 
 
 
-2.3 Serveur de fichiers (SMB)
------------------------------
+6. Serveur de fichiers (SMB)
+============================
 
 Types de Partages
 ^^^^^^^^^^^^^^^^^
 
+.. panels::
+  :header: text-center
+  :column: col-lg-12
+
+  Deux types de partages :
+  Le premier est collectif (Tout le monde peut partager un dossier Commun)
+  Le deuxième est individuel et dépend de la création d'un utilisateur dans DatisAdmin
+
+** Premier cas de figure:**
+
+.. figure:: ./Figures_SMB/SMB_commun2_a.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+** Comme le montre cette première photo il faut créer un lecteur réseau en faisant un clic droit
+  sur l'icône "Ce PC" puis, de choisir "Connecter un lecteur réseau..."**
+
+
+.. figure:: ./Figures_SMB/SMB_commun2_b.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+** Déterminer la lettre de lecteur et le chemin d'accès au dossier partagé
+   l'adresse est sous la forme \\smb.xxxx.inspee.re\commun où xxxx représente les 4 digits de l'adresse MAC
+   de votre Datis.**
+
+
+.. figure:: ./Figures_SMB/SMB_commun2_c.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+** Deuxième cas de figure:**
+
+.. figure:: ./Figures_SMB/SMB_commun_1.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+** Procéder de façon identique à la première partie (Clic droit sur "Ce PC")
+   Ensuite "Connecter un lecteur réseau..."**
+
+.. figure:: ./Figures_SMB/SMB_commun2_aa.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+** La différence se fait dans le choix du chemin réseau qui se présentera sous cette forme :
+   \\smb.xxxx.inspee.re\<nom_de_l'utilisateur>**
+
+
+.. figure:: ./Figures_SMB/SMB_commun2_bb.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+** Chacun a accès à un dossier personnel.**
+
+
+  
 Partages avec sauvegardes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
