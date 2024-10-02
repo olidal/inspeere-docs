@@ -1,4 +1,4 @@
-3. Résolution de problèmes
+7. Résolution de problèmes
 ==========================
 
 Accès VPN depuis MacOS
@@ -260,11 +260,16 @@ Restoration granulaire en local
   :width: 480px
   :align: center
 
+  image 1
+
+
 **Choisir une image dans la liste proposée et cliquer sur l'oeil tout à droite (Explorer)**
 
 .. figure:: ./Figures2/Selection_013.png
   :width: 480 px
   :align: center
+
+  image 2
 
 
 **Il faut ensuite "Monter" l'image pour avoir accès à son contenu.**
@@ -273,12 +278,16 @@ Restoration granulaire en local
   :width: 480px
   :align: center
 
+  image 3
+
 
 **Après quoi il suffit donc d'explorer et de sélectionner un dossier (Ici il a été choisi "Users")**
 
 .. figure:: ./Figures2/Selection_015.png
   :width: 480px
   :align: center
+
+  image 4
 
 
 **User name (Ici Anakin)**
@@ -287,12 +296,16 @@ Restoration granulaire en local
   :width: 480px
   :align: center
 
+  image 5
+
 
 **Et enfin de choisir un dossier à restaurer.**
 
 .. figure:: ./Figures2/Selection_017.png
   :width: 480px
   :align: center
+
+  image 6
 
 
 **Puis de le télécharger.**
@@ -301,7 +314,7 @@ Restoration granulaire en local
   :width: 480px
   :align: center
 
-  Bottom file  
+  image 7  
 
 
 Restoration locale à partir de la sauvegarde O365
@@ -327,8 +340,8 @@ Restoration locale à partir de la sauvegarde O365
 
 
 
-Restoration Datis complète depuis sauvegarde distante
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restauration Datis complète depuis sauvegarde distante
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Pour cette opération vous aurez besoin des éléments suivants:
 
@@ -384,7 +397,7 @@ L'opération de restauration est très simple:
    Cette page devient accessible après environ 10-15 minutes d'installation
    (astuce: patientez tant que les indicateurs d'activité des disques sont allumés) 
 
-5. Renseignez les champs du formulaire de erstoration avec les informations demandées 
+5. Renseignez les champs du formulaire de restauration avec les informations demandées 
    (clefs d'activation, clef de déchiffrement des disques, mot de passe administrateur)
 
 6. Patientez jusqu'à la réception des messages de fin de restauration ET d'installation des des services (au minimum deux messages):
@@ -393,14 +406,14 @@ L'opération de restauration est très simple:
    * Sauvegarde des postes
    * Autres services en option (p. ex Nextcloud)
       La durée de la restauration est de 40 mins minimum pour rétablir l'ensemble des services.
-      Elle dépend du volume de données et de la bande passant disponible.
+      Elle dépend du volume de données et de la bande passante disponible.
       Sur une connexion Internet par fibre Gbit, la vitesse de restauration sera au maximum de 110GO/h.
       Néanmoins, sur une connexion partagée, le débit est souvent moindre.  
 
 
 .. note::
     Pour les clients qui n'ont pas une bande passante suffisante, Inspeere  ou 
-    votre prestataire peuvent vous fournir un service de restoration à 
+    votre prestataire peuvent vous fournir un service de restauration à 
     partir de leur réseau.
 
     Dans ce cas vous recevez une Datis pré-restaurée mais chiffrée, dans laquelle il 
@@ -417,53 +430,79 @@ La procédure de reconfiguration est très simple, en 9 étapes:
 1. Ouvrir le menu paramètres
 
 .. figure:: 1_menu_paramètres.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 1
 
 2. Cliquer sur Mise à jour et sécurité
 
 .. figure:: 2_mises_a_jour_et_securite.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 2
+
 
 3. Cliquer à gauche sur Sécurité windows
 
 .. figure:: 3_securite_windows.png 
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 3
+
 
 4. Cliquer sur Pare-feu et protection réseau
 
 .. figure:: 4_parefeux.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 4
+
 
 5. Cliquer sur la ligne 'Autoriser une application via le pare-feu'
 
 .. figure:: 5_autoriser_app_parefeux.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 5
+
 
 6. Cliquer sur le bouclier 'Modifier les paramètres'
 
 .. figure:: 6_modifier_parametres.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 6
+
 
 7. Faire défiler et sélectionner la ligne 'UrBackupClientBackend' 
 
 .. figure:: 7_ligne_urbackup.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
 
-8. Cocher les cases pour activer les deux profiles privé et public
+  image 7
+
+
+8. Cocher les cases pour activer les deux profils privé et public
 
 .. figure:: 8_cocher_les_cases.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 8
+
 
 9. Cliquer sur Ok pour valider
 
 .. figure:: 9_cliquer_ok_valider.png
-   :width: 480px
-   :align: center
+  :width: 480px
+  :align: center
+
+  image 9
+

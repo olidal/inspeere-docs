@@ -910,7 +910,7 @@ Types de Partages
   Le premier est collectif (Tout le monde peut partager un dossier Commun)
   Le deuxième est individuel et dépend de la création d'un utilisateur dans DatisAdmin
 
-** Premier cas de figure:**
+**Premier cas de figure:**
 
 .. figure:: ./Figures_SMB/SMB_commun2_a.png
   :width: 480px
@@ -918,8 +918,8 @@ Types de Partages
 
   image 1
 
-** Comme le montre cette première photo il faut créer un lecteur réseau en faisant un clic droit
-  sur l'icône "Ce PC" puis, de choisir "Connecter un lecteur réseau..."**
+**Comme le montre cette première photo il faut créer un lecteur réseau en faisant un clic droit
+sur l'icône "Ce PC" puis, de choisir "Connecter un lecteur réseau..."**
 
 
 .. figure:: ./Figures_SMB/SMB_commun2_b.png
@@ -928,9 +928,9 @@ Types de Partages
 
   image 2
 
-** Déterminer la lettre de lecteur et le chemin d'accès au dossier partagé
-   l'adresse est sous la forme \\smb.xxxx.inspee.re\commun où xxxx représente les 4 digits de l'adresse MAC
-   de votre Datis.**
+**Déterminer la lettre de lecteur et le chemin d'accès au dossier partagé
+l'adresse est sous la forme \\smb.xxxx.inspee.re\commun où xxxx représente les 4 digits de l'adresse MAC
+de votre Datis.**
 
 
 .. figure:: ./Figures_SMB/SMB_commun2_c.png
@@ -940,7 +940,7 @@ Types de Partages
   image 3
 
 
-** Deuxième cas de figure:**
+**Deuxième cas de figure:**
 
 .. figure:: ./Figures_SMB/SMB_commun_1.png
   :width: 480px
@@ -949,8 +949,8 @@ Types de Partages
   image 1
 
 
-** Procéder de façon identique à la première partie (Clic droit sur "Ce PC")
-   Ensuite "Connecter un lecteur réseau..."**
+**Procéder de façon identique à la première partie (Clic droit sur "Ce PC")
+Ensuite "Connecter un lecteur réseau..."**
 
 .. figure:: ./Figures_SMB/SMB_commun2_aa.png
   :width: 480px
@@ -958,8 +958,8 @@ Types de Partages
 
   image 2
 
-** La différence se fait dans le choix du chemin réseau qui se présentera sous cette forme :
-   \\smb.xxxx.inspee.re\<nom_de_l'utilisateur>**
+**La différence se fait dans le choix du chemin réseau qui se présentera sous cette forme :
+\\smb.xxxx.inspee.re\<nom_de_l'utilisateur>**
 
 
 .. figure:: ./Figures_SMB/SMB_commun2_bb.png
@@ -969,12 +969,8 @@ Types de Partages
   image 3
 
 
-** Chacun a accès à un dossier personnel.**
+**Chacun a accès à un dossier personnel.**
 
-
-  
-Partages avec sauvegardes
-^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Partages et Nextcloud
 ^^^^^^^^^^^^^^^^^^^^^
@@ -999,6 +995,8 @@ Output:
 Password for hsolo@//192.168.113.99/hsolo/:``<Entrer le mot de passe>``
 
 mount.cifs kernel mount options: ip=192.168.113.99,unc=\\192.168.113.99\hsolo,user=hsolo,pass=********
+
+
 Pour vérifier que les dossiers sont bien synchronisés créer un dossier "Titi" dans Nextcloud
 
 .. figure:: ./Figures_SMB/Selection_003.png
@@ -1010,8 +1008,8 @@ Pour vérifier que les dossiers sont bien synchronisés créer un dossier "Titi"
 
 .. code-block:: bash
 
-
   root@skywalker:/home/luke/Documents#cd SMB
+
 
 .. code-block:: bash
 
@@ -1019,14 +1017,21 @@ Pour vérifier que les dossiers sont bien synchronisés créer un dossier "Titi"
   luke@skywalker:~/Documents/SMB$ ls
 
 **Output:**
-Documents   Modèles  'Nextcloud intro.mp4'  'Nextcloud Manual.pdf'   Nextcloud.png   
-NOBACKUP   Photos   Readme.md  'Reasons to use Nextcloud.pdf'   Talk   ``Titi`` 
+Documents   Modèles  'Nextcloud intro.mp4'  'Nextcloud Manual.pdf'   Nextcloud.png
+NOBACKUP   Photos   Readme.md  'Reasons to use Nextcloud.pdf'   Talk   ``Titi``
 
-2.4 Option Nextcloud
---------------------
+  
+Partages avec sauvegardes
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Option Nextcloud
+^^^^^^^^^^^^^^^^
+
 
 Fonctionalités par défaut
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Espace de partage (dossier COMMUN)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
