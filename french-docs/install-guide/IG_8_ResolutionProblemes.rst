@@ -1,4 +1,4 @@
-7. Résolution de problèmes
+8. Résolution de problèmes
 ==========================
 
 Accès VPN depuis MacOS

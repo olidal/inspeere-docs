@@ -15,7 +15,7 @@ Documentation Inspeere
    :maxdepth: 3
 
    user-guide/UsersGuide
-   install-guide/InstallGuide
+   install-guide/IG_0_InstallGuide
 
 
 
