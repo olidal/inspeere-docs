@@ -100,8 +100,8 @@ sur la page d'accueil de l'interface de gestion.
 
 **Entrer le nom du PC.**
 
-Comment le trouver?:
-^^^^^^^^^^^^^^^^^^^^
+Comment trouver le nom du PC dans Windows?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. NOTE:: 
 
   Il faut simplement faire un clic droit sur l'icône "CePC" sur le bureau et de choisir "Propriétes"
@@ -124,7 +124,7 @@ Renseigner la case comme ci-dessous
   :strong:`Votre attention est requise:`
 
   Bien repérer les informations qui sont encadrées
-  car il faudra les répercuter sur le Client Urbackup du ou des PC à sauvegarder
+  car il faudra les renseigner dans le Client Urbackup du ou des PC à sauvegarder
   (image 4 et 5)
 
 

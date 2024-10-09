@@ -76,6 +76,52 @@ Ensuite "Connecter un lecteur réseau..."**
 
 **Chacun a accès à un dossier personnel.**
 
+Espace de partage (dossier COMMUN)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. panels::
+  :header: text-center
+  :column: col-lg-12
+
+  A propos du dossier commun
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Après avoir créé des utilisateurs dans la DatisAdmin :ref:`gestion_des_utilisateurs` ceux-ci ont accès au
+  dossier ``COMMUN``.
+  Le dossier commun est à la fois visible sur le PC en local et dans le serveur Nextcloud. Etant synchronisés
+  tout ce qu'un utilisateur créera dans le dossier commun le sera aussi dans le même dossier Nextcloud
+  ...et inversement!
+
+
+.. figure:: ./Figures_SMB/SMB_1.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+
+.. figure:: ./Figures_SMB/SMB_2.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+.. figure:: ./Figures_SMB/SMB_3.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+**Un dossier nommé OWEN LARS créé dans le dossier COMMUN du PC est synchonisé dans Nextcloud**
+
+.. figure:: ./Figures_SMB/SMB_4.png
+  :width: 480px
+  :align: center
+
+  image 4
+
 
 Partages et Nextcloud
 ^^^^^^^^^^^^^^^^^^^^^
@@ -137,51 +183,6 @@ Option Nextcloud
 Fonctionalités par défaut
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
-Espace de partage (dossier COMMUN)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. panels::
-  :header: text-center
-  :column: col-lg-12
-
-  A propos du dossier commun
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Après avoir créé des utilisateurs dans la DatisAdmin :ref:`gestion_des_utilisateurs` ceux-ci ont accès au
-  dossier ``COMMUN``.   
-  Le dossier commun est à la fois visible sur le PC en local et dans le serveur Nextcloud. Etant synchronisés
-  tout ce qu'un utilisateur créera dans le dossier commun le sera aussi dans le même dossier Nextcloud
-  ...et inversement!
-
-
-.. figure:: ./Figures_SMB/SMB_1.png
-  :width: 480px
-  :align: center
-
-  image 1
-
-
-
-.. figure:: ./Figures_SMB/SMB_2.png
-  :width: 480px
-  :align: center
-
-  image 2
-
-
-.. figure:: ./Figures_SMB/SMB_3.png
-  :width: 480px
-  :align: center
-
-  image 3
-
-
-**Un dossier nommé OWEN LARS créé dans le dossier COMMUN du PC est synchonisé dans Nextcloud**
-
-.. figure:: ./Figures_SMB/SMB_4.png
-  :width: 480px
-  :align: center
-
-  image 4
+**En construction**
 
 
