@@ -179,6 +179,16 @@ Partages avec sauvegardes
 Option Nextcloud
 ^^^^^^^^^^^^^^^^
 
+.. panels::
+  :header: text-center
+  :column: col-lg-12
+
+  A propos de l'option Nextcloud
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Il est possible d'avoir ce service dans votre Datis. Si vous avez besoin de mieux connaître son utilisation veuillez suivre
+  le lien officiel https://nextcloud.com/ .
+  Vous y trouverez toutes les informations nécessaires pour vous familiariser avec le produit
+
 
 Fonctionalités par défaut
 ^^^^^^^^^^^^^^^^^^^^^^^^^
