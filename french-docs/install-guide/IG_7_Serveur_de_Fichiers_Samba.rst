@@ -172,8 +172,8 @@ Documents   Modèles  'Nextcloud intro.mp4'  'Nextcloud Manual.pdf'   Nextcloud.
 NOBACKUP   Photos   Readme.md  'Reasons to use Nextcloud.pdf'   Talk   ``Titi``
 
   
-Partages avec sauvegardes
-^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Partages avec sauvegardes
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 Option Nextcloud
@@ -190,8 +190,8 @@ Option Nextcloud
   Vous y trouverez toutes les informations nécessaires pour vous familiariser avec le produit
 
 
-Fonctionalités par défaut
-^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Fonctionalités par défaut
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **En construction**
 
