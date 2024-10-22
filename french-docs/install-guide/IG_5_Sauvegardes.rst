@@ -20,55 +20,31 @@
 
   La configuration du client Urbackup nécessite tout d'abord le téléchargement de ce dernier
   à l'adresse indiquée (Téléchargement:  `ICI <https://hndl.urbackup.org/Client/2.5.25/UrBackup%20Client%202.5.25.exe>`_)
-  Lancer l'installation et paramétrer comme suit :
+  Lancer l'installation par défaut, tout les paramètres de sauvegardes seront effectués à partir du Serveur Urbackup
 
 
 
-Paramétrage du Client
----------------------
+Installation du Client
+----------------------
 
-**Clic droit sur l'icône (voir encadré sur l'image).**
+**Lancement de l'installation**
 
-.. figure:: ./Figures2/urb_client.png
+.. figure:: ./Figures2/Client_Urbackup_Default_0.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+**Fin de l'installation**
+
+.. figure:: ./Figures2/Client_Urbackup_Default_1.png
   :width: 480px
   :align: center
   
-  figure 1
+  image 2
 
 
-**Choisir settings.**
-
-.. figure:: ./Figures2/urb_client_.png
-  :width: 480px
-  :align: center
-
-  figure 2
-
-
-**Sélectionner les fichiers à sauvegarder et ceux à exclure.**
-
-.. figure:: ./Figures2/urb_client_1.png
-  :width: 480px
-  :align: center
-
-  figure 3
-
-
-**Indiquer le volume C pour la sauvegarde image du système.**
-
-.. figure:: ./Figures2/urb_client_2.png
-  :width: 480px
-  :align: center
-
-  figure 4
-
-**Puis le créneau horaire et journalier.**
-
-.. figure:: ./Figures2/urb_client_3.png
-  :width: 480px
-  :align: center
-
-  figure 5
 
 
 .. _config_client_timemachine:
