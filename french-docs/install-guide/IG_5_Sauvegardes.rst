@@ -24,26 +24,8 @@
 
 
 
-Installation du Client
-----------------------
-
-**Lancement de l'installation**
-
-.. figure:: ./Figures2/Client_Urbackup_Default_0.png
-  :width: 480px
-  :align: center
-
-  image 1
-
-
-**Fin de l'installation**
-
-.. figure:: ./Figures2/Client_Urbackup_Default_1.png
-  :width: 480px
-  :align: center
-  
-  image 2
-
+Voir Agents de sauvegarde
+-------------------------
 
 
 

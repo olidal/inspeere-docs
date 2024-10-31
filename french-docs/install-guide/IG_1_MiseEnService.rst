@@ -488,7 +488,7 @@ Les adresses entre 200 et 250 sont généralement de bons choix.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Les mesures de sécurité sont variables d'un site d'installation à un autre. Dans 
-les environnements les plus stricts, les connexions sortantes sont systèmatiquement 
+les environnements les plus stricts, les connexions sortantes sont systématiquement 
 bloquées ou relayées par un *proxy* filtrant.
 
 Dans ce cas, il faut configurer le Firewall (ou le faire configurer) afin de "défiltrer" 

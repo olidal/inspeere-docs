@@ -1,6 +1,24 @@
 8. Résolution de problèmes
 ==========================
 
+Réinitialisation du mot de passe IPMI
+-------------------------------------
+
+Il faut créer une clé bootable avec SystemRescue.
+(Suivre ce lien: `SystemRescue Download <https://www.system-rescue.org/Download>`_)
+ 
+- Booter dessus
+ 
+- Utiliser la commande suivante :
+
+.. code-block:: bash
+
+  $ ipmitool user set password <admin>
+
+
+- Entrer un nouveau mot de passe
+
+
 Accès VPN depuis MacOS
 ----------------------
 
