@@ -1,14 +1,10 @@
-
 .. role:: red
 
-4. Configuration du Système DATIS
-=================================
+6. Gestion du Matériel
+======================
 
-Opérations courantes :
-
- 
-Fonction IPMI de la DATIS
-^^^^^^^^^^^^^^^^^^^^^^^^^
+6.1 Fonction IPMI de la DATIS
+-----------------------------
 
 .. NOTE::
 

@@ -1,11 +1,10 @@
+.. role:: red
 
-
-
-7. Serveur de fichiers (SMB)
+8. Serveur de fichiers (SMB)
 ============================
 
-Types de Partages
-^^^^^^^^^^^^^^^^^
+8.1 Types de Partages
+---------------------
 
 .. panels::
   :header: text-center

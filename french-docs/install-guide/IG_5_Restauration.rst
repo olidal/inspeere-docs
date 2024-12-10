@@ -1,115 +1,164 @@
-8. Résolution de problèmes
-==========================
+.. role:: red
 
-Réinitialisation du mot de passe IPMI
--------------------------------------
+5. Restaurations
+================
 
-Il faut créer une clé bootable avec SystemRescue.
-(Suivre ce lien: `SystemRescue Download <https://www.system-rescue.org/Download>`_)
+
+5.1 Restauration dans le stockage local
+---------------------------------------
+
+Le menu Récupération (image 8) permet d'accéder à l'historique de la première des deux 
+formes de sauvegardes, celle des fichiers « déposés » sur le système INSPEERE Datis, 
+à l'aide de protocoles tels que Samba, Rsync, FTP, NFS, etc.
+
+Le système DATIS prend des instantanés ZFS de l'état du stockage fichier selon la politique 
+de rétention locale planifiée. Cette politique est configurable, avec une granularité variable. 
+Par exemple il est possible de prendre un instantané toutes les 5 minutes pendant 1 heure, 
+puis un toutes les heures pendant 24h, puis un par jour pendant 30j, puis un par semaine 
+pendant 3 mois, etc.
+
+Une fois l'intervalle de recherche affiné (barre de sélection encadrée en rouge au milieu, 
+figure 8), il suffit de cliquer sur le bouton explorer pour accéder à l'explorateur des 
+instantanés et récupérer le fichier ou dossier voulu. 
+La restitution se fait alors soit en écrasant le contenu actuel, soit a côté en ajoutant 
+la date de l’instantané en suffixe du nom de fichier/dossier. 
+
+
+.. figure:: ./Figures/9_DatisAdmin_Urbackup_Liste_Annot.png
+  :width: 480px
+  :align: center
+
+  image 9
+
+
+5.2 Restauration depuis les sauvegardes UrBackup
+------------------------------------------------
+
+ Le menu Machines Sauvegardées (image 9) permet d'accéder à la deuxième interface de 
+ restauration plus spécifiquement dédiée à UrBackup. 
+ Elle permet d'obtenir la liste des sauvegardes de postes et VMs gérées par la système 
+ UrBackup. Le bouton d'action en bout de ligne permet d'accéder plus spécifiquement aux 
+ sauvegardes d'un poste en particulier.
+
+ Il est important de noter que cette interface est complémentaire de l'interface fournie 
+ par le système UrBackup. Elle fournit la fonction de restauration granulaire, qui 
+ n'est pas disponible autrement par l'interface de UrBackup.
+
+ La restauration granulaire consiste à permettre l'ouverture d'un instantané d'Image 
+ disque pour en extraire un fichier. Elle est rendue possible grâce à l'utilisation du 
+ backend ZFS avec UrBackup.
  
-- Booter dessus
- 
-- Utiliser la commande suivante :
+ Ce backend permet de proposer avec UrBackup une sauvegarde incrémentale perpétuelle, 
+ dans laquelle chaque incrément de sauvegarde contient le contenu d'une sauvegarde image 
+ complète, mais ne requiert que l'espace supplémentaire d'un incrément. 
 
-.. code-block:: bash
-
-  $ ipmitool user set password <admin>
-
-
-- Entrer un nouveau mot de passe
+ Avec cette forme de sauvegarde, les techniques de sauvegardes complètes,  « full 
+ synthetique », ou incrémentales inversée deviennent totalement inutiles : l'espace 
+ disque occupé est minimal, et il est possible de réduire le nombre d'instantanés 
+ en supprimant n'importe le(s)quel(s), en fonction des objectifs de la politique de rétention.
 
 
-Accès VPN depuis MacOS
-----------------------
+.. figure:: ./Figures/10_DatisAdmin_Urbackup_ListeOne.png
+  :width: 480px
+  :align: center
 
-Les dernières versions de MacOS **imposent** l'utilisation de IPv6 quand cette option est disponible.
+  image 10
 
-En effet, si vous accédez à internet par un opeerateur qui fournit un accès IPv6, l'interface de 
-configuration réseau de votre MAC ne vous permet pas de désactiver IPv6 pour basculer
-sur IPv4 seul.
 
-Or l'accès OpenVPN de votre DATIS ne fonctionne qu'avec IPv4.
+a. Navigation dans les sauvegardes UrBackup d'un poste en particulier
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Pas panique, une solution existe, il suffit d'ouvrir un terminal de commande 
-(Application Utilitaires/Terminal) et de taper l'une des commandes suivantes 
-selon votre mode de connexion:
+ En cliquant sur le bouton d'action à fin de la ligne correspondant à un poste sauvegardé (image 9), 
+ on obtient la liste des sauvegardes de type image et de type fichier de UrBackup. Pour chaque instantané de sauvegarde de type image, 
+ il est possible d'ouvrir une nouvelle  page de détails spécifique à cet instantané (bouton action en fin de ligne sur la figure 10).
 
-1. Connexion Wi-Fi
 
-   .. code-block:: bash
-      
-      sudo -setv6off Wi-Fi
+.. figure:: ./Figures/11_DatisAdmin_UrBackup_ExploreImg_Annot.png
+  :width: 480px
+  :align: center
 
-2. Connexion cablée Ethernet
+  image 11
 
-   .. code-block:: bash
 
-      sudo -setv6off Ethernet
+b. Ouverture d'un instantané de volume du poste sauvegardé
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Si vous êtes connectés simultanément avec les deux modes d'accès, exécutez les deux commandes.
+ Lorsque le volume explorer correspond à une partition d’origine (disque C, D, ...), il est possible de « monter » l’image 
+ afin d’accéder à son contenu (image 11). Il est alors possible d’explorer le contenu de l’image et d’en télécharger 
+ des fichier à l’aide des boutons d’action en fin de ligne.
 
-NB1: Ces commandes doivent être exécutées depuis un compte administrateur 
-du Mac, et vous demanderont de saisir votre mot de passe admin.
-
-NB2: Si vous n'êtes pas connectés avec le compte administrateur, vous n'avez pas besoin de 
-fermer votre session, ajoutez simplement l'option `-u`` suivie du nom de l'utilisateur avec les droits d'admin. 
-Par exemple si l'utilisateur avec droit d'admin est `macadmin` alors tapez la commande suivante pour un mode de connexion Wi-Fi:
-
-.. code-block:: bash
-
-   sudo -u macadmin -setv6off Wi-Fi
+ Il est important de noter que toute cette séquence d’ouverture est très rapide, car grâce au stockage ZFS, 
+ l’accès au contenu d’un instantané ne requiert aucune phase de reconstruction/consolidation : en pratique, 
+ chaque instantané est une sauvegarde complète, immédiatement disponible.
 
 
 
-Sauvegardes TimeMachine (sur MAC)
----------------------------------
-
-Accélérer la première sauvegarde qui prend des heures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Par défaut TimeMachine fonctionne avec une priorité très basse de façon (supposément) à ne pas gêner les autres activités de l'utilisateur sur le MAC.
-
-En fait, cette stratégie est héritée d'une époque révolue où les MAC n'avaient pas encore de disques SSD, et où les accès au disque, très lents, étaient très pénalisant.
-
-Pour désactiver cette stratégie au moins jusqu'au prochain démarrage (où elle reviendra automatiquement), il suffit de taper la commande suivante dans un Terminal (l'application Terminal se trouve dans le sous-dossier 'Utilitaires' du dossier 'Applications') :
-
-.. code-block:: bash
-
-   sudo sysctl debug.lowpri_throttle_enabled=0
-
-La vitesse de sauvegarde doit alors augmenter de façon spectaculaire...
-
-Sauvegarde sur une connexion VPN
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-La procédure de configuration par défaut, sans VPN, utilise le protcole "Bonjour" pour détecter le volume TimeMachine de la Datis.
-Malheureusement, ce protocole ne fonctionne que dans le périmètre du domaine de diffusion de votre réseau local.
-
-En clair, cela signifie que votre volume TimeMachine *par défaut* n'est pas accessible lors d'une connexion VPN.
-
-Heureusement, il y a une solution assez simple, il suffit d'une commande dans un terminal pour résoudre le problème:
-
-.. code-block:: bash
-
-   sudo tmutil setdestination -ap smb://<login>@<ipdatis_par_vpn>/TimeMachine-<mac4>
 
 
-En n'oubliant pas de remplacer les valeurs entre <> (les <> ne doivent pas être conservés):
+c. Restauration Granulaire
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  * ``login`` : votre identifiant d'utilisateur **sur la DATIS** 
-  * ``ipdatis_par_vnp`` : si vous utilisez le serveur VPN embarqué de votre DATIS, ça sera toujours 10.147.13.111 
-  * ``mac4``: l'identifiant à 4 caractères de la DATIS
-
-
-Cette commande ajoute un nouveau volume TimeMachine, qui lui sera bien accessible par VPN... et même seulement par VPN si vous utilisez le VPN embarqué de la Datis.
-Ensuite, TimeMachine sait parfaitement gérer plusieurs volume, et utiliser ceux qui sont disponibles en fonction du moment.
+**Grâce à DatisAdmin, cette opération est simple :**
+Dans l'onglet "Machines sauvegardées" de DatisAdmin cliquer sur l'explorateur (l'oeil) d'une machine
 
 
-Procédures de Restauration
---------------------------
+.. figure:: ./Figures/DatisAdmin_restor1.png
+  :width: 480px
+  :align: center
+  
+  image 1
 
-Restauration locale à partir de la sauvegarde de niveau 1
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Repérer le disque "C" qui contient tous vos fichiers et dossiers
+
+.. figure:: ./Figures/DatisAdmin_restor2.png
+  :width: 480px
+  :align: center
+  
+  image 2
+
+
+Cliquer ensuite sur le bouton "MONTER"
+
+.. figure:: ./Figures/DatisAdmin_restor3.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+Utiliser le menu déroulant jusqu'à l'utilisateur
+
+.. figure:: ./Figures/DatisAdmin_restor4.png
+  :width: 480px
+  :align: center
+
+  image 4
+
+
+.. figure:: ./Figures/DatisAdmin_restor5.png
+  :width: 480px
+  :align: center
+
+  image 5
+
+
+Choisir enfin le fichier recherché et cliquer le la flèche de téléchargement
+
+.. figure:: ./Figures/DatisAdmin_restor6.png
+  :width: 480px
+  :align: center
+
+  image 6
+
+
+
+
+5.3 Procédures de Restauration
+------------------------------
+
+a. Restauration locale à partir de la sauvegarde de niveau 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 La restauration de fichiers à partir de la sauvegarde de 
 niveau 1 se fait à partir du menu sauvegarde de l'interface DatisAdmin.
@@ -140,8 +189,8 @@ Elle se passe en cinq étapes:
       afin qu'il n'écrase pas la version existante
 
 
-Restauration locale d'une image système à partir de la sauvegarde UrBackup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+b. Restauration locale d'une image système à partir de la sauvegarde UrBackup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. NOTE::
   C'est une procédure relativement simple qui se déroule en 3 étapes:
   Créer une clé de restauration bootable
@@ -264,8 +313,8 @@ L'image ci-dessous montre la reprise des sauvegardes par le client Urbackup
 
  
 
-Restoration granulaire en local
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+c. Restoration granulaire en local
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE::
   Datis Admin permet désormais la restauration de fichiers à partir de l'image 
@@ -335,8 +384,8 @@ Restoration granulaire en local
   image 7  
 
 
-Restoration locale à partir de la sauvegarde O365
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+d. Restoration locale à partir de la sauvegarde O365
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE::
   Ce paragraphe fait référence a la dernière partie intitulée : Sauvegarde Office 365
@@ -358,8 +407,8 @@ Restoration locale à partir de la sauvegarde O365
 
 
 
-Restauration Datis complète depuis sauvegarde distante
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+e. Restauration Datis complète depuis sauvegarde distante
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Pour cette opération vous aurez besoin des éléments suivants:
 
@@ -436,91 +485,4 @@ L'opération de restauration est très simple:
 
     Dans ce cas vous recevez une Datis pré-restaurée mais chiffrée, dans laquelle il 
     ne reste plus qu'à insérer la clef de déchiffrement.
-
-
-.. _reconfigurer_le_pare_feu:
-
-Reconfigurer le pare-feux Windows après installation d'un agent UrBackup
-------------------------------------------------------------------------
-
-La procédure de reconfiguration est très simple, en 9 étapes:
-
-1. Ouvrir le menu paramètres
-
-.. figure:: 1_menu_paramètres.png
-  :width: 480px
-  :align: center
-
-  image 1
-
-2. Cliquer sur Mise à jour et sécurité
-
-.. figure:: 2_mises_a_jour_et_securite.png
-  :width: 480px
-  :align: center
-
-  image 2
-
-
-3. Cliquer à gauche sur Sécurité windows
-
-.. figure:: 3_securite_windows.png 
-  :width: 480px
-  :align: center
-
-  image 3
-
-
-4. Cliquer sur Pare-feu et protection réseau
-
-.. figure:: 4_parefeux.png
-  :width: 480px
-  :align: center
-
-  image 4
-
-
-5. Cliquer sur la ligne 'Autoriser une application via le pare-feu'
-
-.. figure:: 5_autoriser_app_parefeux.png
-  :width: 480px
-  :align: center
-
-  image 5
-
-
-6. Cliquer sur le bouclier 'Modifier les paramètres'
-
-.. figure:: 6_modifier_parametres.png
-  :width: 480px
-  :align: center
-
-  image 6
-
-
-7. Faire défiler et sélectionner la ligne 'UrBackupClientBackend' 
-
-.. figure:: 7_ligne_urbackup.png
-  :width: 480px
-  :align: center
-
-  image 7
-
-
-8. Cocher les cases pour activer les deux profils privé et public
-
-.. figure:: 8_cocher_les_cases.png
-  :width: 480px
-  :align: center
-
-  image 8
-
-
-9. Cliquer sur Ok pour valider
-
-.. figure:: 9_cliquer_ok_valider.png
-  :width: 480px
-  :align: center
-
-  image 9
 

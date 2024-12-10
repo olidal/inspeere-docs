@@ -1,4 +1,4 @@
-
+.. role:: red
 
 1. Mise en Service
 ==================
@@ -15,14 +15,14 @@
 1.1 Installation du firmware DATIS
 ----------------------------------
 
-Si vous êtes distributeur, il est possible que vous ayez reçu de Inspeere ou 
+Si vous êtes partenaire revendeur, il est possible que vous ayez reçu de Inspeere ou 
 du grossiste une Datis pré-installée. Dans ce cas vous n'avez rien à faire, 
 vous pouvez passer à l'étape suivante:
 
     :ref:`activation_du_systeme_DATIS`
 
-Clef USB d'installation
-^^^^^^^^^^^^^^^^^^^^^^^
+a. Clef USB d'installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dans ce qui suit, nous supposons que disposez d'un serveur ou d'un équipement 
 nu, compatible DATIS et que vous souhaitez faire l'installation initiale du système DATIS. 
@@ -42,8 +42,8 @@ détectée comme ``/dev/sdb`` sur linux, vous utiliserez la commande suivante:
 
   $ dd if=fichier_image.iso of=/dev/sdb bs=1M
 
-Procédure d'Installation du firmware DATIS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+b. Procédure d'Installation du firmware DATIS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Pour installer le firmware DATIS, vous devez déballer le matériel, et connecter 
 le boitier DATIS au secteur ET au réseau. 
@@ -139,8 +139,8 @@ phase d'installation!
     configuration **raisonnable par défaut** lui permettant de fonctionner sans paramètrage 
     ni réglage, *out-of-the-box*.
 
-Ajustement de la configuration par défaut
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+a. Ajustement de la configuration par défaut
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 L'activation d'un système DATIS entraîne le chargement et l'application automatique
 de réglages prédéfinis contenus dans son `bundle de configuration`. 
@@ -167,15 +167,17 @@ traîtés en amont de l'installation, ou par demande explicite au support.
 Lors de sa première mise en service, la Datis récupère *automatiquement* son bundle de configuration 
 auprès d'Inspeere, et se configure de façon complètement automatique.
 
-Inspeere ne propose pas d'outil à ses distributeurs pour la gestion de bundle de 
+Inspeere ne propose pas d'outil à ses revendeurs pour la gestion de bundle de 
 configuration. Les demandes peuvent être formulées librement, par mail ou téléphone, auprès 
-du support Inspeere. Chaque distributeur ayant ses propres habitudes, Inspeere part néanmoins 
-d'une configuration type (template) spécifique à chaque distributeur, et l'ajuste ensuite en 
+du support Inspeere. Chaque revendeur ayant ses propres habitudes, Inspeere part néanmoins 
+d'une configuration type (template) spécifique à chaque revendeur, et l'ajuste ensuite en 
 fonction des demandes formulées, toujours dans le but de réduire au minimum les questions 
 liées à la configuration, et donc les risques d'erreur.
 
-Liste des réglages
-^^^^^^^^^^^^^^^^^^
+b. Liste des réglages
+^^^^^^^^^^^^^^^^^^^^^
+
+(NB: Cette section a besoin d'être actualisée.)
 
 Voici la liste des réglages qui peuvent être pris en compte au niveau du bundle de configuration:
 
@@ -233,8 +235,21 @@ est en service, par simple demande au support Inspeere:
 - désignation d'un volume ZFS alternatif pour les sauvegardes UrBackup/ZFS
 
 
-Politiques de sauvegarde Datis (niveau 1)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+c. Politiques de sauvegarde Datis (niveau 1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. dropdown:: TL;DR
+
+    La sauvegarde de niveau 1 (bas niveau), capture toutes les données qui sont 
+    stockées sur Datis. Les données capturées sont disponibles localement, 
+    sous forme de *snapshots*. C'est aussi à ce niveau que les données 
+    capturées (et leur historique) sont externalisées vers les sites distants. 
+
+    Les durées de conservation locale et externalisée sont ajustables 
+    indépendamment, selon une politique de rétention. On peut définir autant 
+    de politiques de rétention que nécessaire, et les appliquer selon les 
+    besoins à différents volumes de stockage: archives, backup, documents 
+    comptables, etc.
 
 La sauvegarde Datis de niveau 1 s'appuie sur les instantanés de ZFS. Il s'agit d'une 
 sauvegarde dite *de niveau blocs*, incrémentielle perpetuelle. Cette technologie de sauvegarde 
@@ -330,7 +345,11 @@ de sauvegarde.
 
     Il est aussi possible de créer un clone modifiable d'un instantané. Ces opérations avancées 
     de clônage et de montage ne sont pas mises à disposition des utilisateurs. Elle peuvent néanmoins
-    faire l'objet d'une demande auprès du support en cas de besoin.
+    faire l'objet d'une demande auprès du support en cas de besoin. Pour cela le support de niveau 2
+    dispose d'une bibliothèque de commandes qui permettant la manipulation et le montage 
+    des instantannés. (NB: Cette bibliothèque fonctionne en mode "Zero-Trust" avec ssh, ce qui 
+    permet de facilement déléguer la réalisation de certaines tâches spécifiques à des 
+    utilisateurs désignés et identifiés par leur clef ssh privée.)
 
     La configuration type proposée par défaut par Inspeere, implique une conservation locale sur 30 
     jours et une conservation externalisée sur 90 jours, avec un incrément toutes les 15 minutes sur 
@@ -354,18 +373,14 @@ La mise en service d'une DATIS sur le site du client suit les étapes suivantes:
 
 - :ref:`config_backup`
 
-- :ref:`config_client_urbackup`
-
-- :ref:`config_client_timemachine`
-
 - :ref:`compte_admin`
 
 .. _mise_en_place:
 
-Mise en place physique
-^^^^^^^^^^^^^^^^^^^^^^
+A/ Mise en place physique
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Le plus souvent, l'équipement est pré-installé en usine ou par le distributeur. 
+Le plus souvent, l'équipement est pré-installé en usine ou par le revendeur. 
 La mise en place physique est donc très simple, il suffit de le connecter au réseau
 interne de l'entreprise et à une source d'alimentation protégée.
 
@@ -388,12 +403,12 @@ un espace raisonnable pour la circulation d'air.
 
 Une ventilation bruyante est un signe courant de surchauffe, et souvent 
 précurseur d'une défaillance matérielle. N'hésitez pas à en avertir votre 
-distributeur.
+revendeur.
 
 .. _config_dnat:
 
-Routage du trafic entrant
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+B/ Routage du trafic entrant
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 L'équipement Inspeere Datis est un équipement ACTIF sur Internet. 
 Bien entendu, il doit impérativement pouvoir envoyer les données de sauvegarde 
@@ -410,7 +425,7 @@ en place de multiple mécanismes automatiques pour garantir que le trafic
 trouve toujours son chemin.
 
 En revanche, il y a une partie du problème que le système Datis ne peut
-pas résoudre tout seul, c'est la '*redirection DNAT*'.
+pas (encore) résoudre tout seul, c'est la '*redirection DNAT*'.
 En effet, pour être joignable sur Internet, un équipement doit 
 être litéralement *schyzophrène*: il doit avoir deux personalités, sous
 la forme de deux adresses IP: une adresse IP *publique* dans Internet, et 
@@ -431,17 +446,16 @@ Pour fonctionner dans de bonnes condition, l'appliance Inspeere doit donc
 être joignable depuis l'extranet, sur les ports suivants, à l'aide de ces 
 redirections DNAT:
 
-+---------------------+-----------+-------+---------------------------------+
-| IP origine          | port dest | proto | description                     |
-+=====================+===========+=======+=================================+
-| toutes              | 443       |  TCP  | Services extranet               |
-+---------------------+-----------+-------+---------------------------------+
-| toutes              | 1194      |  UDP  | VPN                             |
-+---------------------+-----------+-------+---------------------------------+
-| toutes              | 600-606   |  TCP  | Sauvegardes                     |
-+---------------------+-----------+-------+---------------------------------+
-| toutes              | 22        |  TCP  | Ssh (optionel, mais recommandé) |
-+---------------------+-----------+-------+---------------------------------+
++------------------+-----------+-------+-----------------------------------+
+| IP origine       | port dest | proto | description                       |
++==================+===========+=======+===================================+
+| toutes           | 443       |  TCP  | Services extranet (selon options) |
++------------------+-----------+-------+-----------------------------------+
+| toutes           | 1194      |  UDP  | VPN (en option)                   |
++------------------+-----------+-------+-----------------------------------+
+| toutes           | 600       |  TCP  | Sauvegardes (requis)              |
++------------------+-----------+-------+-----------------------------------+
+
 
 
 NB: La configuration des redirections DNAT doit être mise en place au niveau 
@@ -452,8 +466,8 @@ sur le trajet entre la box internet et l'équipement DATIS.
 
 .. _ip_statique:
 
-Affectation d'une IP statique
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C/ Affectation d'une IP statique
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le problème du routage DNAT décrit ci-dessus est qu'il est *statique* 
 (l'association entre IP publique et privée est figée), alors que 
@@ -484,8 +498,8 @@ Les adresses entre 200 et 250 sont généralement de bons choix.
 
 .. _filtrage_sortant: 
 
-(De)filtrage du trafic sortant
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+D/ (De)filtrage du trafic sortant
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Les mesures de sécurité sont variables d'un site d'installation à un autre. Dans 
 les environnements les plus stricts, les connexions sortantes sont systématiquement 
@@ -531,8 +545,8 @@ pouvoir envoyer les sauvegardes vers DATIS:
 
 .. _config_backup:
 
-Configuration de la sauvegarde de postes de travail
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E/ Configuration de la sauvegarde de postes de travail
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Comme expliqué dans cette introduction sur le :ref:`fonctionnement_sauvegarde`, 
 la sauvegarde d'Inspeere, selon les cas d'usage, peut comporter un ou deux niveaux:
@@ -598,8 +612,8 @@ du type de poste de travail ou serveur à sauvegarder:
 
 .. _config_client_windows:
 
-Configuration de la sauvegarde des postes Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+a/ Configuration de la sauvegarde des postes Windows
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 :Durée d'intervention: 
   - 1 à 5 minutes par poste windows
@@ -619,8 +633,8 @@ que la **procédure d'association**:
 
 .. _config_client_macos:
 
-Configuration backup des postes MACOS via TimeMachine
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+b/ Configuration backup des postes MACOS via TimeMachine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 :Durée d'intervention: 1 minute par poste MacOS.
 
@@ -630,8 +644,8 @@ très simplement, en six étapes décrite sur la page :ref:`config_client_timema
 
 .. _compte_admin:
 
-Création d'un compte administrateur
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+F/ Création d'un compte administrateur
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :Durée d'intervention: 1 minute.
 

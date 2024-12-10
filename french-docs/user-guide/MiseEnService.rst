@@ -4,10 +4,10 @@
 ------------------
 
 Selon la prestation d'installation retenue en collaboration avec votre 
-distributeur, votre solution Inspeere peut être livrée soit pré-installée et 
+revendeur, votre solution Inspeere peut être livrée soit pré-installée et 
 pré-activée, soit prête à être activée sur site. 
 
-Dans les deux cas votre distributeur assurera la réalisation 
+Dans les deux cas votre revendeur assurera la réalisation 
 des étapes suivantes de l'installation, dans vos locaux:
 
 * :ref:`mise_en_place`
@@ -35,7 +35,7 @@ Puis, 30mins au moins après l'étape 3 (le temps que la Datis s'auto-configure)
 
 7. Création d'un compte Administrateur : chaque DATIS embarque une interface de configuration, DatisAdmin, qui peut être jointe à partir de votre réseau local, et qui permet la créeation de comptes utilisateurs pour les différents services. L'utilisation de cette interface est décrite plus précisément ci-dessous ( :ref:`interface_datisadmin` )
 8. Configuration de la sauvegarde des postes de travail : c'est la phase de mise en route de la sauvegarde sur chaque poste pris en charge
-9. Configuration des services supplémentaires en option (selon clients) : les prestations proposées par les distributeurs de la solution Datis peuvent inclure des options qui requiert à leur tour une opération de configuration
+9. Configuration des services supplémentaires en option (selon clients) : les prestations proposées par les revendeurs de la solution Datis peuvent inclure des options qui requiert à leur tour une opération de configuration
 
 .. _pre_requis:
 
@@ -53,7 +53,7 @@ de type DSL ou fibre, et dédiée:
   supportées (connexion entrante impossible depuis Internet)
 
 - En cas de connexion partagée (hotel d'entreprise, tiers lieu), informer
-  votre distributeur au plus vite, afin qu'il coordonne son intervention
+  votre revendeur au plus vite, afin qu'il coordonne son intervention
   en amont de sa venue avec l'administrateur réseau de votre site
 
 - Si vous avez souscrit un contrat particulier auprès de l'opérateur Free,
@@ -61,7 +61,7 @@ de type DSL ou fibre, et dédiée:
   (procédure automatique via `votre console de gestion Free  <https://subscribe.free.fr/login/>`_ )
 
 2. Pensez à un emplacement à l'abri de l'humidité, du soleil, de la poussière
-avec une prise réseau et une prise éléctrique (ou informez votre distributeur
+avec une prise réseau et une prise éléctrique (ou informez votre revendeur
 en amont de l'installation)
 
 3. L'équipement Inspeere doit impérativement être alimenté par une alimentation

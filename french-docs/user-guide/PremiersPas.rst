@@ -119,26 +119,26 @@ complète avec VEEAM au niveau 2 et Datis en externalisation au niveau 1 est
 absolument triviale.
 
 
-Console de gestion DatisAdmin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Console de gestion DatisAdmin
+.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-Volumes de partage SMB
-^^^^^^^^^^^^^^^^^^^^^^
+.. Volumes de partage SMB
+.. ^^^^^^^^^^^^^^^^^^^^^^
 
 
-Nextcloud
-^^^^^^^^^
+.. Nextcloud
+.. ^^^^^^^^^
 
-Permissions du dossier COMMUN
-"""""""""""""""""""""""""""""
+.. Permissions du dossier COMMUN
+.. """""""""""""""""""""""""""""
 
-Partage de documents
-""""""""""""""""""""
+.. Partage de documents
+.. """"""""""""""""""""
 
-Authentification 2 facteurs
-"""""""""""""""""""""""""""
+.. Authentification 2 facteurs
+.. """""""""""""""""""""""""""
 
-Réseau privé virtuel (VPN)
-""""""""""""""""""""""""""
+.. Réseau privé virtuel (VPN)
+.. """"""""""""""""""""""""""
 

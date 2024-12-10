@@ -1,21 +1,21 @@
 
-====================================
-Guide d'Installation (distributeurs)
-====================================
+=================================
+Guide d'Installation (revendeurs)
+=================================
 
-Ce guide s'adresse aux partenaires **distributeurs** de la solution Inspeere.
+Ce guide s'adresse aux partenaires **revendeurs** de la solution Inspeere.
 
 
 .. toctree::
   :maxdepth: 2
 
   IG_1_MiseEnService
-  IG_2_InterfaceGestionCentralisee
-  IG_3_AgentdeSauvegarde
-  IG_4_Configuration
-  IG_5_Sauvegardes
-  IG_6_Interface_DatisAdmin
-  IG_7_Serveur_de_Fichiers_Samba
-  IG_8_ResolutionProblemes
+  IG_2_Interface_de_gestion
+  IG_3_Supervision
+  IG_4_Sauvegardes
+  IG_5_Restauration
+  IG_6_Gestion_du_materiel
+  IG_7_ResolutionProblemes
+  IG_8_Serveur_de_Fichiers_Samba
 
 

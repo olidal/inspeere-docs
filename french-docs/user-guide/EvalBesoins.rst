@@ -24,7 +24,7 @@ Je ne suis pas expert, comment répondre à ces questions??
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Les produits et le service Inspeere sont proposés en priorité par 
-l'intermédiaire de distributeurs agréés. Ces spécialistes sont 
+l'intermédiaire de partenaires revendeurs agréés. Ces spécialistes sont 
 formés et parfaitement rôdés à notre solution et pourront vous 
 aider à répondre à toutes ces questions sans effort ni perte de 
 temps inutile.
@@ -329,7 +329,7 @@ Pour cela, Inspeere fournit un certain nombre d'outils très simple pour:
 Lors du choix de sa nouvelle solution Inspeere, l'utilisateur doit donc anticiper ses 
 besoins d'espace de stockage pour la concentration de ses données existantes et futures,
 et ce sur plusieurs années. Ce calcul n'est pas très complexe, mais il ne peut pas être
-automatisé. En revanche, le distributeur choisi pour la fourniture et l'installation 
+automatisé. En revanche, le revendeur choisi pour la fourniture et l'installation 
 de la solution Inspeere saura parfaitement vous accompagner pour cette évaluation.
 
 Cette évaluation doit en effet tenir compte de différents éléments, comme par exemple
@@ -715,10 +715,10 @@ et un niveau d'**externalisation** des données de l'équipement DATIS vers d'au
 Chaque niveau possède des politiques de sauvegarde indépendante. Le niveau **concentration** 
 est généralement configuré sur place par le technicien, lors de l'installation de l'équipement.
 Mais dans certains cas, cette étape peut être entièrement réalisée à distance par les équipes
-techniques de votre distributeur Inspeere.
+techniques de votre revendeur Inspeere.
 
 Le niveau **externalisation** est lui, en principe, pré-configuré en amont, lors de la 
-préparation de votre équipement DATIS en usine ou chez le partenaire distributeur. C'est
+préparation de votre équipement DATIS en usine ou chez le partenaire revendeur. C'est
 normalement Inspeere qui se charge de ce réglage. Par la suite, cette configuration 
 peut néanmoins faire l'objet d'ajustements ou de corrections.
 
