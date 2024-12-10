@@ -8,7 +8,7 @@
 .. _config_client_urbackup:
 
 
-5.1 Configuration sauvegarde niveau 2 : UrBackup
+4.1 Configuration sauvegarde niveau 2 : UrBackup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 La sauvegarde des postes de travail, serveurs et machines virtuelles windows
@@ -249,7 +249,7 @@ Renseigner la case comme ci-dessous
 
 .. _config_client_timemachine:
 
-5.2 Configuration sauvegarde niveau 2 : TimeMachine
+4.2 Configuration sauvegarde niveau 2 : TimeMachine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configuration du client de sauvegarde TimeMachine faisant partie 
@@ -325,14 +325,14 @@ utilisés par TimeMachine, et la première sauvegarde doit commencer bientôt.
 
 .. _config_VEEAM:
 
-5.3 Mise en place sauvegarde niveau 2 : VEEAM
+4.3 Mise en place sauvegarde niveau 2 : VEEAM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Le système Datis peut être configuré comme *Dépôt VEEM Durci*. La 
 mise en place de cette option requiert une intervention du support Inspeere.
 
 
-5.4 Sauvegarde Office 365
+4.4 Sauvegarde Office 365
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. NOTE::
