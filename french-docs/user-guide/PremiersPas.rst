@@ -20,7 +20,7 @@ atteindre des capacités allant jusqu'à plusieurs Peta-octets. Le système DATI
 aucune limite d'échelle, ce sont vos besoins qui définissent le cahier des charges. 
 
 .. figure:: Image_deux_niveaux_Michael.png
-   :width: 480px
+   :width: 720px
    :align: center
 
    Le système DATIS d'Inspeere comporte deux niveaux.
@@ -52,7 +52,7 @@ le fonctionnement de la sauvegarde. En fait, DATIS ne propose pas une sauvegarde
 mais DEUX, une à chaque niveau, comme l'illustre le schema suivant:
 
 .. figure:: Image_deux_niveaux_sauvegarde.png
-   :width: 720px
+   :width: 480px
    :align: center
 
    Les deux niveaux de sauvegarde du système DATIS.
@@ -122,13 +122,77 @@ absolument triviale.
 Console de gestion DatisAdmin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**Cette console permet de gérer de façon intuitive et efficace le serveur Urbackup**
+
+.. figure:: ./Figures/1_DatisAdmin_DashBoard_Annot.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+- Colonne de gauche : Le menu du tableau de bord.
+- Au centre : l'état général de l'occupation de l'espace disque disponible.
+- En dessous : l'état des machines connectées.
+
 
 Volumes de partage SMB
 ^^^^^^^^^^^^^^^^^^^^^^
 
+**Voici comment configurer un lecteur réseau permettant l'accès au partage SMB 
+avec un utilisateur.**
+
+Dans l'explorateur de fichier faire un clic droit sur "CePC" puis choisir "Connecter un lecteur réseau"
+
+
+.. figure:: ./Figures_SMB/SMB_commun2_a.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+Indiquer ensuite dans la fenêtre le chemin du réseau et le nom utilisateur
+
+
+.. figure:: ./Figures_SMB/SMB_commun2_aa.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+Une fenêtre s'ouvre pour vous permettre de vous authentifier
+
+
+
+.. figure:: ./Figures_SMB/SMB_commun2_bb.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+Le lecteur réseau est installé
+
+
+.. figure:: ./Figures_SMB/SMB_commun2_c.png
+  :width: 480px
+  :align: center
+
+  image 4
+
 
 Nextcloud
 ^^^^^^^^^
+
+.. NOTE::
+
+    Pour Nextcloud aller sur le `site propriétaire <https://www.nextcloud.com>`_
+    Vous aurez toutes les informations nécessaires à l'utilisation de leur produit
+    
+
+ 
+
 
 Permissions du dossier COMMUN
 """""""""""""""""""""""""""""
@@ -139,6 +203,55 @@ Partage de documents
 Authentification 2 facteurs
 """""""""""""""""""""""""""
 
+**Dans l'onglet sécurité de la DatisAdmin il est proposé une authentification à double facteur.**
+
+Voici comment procéder:
+
+- Activer le bouton 2FA
+
+.. figure:: ./DATIS_2FA/2FA_1.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+-Taper son mot de passe dans la fenêtre d'invite.
+
+
+.. figure:: ./DATIS_2FA/2FA_2.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+- Flasher le QR Code après avoir pris soin d'installer une application sur son téléphone du type : Google Authenticator
+
+- Pour finir il faut entre le code fourni par cette application dans le champ correspondant (image 3)
+
+.. figure:: ./DATIS_2FA/2FA_3.png
+  :width: 480px
+  :align: center
+
+  image 3
+
+
+
 Réseau privé virtuel (VPN)
 """"""""""""""""""""""""""
 
+.. figure:: ./DATIS_VPN/vpn_clé.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+
+.. NOTE::
+
+    Pour chaque utilisateur enregistré dans DatisAdmin il est possible d'établir une connexion VPN.
+    Il suffit pour cela de cliquer sur la clé correspondant à l'identifiant pour obtenir un fichier de configuration
+    VPN. Il faudra également avoir pris soin d'ouvrir le port UDP 1194 dans la console de gestion de votre FAI pour per
+    mettre cette connexion.
