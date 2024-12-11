@@ -3,16 +3,36 @@
 6. Gestion du Matériel
 ======================
 
-6.1 Fonction IPMI de la DATIS
------------------------------
+6.1 IPMI(BMC)
+--------------------
+
 
 .. NOTE::
-
-  Certaines DATIS (Les Terra) possèdent une "fonction" IPMI(BMC) qui permet l'administration de celle-ci
+  Certaines DATIS (Les Terra) possèdent une "fonction" IPMI(BMC) qui permet l'administration de cette dernière
   via le réseau.
-  Trouver l'adresse IP du BMC:
-  Pendant le démarrage du serveur, l'adresse IP du BMC s'affiche généralement dans le coin inférieur droit de l'écran
-  
+  Pour connaitre l'IP d'une Datis possédant cette option il y a deux possibilités :
+  - Pendant le démarrage du serveur, l'adresse IP du BMC s'affiche généralement dans le coin inférieur droit de l'écran.
+
+  - Elle s'affiche également dans le BIOS (Images 1 et 2)
+
+
+.. figure:: ./DATIS_BIOS/BMC-network-config1.png
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+.. figure:: ./DATIS_BIOS/BMC-network-config2.png
+  :width: 480px
+  :align: center
+
+  image 2
+
+
+
+6.2 Paramétrage IPMI de la DATIS
+--------------------------------
 
 
 **Tout d'abord entrer l'adresse IP partagée dans un navigateur pour accéder au serveur**
