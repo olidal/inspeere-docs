@@ -188,7 +188,7 @@ Nextcloud
 .. NOTE::
 
     Pour Nextcloud aller sur le `site propriétaire <https://www.nextcloud.com>`_
-    Vous aurez toutes les informations nécessaires à l'utilisation de leur produit
+    afin d'avoir toutes les informations nécessaires à l'utilisation de leur produit
     
 
  
