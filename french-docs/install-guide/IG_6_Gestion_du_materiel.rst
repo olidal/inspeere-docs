@@ -3,8 +3,24 @@
 6. Gestion du Matériel
 ======================
 
-6.1 IPMI(BMC)
---------------------
+6.1 Gestion de l'Energie
+------------------------
+
+.. WARNING::
+  Il est indispensable que la Datis redémarre toute seule en cas de coupure électrique que celle-ci soit branchée
+  sur onduleur ou pas. Voici la vérification à effectuer avant de considérer un boitier d'alimentation défectueux.
+
+
+.. figure:: ./DATIS_BIOS/Datis_power.jpg
+  :width: 480px
+  :align: center
+
+  image 1
+
+
+
+6.2 IPMI(BMC)
+-------------
 
 
 .. NOTE::
@@ -31,7 +47,7 @@
 
 
 
-6.2 Paramétrage IPMI de la DATIS
+6.3 Paramétrage IPMI de la DATIS
 --------------------------------
 
 
