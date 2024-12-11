@@ -191,3 +191,24 @@ La procédure de reconfiguration est très simple, en 9 étapes:
 
   image 9
 
+7.6 Question diverses
+---------------------
+
+
+**Pour changer la config windows et forcer le mode clair.**
+
+(Autrement sur un Windows sans licence on ne peut pas changer et on reste en mode sombre)
+
+Appuyer sur les touches Windows + R
+Une fenêtre apparait. Taper regedit et appuyer sur Entrée
+La base de Registre s'ouvre alors.
+Il faut alors dérouler le menu comme indiqué ci-dessous:
+
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize
+
+Modifier la valeur "AppSuserLightTheme"
+
+- Valeur à définir:
+
+-  1 : Mode clair
+-  0 : Mode sombre
